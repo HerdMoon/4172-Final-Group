@@ -44,10 +44,12 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - Project
     - ProjectTest
     - VuforiaMars_Images
     - VuforiaMars_VuMark
     dataSetsToActivate:
+    - Project
     - ProjectTest
   videoBackground:
     clippingMode: 0

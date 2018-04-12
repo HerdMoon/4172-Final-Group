@@ -7,8 +7,9 @@ public class wandScript : MonoBehaviour {
 
 	// Use this for initialization
 
-	GameObject canv = GameObject.Find("Canvas");
+	GameObject canv;
 	void Start () {
+		canv = GameObject.Find("Canvas");
 		canv.SetActive (false);
 	}
 	
@@ -25,11 +26,11 @@ public class wandScript : MonoBehaviour {
 		// im trying to modify the text here, according to the collider.
 
 		if (instance.name == "drawer1") {
-			GameObject.Find ("Canvas").SetActive (true);
+			canv.SetActive (true);
 			GameObject.Find ("PanelTopic").GetComponent<Text> ().text = "gold";
 		}
 		else {
-			GameObject.Find ("Canvas").SetActive (true);
+			canv.SetActive (true);
 			GameObject.Find ("PanelTopic").GetComponent<Text> ().text = "silver";
 		}
 	}

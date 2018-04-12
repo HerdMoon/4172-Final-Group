@@ -295,7 +295,7 @@ Transform:
   m_GameObject: {fileID: 116481769}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 13.62}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 1480305194}
   m_Father: {fileID: 0}
@@ -375,15 +375,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: d3
+  mTrackableName: data_FA2015_BowenLou_10v_fig0012
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/ProjectTest.xml
+  mDataSetPath: Vuforia/Project.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 1.2941177
   mImageTargetType: 0
-  mWidth: 3
-  mHeight: 3
+  mWidth: 3.090909
+  mHeight: 4
 --- !u!1 &140577798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1181,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: d4Material
+  m_Name: data_FA2015_Kok_158r_fig0092Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1194,7 +1194,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ed904721071c4f94882048dd5edb505e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5c8de8a9620d4b138b01fe4a6f64c35a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1405,7 +1405,7 @@ Transform:
   m_GameObject: {fileID: 735710907}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 1052968147}
   m_Father: {fileID: 0}
@@ -1485,15 +1485,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: d1
+  mTrackableName: data_FA2014_CarlsonKatz_118v_fig020_CastingInABoxMold
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/ProjectTest.xml
+  mDataSetPath: Vuforia/Project.xml
   mExtendedTracking: 0
-  mAspectRatio: 0.97849464
+  mAspectRatio: 1.2941177
   mImageTargetType: 0
-  mWidth: 3
-  mHeight: 2.935484
+  mWidth: 3.090909
+  mHeight: 4
 --- !u!65 &735710914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1956,7 +1956,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.38636363, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -2009,7 +2009,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 74d1c5be00000000000000bf000000000000803f00000000000000000000000074d1c5be000000000000003f000000000000803f00000000000000000000803f74d1c53e00000000000000bf000000000000803f000000000000803f0000000074d1c53e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -2307,7 +2307,7 @@ Transform:
   m_GameObject: {fileID: 1052968146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.001, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.08, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 735710908}
   m_RootOrder: 0
@@ -2326,7 +2326,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 36ff36d6231704547a2b7ce00a8b4c6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2731,7 +2731,7 @@ Transform:
   m_GameObject: {fileID: 1124343093}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 7.22, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 1234732018}
   m_Father: {fileID: 0}
@@ -2811,15 +2811,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: d2
+  mTrackableName: data_FA2014_Mellon_48r_fig012_ExcellentMustard
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/ProjectTest.xml
+  mDataSetPath: Vuforia/Project.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 1.2941177
   mImageTargetType: 0
-  mWidth: 3
-  mHeight: 3
+  mWidth: 3.090909
+  mHeight: 4
 --- !u!1 &1156903540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,7 +2911,7 @@ Transform:
   m_GameObject: {fileID: 1162218057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.001, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.08, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1172229565}
   m_RootOrder: 0
@@ -2930,7 +2930,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 36ff36d6231704547a2b7ce00a8b4c6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2999,7 +2999,7 @@ Transform:
   m_GameObject: {fileID: 1172229564}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 7.23, y: 0, z: 13.62}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 1162218058}
   m_Father: {fileID: 0}
@@ -3079,15 +3079,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: d4
+  mTrackableName: data_FA2015_Kok_158r_fig0092
   mPreserveChildSize: 0
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/ProjectTest.xml
+  mDataSetPath: Vuforia/Project.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 1.2941177
   mImageTargetType: 0
-  mWidth: 3
-  mHeight: 3
+  mWidth: 3.090909
+  mHeight: 4
 --- !u!1 &1189146080
 GameObject:
   m_ObjectHideFlags: 0
@@ -3255,7 +3255,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.48924732}
+      m_Extent: {x: 0.38636363, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -3308,7 +3308,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000a07efabe000000000000803f000000000000000000000000000000bf00000000a07efa3e000000000000803f00000000000000000000803f0000003f00000000a07efabe000000000000803f000000000000803f000000000000003f00000000a07efa3e000000000000803f000000000000803f0000803f
+    _typelessdata: 74d1c5be00000000000000bf000000000000803f00000000000000000000000074d1c5be000000000000003f000000000000803f00000000000000000000803f74d1c53e00000000000000bf000000000000803f000000000000803f0000000074d1c53e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -3542,7 +3542,7 @@ Transform:
   m_GameObject: {fileID: 1234732017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.001, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.08, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1124343094}
   m_RootOrder: 0
@@ -3561,7 +3561,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 36ff36d6231704547a2b7ce00a8b4c6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3862,7 +3862,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.38636363, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -3915,7 +3915,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 74d1c5be00000000000000bf000000000000803f00000000000000000000000074d1c5be000000000000003f000000000000803f00000000000000000000803f74d1c53e00000000000000bf000000000000803f000000000000803f0000000074d1c53e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -4082,7 +4082,7 @@ Transform:
   m_GameObject: {fileID: 1480305193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.001, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.08, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 116481770}
   m_RootOrder: 0
@@ -4101,7 +4101,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 36ff36d6231704547a2b7ce00a8b4c6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4831,7 +4831,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: d3Material
+  m_Name: data_FA2015_BowenLou_10v_fig0012Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -4844,7 +4844,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: efb4a45f1be04f9c9e0423acd3b6d7a4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 466619fa76dc466cbbd666468bdb423a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -5531,7 +5531,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: d2Material
+  m_Name: data_FA2014_Mellon_48r_fig012_ExcellentMustardMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -5544,7 +5544,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: cf386ef93e1345a1b52511e5e1c5d7bc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 38c548073e4346888a50d968961e6145, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -5698,7 +5698,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: d1Material
+  m_Name: data_FA2014_CarlsonKatz_118v_fig020_CastingInABoxMoldMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -5711,7 +5711,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6fe7682cd682487e84aad76b9c0dbfc7, type: 3}
+        m_Texture: {fileID: 2800000, guid: d3f5f4a76363494790a75a510520fb45, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -5975,7 +5975,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.38636363, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -6028,7 +6028,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: 74d1c5be00000000000000bf000000000000803f00000000000000000000000074d1c5be000000000000003f000000000000803f00000000000000000000803f74d1c53e00000000000000bf000000000000803f000000000000803f0000000074d1c53e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
