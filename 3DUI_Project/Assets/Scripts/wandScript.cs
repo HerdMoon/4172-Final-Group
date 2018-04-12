@@ -34,4 +34,13 @@ public class wandScript : MonoBehaviour {
 			GameObject.Find ("PanelTopic").GetComponent<Text> ().text = "silver";
 		}
 	}
+
+	void OnTriggerExit(Collider instance){
+
+		Debug.Log (instance.name + " Exit!!");
+
+		// remove the ui panel
+
+		canv.SetActive (false);
+	}
 }
