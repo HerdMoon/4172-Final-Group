@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 116481773}
   - component: {fileID: 116481772}
   - component: {fileID: 116481771}
+  - component: {fileID: 116481776}
   m_Layer: 0
   m_Name: drawer3
   m_TagString: Untagged
@@ -384,6 +385,18 @@ MonoBehaviour:
   mImageTargetType: 0
   mWidth: 3.090909
   mHeight: 4
+--- !u!65 &116481776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 116481769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &140577798
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +421,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 140577798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -166}
   m_LocalScale: {x: 0.69333, y: 0.69333, z: 0.69333}
   m_Children:
   - {fileID: 839141850}
@@ -424,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 13.866669, y: 13.866669}
+  m_AnchoredPosition: {x: 167, y: 101.07225}
   m_SizeDelta: {x: 200, y: 500}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &140577800
@@ -1739,6 +1752,7 @@ GameObject:
   - component: {fileID: 846489810}
   - component: {fileID: 846489809}
   - component: {fileID: 846489808}
+  - component: {fileID: 846489812}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1823,6 +1837,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &846489812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 846489807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &867936099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2701,6 +2736,7 @@ GameObject:
   - component: {fileID: 1124343097}
   - component: {fileID: 1124343096}
   - component: {fileID: 1124343095}
+  - component: {fileID: 1124343100}
   m_Layer: 0
   m_Name: drawer2
   m_TagString: Untagged
@@ -2805,6 +2841,18 @@ MonoBehaviour:
   mImageTargetType: 0
   mWidth: 3.090909
   mHeight: 4
+--- !u!65 &1124343100
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124343093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1156903540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +3002,7 @@ GameObject:
   - component: {fileID: 1172229568}
   - component: {fileID: 1172229567}
   - component: {fileID: 1172229566}
+  - component: {fileID: 1172229571}
   m_Layer: 0
   m_Name: drawer4
   m_TagString: Untagged
@@ -3058,6 +3107,18 @@ MonoBehaviour:
   mImageTargetType: 0
   mWidth: 3.090909
   mHeight: 4
+--- !u!65 &1172229571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1172229564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 0, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1189146080
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,8 +3194,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1597349905}
   m_HandleRect: {fileID: 1597349904}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0
+  m_Value: 0.9999992
+  m_Size: 0.867658
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3582,7 +3643,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1244834407}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -181}
   m_LocalScale: {x: 0.69333, y: 0.69333, z: 0.69333}
   m_Children:
   - {fileID: 222490819}
@@ -3592,7 +3653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 166.4, y: 13.866669}
+  m_AnchoredPosition: {x: 316, y: 107}
   m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1244834409
