@@ -21,4 +21,11 @@ public class ARScript : MonoBehaviour {
 //		GetComponent<DefaultInitializationErrorHandler> ().enabled = false;
 		
 	}
+
+	public void GoMainMenu(string scenename){
+		GetComponent<VuforiaBehaviour> ().enabled = false;
+		GetComponent<DefaultInitializationErrorHandler> ().enabled = false;
+		VuforiaRuntime.Instance.Deinit ();
+		Application.LoadLevel (scenename);
+	}
 }
