@@ -51,6 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Image01Script.cs" />
+     <Compile Include="Assets\Image02Script.cs" />
+     <Compile Include="Assets\Image03Script.cs" />
+     <Compile Include="Assets\Image04Script.cs" />
+     <Compile Include="Assets\Image05Script.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
      <Compile Include="Assets\Scripts\ARScript.cs" />
