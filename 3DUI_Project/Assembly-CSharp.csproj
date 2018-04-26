@@ -51,23 +51,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\RadialProgressBar.cs" />
      <Compile Include="Assets\Scripts\ActiveStateToggler.cs" />
      <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+     <Compile Include="Assets\Scripts\ARScript.cs" />
      <Compile Include="Assets\Scripts\ChangeColor.cs" />
      <Compile Include="Assets\Scripts\DragMe.cs" />
      <Compile Include="Assets\Scripts\DragPanel.cs" />
      <Compile Include="Assets\Scripts\DropMe.cs" />
+     <Compile Include="Assets\Scripts\menuScript.cs" />
      <Compile Include="Assets\Scripts\PanelManager.cs" />
+     <Compile Include="Assets\Scripts\phoneCamera.cs" />
+     <Compile Include="Assets\Scripts\RadialProgressBar.cs" />
      <Compile Include="Assets\Scripts\ResizePanel.cs" />
      <Compile Include="Assets\Scripts\ScrollDetailTexture.cs" />
      <Compile Include="Assets\Scripts\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\TiltWindow.cs" />
+     <Compile Include="Assets\Scripts\WandPanelpos.cs" />
      <Compile Include="Assets\Scripts\wandScript.cs" />
+     <Compile Include="Assets\Scripts\WandSelection.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
-     <Compile Include="Assets\WandPanelpos.cs" />
-     <Compile Include="Assets\WandSelection.cs" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\StreamingAssets\Vuforia\VuforiaMars_ModelTarget.xml" />
      <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
