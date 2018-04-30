@@ -7,25 +7,19 @@ public class ARScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		VuforiaBehaviour.Instance.enabled = true;
-		VuforiaRuntime.Instance.InitVuforia ();
-		GetComponent<VuforiaBehaviour> ().enabled = true;
-		GetComponent<DefaultInitializationErrorHandler> ().enabled = true;
+//		VuforiaRuntime.Instance.InitVuforia ();
+//		GetComponent<VuforiaBehaviour> ().enabled = true;
+//		GetComponent<DefaultInitializationErrorHandler> ().enabled = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-//		//Go back to main menu: need to deinit vuforia camera
-//		VuforiaRuntime.Instance.Deinit ();
-//		GetComponent<VuforiaBehaviour> ().enabled = false;
-//		GetComponent<DefaultInitializationErrorHandler> ().enabled = false;
 		
 	}
 
 	public void GoMainMenu(string scenename){
-		GetComponent<VuforiaBehaviour> ().enabled = false;
-		GetComponent<DefaultInitializationErrorHandler> ().enabled = false;
-		//VuforiaRuntime.Instance.Deinit ();
+//		GetComponent<VuforiaBehaviour> ().enabled = false;
+//		GetComponent<DefaultInitializationErrorHandler> ().enabled = false;
 		Application.LoadLevel (scenename);
 	}
 }

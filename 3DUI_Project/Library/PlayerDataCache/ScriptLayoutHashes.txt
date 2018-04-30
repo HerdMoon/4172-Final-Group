@@ -200,7 +200,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 269dedd56aa4cd36f2247171c5bb4009 Assembly-CSharp.dll:.phoneCamera
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Image03Script
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Positionset
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.menuScript
+1dec5e52dbfef7a79ff355870a701603 Assembly-CSharp.dll:.menuScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Image04Script
 847108a4f4300c8402f74cce11a88a67 Assembly-CSharp.dll:.DropMe
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
@@ -312,3 +312,4 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.database
