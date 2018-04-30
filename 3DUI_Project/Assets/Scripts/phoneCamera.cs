@@ -58,6 +58,8 @@ public class phoneCamera : MonoBehaviour {
 		}
 			
 		if (!taken) {
+			backCam.Play ();
+			background.texture = backCam;
 			float ratio = (float)backCam.width / (float)backCam.height;
 			fit.aspectRatio = ratio;
 			float scaleY = backCam.videoVerticallyMirrored ? -1f : 1f;
@@ -65,26 +67,11 @@ public class phoneCamera : MonoBehaviour {
 
 			int orient = -backCam.videoRotationAngle;
 			background.rectTransform.localEulerAngles = new Vector3 (0, 0, orient);
+
 		}
 
 	}
-
-//	public void TakePhoto(){
-//		
-//		if (!camAvailable) {
-//			return;
-//		}
-////		Texture2D PhotoTaken= new Texture2D(backCam.width, backCam.height);
-////		PhotoTaken = background.texture as Texture2D;
-//		Texture2D PhotoTaken= new Texture2D(backCam.width, backCam.height);
-//		PhotoTaken.SetPixels(backCam.GetPixels());
-//		PhotoTaken.Apply();
-//		background.texture = PhotoTaken;
-//		buttonpanel.SetActive (false);
-//		scroll.SetActive (true);
-//		taken = true;
-//
-//	}
+		
 
 	public void TakePhoto(){
 
@@ -136,6 +123,12 @@ public class phoneCamera : MonoBehaviour {
 		scroll.SetActive (false);
 		taken = false;
 		background.texture = backCam;
+	}
+
+	public void BackToMainMenu(){
+
+		Application.LoadLevel ("MainMenu");
+
 	}
 
 }
