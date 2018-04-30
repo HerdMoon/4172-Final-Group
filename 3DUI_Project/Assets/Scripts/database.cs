@@ -15,12 +15,20 @@ public class database : MonoBehaviour {
 		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
 		Debug.Log (Application.persistentDataPath);
 		CreateSchema();
+
 		InsertMat_Info ("Wood", 0, "Wood is an usual Material.");
 		InsertMat_Info ("Iron", 0, "Iron is a kind of metal.");
 		InsertMat_Info ("Silver Pigment", 1, "Silver Pigment made from lead,poison.");
 		InsertMat_Info ("Yellow Pigment", 0, "Yellow Pigment made from oil,not poison.");
+
 		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Silver Pigment", "None", "None", 10000);
 		Insert_Photo_By_URL ("herdmoon.org/static/f/chair.png", "Wood", "Iron", "Yellow Pigment", "None", 20000);
+
+		InsertMat_Drawer_Pair ("Wood", "Wood_Drawer");
+
+		string res_Mat = "";
+		Lookup_Mat ("Wood", ref res_Mat);
+		Debug.Log (res_Mat);
 		bool res_Dangerous = true;
 		string res_Descripton = "";
 		Get_Description ("Wood", ref res_Dangerous, ref res_Descripton);
@@ -33,9 +41,18 @@ public class database : MonoBehaviour {
 			Debug.Log (res_URL);
 		}
 
+		List<string> mat_List = new List<string> (4);
+		Debug.Log (mat_List.Count);
+		Lookup_URL ("herdmoon.org/static/f/silver_rose.png", ref mat_List);
+		foreach (string res_Mat_Read in mat_List)
+		{
+			Debug.Log ("Mat Res" + res_Mat_Read);
+		}
 
+		Debug.Log (mat_List.Count);
 
 	}
+
 
 	public void CreateSchema() {
 		using (var conn = new SqliteConnection(dbPath)) {
@@ -67,9 +84,19 @@ public class database : MonoBehaviour {
 
 				var result = cmd.ExecuteNonQuery();
 				Debug.Log("create schema: " + result);			
-			
 			}
 
+			using (var cmd = conn.CreateCommand ()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "CREATE TABLE IF NOT EXISTS 'Mat_Drawer_Table' ( " +
+					"  'id' INTEGER PRIMARY KEY, " +
+					"  'Mat_Name' TEXT," + 
+					"  'Drawer_Name' TEXT" +
+					");";
+
+				var result = cmd.ExecuteNonQuery();
+				Debug.Log("create schema: " + result);			
+			}
 		}
 	}
 
@@ -114,6 +141,8 @@ public class database : MonoBehaviour {
 	}
 
 
+
+
 	public void InsertMat_Info(string mat_name,int is_dangerous, string mat_des)
 	{
 		using (var conn = new SqliteConnection(dbPath)) {
@@ -142,29 +171,121 @@ public class database : MonoBehaviour {
 		}		
 	}
 
-	public void InsertScore(string highScoreName, int score) {
+	public void InsertMat_Drawer_Pair(string mat_name,string drawer_name)
+	{
 		using (var conn = new SqliteConnection(dbPath)) {
 			conn.Open();
 			using (var cmd = conn.CreateCommand()) {
 				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = "INSERT INTO Mat_info (name, score) " +
-					"VALUES (@Name, @Score);";
+				cmd.CommandText = "INSERT INTO Mat_Drawer_Table (Mat_Name,Drawer_Name) " +
+					"VALUES (@Mat_Name, @Drawer_Name);";
 
 				cmd.Parameters.Add(new SqliteParameter {
-					ParameterName = "Name",
-					Value = highScoreName
+					ParameterName = "Mat_Name",
+					Value = mat_name
 				});
 
 				cmd.Parameters.Add(new SqliteParameter {
-					ParameterName = "Score",
-					Value = score
+					ParameterName = "Drawer_Name",
+					Value = drawer_name
 				});
-
 				var result = cmd.ExecuteNonQuery();
-				Debug.Log("insert score: " + result);
+				Debug.Log("insert pair: " + result);
 			}
-		}
+		}				
 	}
+
+
+	public void Lookup_Drawer(ref string mat_name,string drawer_name)
+	{
+		using (var conn = new SqliteConnection(dbPath)) {
+			conn.Open();
+			using (var cmd = conn.CreateCommand()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "SELECT Mat_Name FROM Mat_Drawer_Table WHERE Drawer_Name =  @Drawer_Name;";
+
+				cmd.Parameters.Add(new SqliteParameter {
+					ParameterName = "Drawer_Name",
+					Value = drawer_name
+				});
+
+				Debug.Log("Mat_Name_Search (begin)");
+				var reader = cmd.ExecuteReader();
+				while (reader.Read()) {
+					var Read_Mat_Name = reader.GetString(0);
+					mat_name = Read_Mat_Name;
+				}
+				Debug.Log("Mat_Name_Search (end)");
+			}
+		}		
+	}
+
+	public void Lookup_Mat(string mat_name,ref string drawer_name)
+	{
+		using (var conn = new SqliteConnection(dbPath)) {
+			conn.Open();
+			using (var cmd = conn.CreateCommand()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "SELECT Drawer_Name FROM Mat_Drawer_Table WHERE Mat_Name =  @Mat_Name;";
+
+				cmd.Parameters.Add(new SqliteParameter {
+					ParameterName = "Mat_Name",
+					Value = mat_name
+				});
+
+				Debug.Log("Drawer_Name_Search (begin)");
+				var reader = cmd.ExecuteReader();
+				while (reader.Read()) {
+					var Read_Drawer_Name = reader.GetString(0);
+					drawer_name = Read_Drawer_Name;
+				}
+				Debug.Log("Drawer_Name_Search (end)");
+			}
+		}			
+	}
+
+	public void Lookup_URL(string URL,ref List<string> Mat_List)
+	{
+		using (var conn = new SqliteConnection(dbPath)) {
+			conn.Open();
+			using (var cmd = conn.CreateCommand()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "SELECT distinct Mat1,Mat2,Mat3,Mat4 FROM Pic_Info WHERE URL =  @URL;";
+
+				cmd.Parameters.Add(new SqliteParameter {
+					ParameterName = "URL",
+					Value = URL
+				});
+
+				Debug.Log("Search_Mat_By_URL (begin)");
+				int count_num = 0;
+				var reader = cmd.ExecuteReader();
+				while (reader.Read()) {
+					count_num++;
+					var Read_Mat1 = reader.GetString (0);
+					var Read_Mat2 = reader.GetString (1);
+					var Read_Mat3 = reader.GetString (2);
+					var Read_Mat4 = reader.GetString (3);
+
+					if (Read_Mat1 != "None") {
+						Mat_List.Add (Read_Mat1);
+					}
+					if (Read_Mat2 != "None") {
+						Mat_List.Add (Read_Mat2);
+					}
+					if (Read_Mat3 != "None") {
+						Mat_List.Add (Read_Mat3);
+					}
+					if (Read_Mat4 != "None") {
+						Mat_List.Add (Read_Mat4);
+					}
+				}
+				Debug.Log (count_num.ToString () + "Lines");
+				Debug.Log("Search_Mat_By_URL (end)");
+			}
+		}		
+	}
+
 
 	public void Get_Description(string Mat_name, ref bool is_dangerous, ref string description)
 	{
@@ -206,8 +327,8 @@ public class database : MonoBehaviour {
 			using (var cmd = conn.CreateCommand ()) {
 				cmd.CommandType = CommandType.Text;
 				cmd.CommandText = "SELECT DISTINCT URL,Time_Stamp FROM Pic_Info WHERE Mat1 =  @Mat_name or Mat2 = @Mat_name or Mat3 = @Mat_name"
-				+ " or Mat4 = @Mat_name ORDER BY Time_Stamp ";
-				
+					+ " or Mat4 = @Mat_name ORDER BY Time_Stamp ";
+
 				cmd.Parameters.Add (new SqliteParameter {
 					ParameterName = "Mat_name",
 					Value = Mat_name
@@ -301,7 +422,7 @@ public class database : MonoBehaviour {
 		}
 	}
 
-		
+
 }
 
 
