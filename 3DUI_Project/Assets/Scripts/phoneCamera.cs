@@ -69,20 +69,66 @@ public class phoneCamera : MonoBehaviour {
 
 	}
 
+//	public void TakePhoto(){
+//		
+//		if (!camAvailable) {
+//			return;
+//		}
+////		Texture2D PhotoTaken= new Texture2D(backCam.width, backCam.height);
+////		PhotoTaken = background.texture as Texture2D;
+//		Texture2D PhotoTaken= new Texture2D(backCam.width, backCam.height);
+//		PhotoTaken.SetPixels(backCam.GetPixels());
+//		PhotoTaken.Apply();
+//		background.texture = PhotoTaken;
+//		buttonpanel.SetActive (false);
+//		scroll.SetActive (true);
+//		taken = true;
+//
+//	}
+
 	public void TakePhoto(){
-		
+
 		if (!camAvailable) {
 			return;
 		}
+		//		Texture2D PhotoTaken= new Texture2D(backCam.width, backCam.height);
+		//		PhotoTaken = background.texture as Texture2D;
 		Texture2D PhotoTaken= new Texture2D(backCam.width, backCam.height);
 		PhotoTaken.SetPixels(backCam.GetPixels());
-		GUI.DrawTexture(new Rect(0,0, -PhotoTaken.width, PhotoTaken.height), PhotoTaken);
 		PhotoTaken.Apply();
-		background.texture = PhotoTaken;
+		Texture2D reverse = FlipTexture (PhotoTaken, true);
+//		Texture2D reverse1 = FlipTexture (PhotoTaken, true);
+		background.texture = reverse;
 		buttonpanel.SetActive (false);
 		scroll.SetActive (true);
 		taken = true;
 
+	}
+
+	Texture2D FlipTexture(Texture2D original, bool reverse){
+		Texture2D flipped = new Texture2D(original.width,original.height);
+
+		int xN = original.width;
+		int yN = original.height;
+
+
+		for (int i = 0; i < xN; i++)
+		{
+			for (int j = 0; j < yN; j++)
+			{
+				if (reverse)
+				{
+					flipped.SetPixel(i, yN - j - 1, original.GetPixel(i, j));
+				}
+				else
+				{
+					flipped.SetPixel(xN - i - 1, j, original.GetPixel(i, j));
+				}
+			}
+		}
+		flipped.Apply();
+
+		return flipped;
 	}
 
 	public void BackToCamera(){
