@@ -7,7 +7,7 @@ public class ARScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		VuforiaBehaviour.Instance.enabled = true/false;
+//		VuforiaBehaviour.Instance.enabled = true;
 		VuforiaRuntime.Instance.InitVuforia ();
 		GetComponent<VuforiaBehaviour> ().enabled = true;
 		GetComponent<DefaultInitializationErrorHandler> ().enabled = true;

@@ -76,7 +76,7 @@ public class phoneCamera : MonoBehaviour {
 		}
 		Texture2D PhotoTaken= new Texture2D(backCam.width, backCam.height);
 		PhotoTaken.SetPixels(backCam.GetPixels());
-
+		GUI.DrawTexture(new Rect(0,0, -PhotoTaken.width, PhotoTaken.height), PhotoTaken);
 		PhotoTaken.Apply();
 		background.texture = PhotoTaken;
 		buttonpanel.SetActive (false);
