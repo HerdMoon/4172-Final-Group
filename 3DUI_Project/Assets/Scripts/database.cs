@@ -22,7 +22,7 @@ public class database : MonoBehaviour {
 		InsertMat_Info ("Yellow Pigment", 0, "Yellow Pigment made from oil,not poison.");
 
 		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Silver Pigment", "None", "None", 10000);
-		Insert_Photo_By_URL ("herdmoon.org/static/f/chair.png", "Wood", "Iron", "Yellow Pigment", "None", 20000);
+		Insert_Photo_By_URL ("herdmoon.org/static/f/chair.jpg", "Wood", "Iron", "Yellow Pigment", "None", 20000);
 
 		InsertMat_Drawer_Pair ("Wood", "Wood_Drawer");
 

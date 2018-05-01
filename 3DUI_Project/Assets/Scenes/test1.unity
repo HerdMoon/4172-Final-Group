@@ -288,8 +288,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 203753513}
   m_HandleRect: {fileID: 203753512}
   m_Direction: 2
-  m_Value: 0.999999
-  m_Size: 0
+  m_Value: 0.9999717
+  m_Size: 0.85616994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2517,7 +2517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0013807}
+  m_AnchoredPosition: {x: 0, y: -0.0014261182}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &933195217
@@ -5488,6 +5488,7 @@ GameObject:
   - component: {fileID: 2061447264}
   - component: {fileID: 2061447263}
   - component: {fileID: 2061447262}
+  - component: {fileID: 2061447268}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: Untagged
@@ -5586,3 +5587,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2061447268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2061447261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b09704682f44c72892ddbb95ab6699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
