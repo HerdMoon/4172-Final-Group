@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class phoneCamera : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class phoneCamera : MonoBehaviour {
 
 	private GameObject buttonpanel;
 	private GameObject scroll;
+	private Texture2D reverse;
 
 	private bool taken;
 
@@ -83,7 +85,7 @@ public class phoneCamera : MonoBehaviour {
 		Texture2D PhotoTaken= new Texture2D(backCam.width, backCam.height);
 		PhotoTaken.SetPixels(backCam.GetPixels());
 		PhotoTaken.Apply();
-		Texture2D reverse = FlipTexture (PhotoTaken, true);
+		reverse = FlipTexture (PhotoTaken, true);
 //		Texture2D reverse1 = FlipTexture (PhotoTaken, true);
 		background.texture = reverse;
 		buttonpanel.SetActive (false);
@@ -118,6 +120,28 @@ public class phoneCamera : MonoBehaviour {
 		return flipped;
 	}
 
+	public void submit(){
+		List<string> mats = new List<string> ();
+		if (GameObject.Find ("Image01").GetComponent<Image01Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image01").GetComponent<Image01Script> ().name);
+		}
+		if (GameObject.Find ("Image02").GetComponent<Image01Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image02").GetComponent<Image01Script> ().name);
+		}
+		if (GameObject.Find ("Image03").GetComponent<Image01Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image03").GetComponent<Image01Script> ().name);
+		}
+		if (GameObject.Find ("Image04").GetComponent<Image01Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image04").GetComponent<Image01Script> ().name);
+		}
+		if (GameObject.Find ("Image05").GetComponent<Image01Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image05").GetComponent<Image01Script> ().name);
+		}
+		System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
+		int time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
+		gameObject.GetComponent<database>().Insert_Data (reverse, mats, time);
+	}
+
 	public void BackToCamera(){
 		buttonpanel.SetActive (true);
 		scroll.SetActive (false);
@@ -125,9 +149,9 @@ public class phoneCamera : MonoBehaviour {
 		background.texture = backCam;
 	}
 
-	public void BackToMainMenu(){
+	public void BackToMainMenu(string name){
 		taken = true;
-		Application.LoadLevel ("MainMenu");
+		SceneManager.LoadScene (name);
 
 	}
 

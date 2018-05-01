@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Image03Script : MonoBehaviour {
 
-	private bool selected = false;
+	public bool selected = false;
+	public string name = "m3";
 	private Color origincolor;
 
 	public void buttonClick(){
