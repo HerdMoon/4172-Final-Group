@@ -126,7 +126,7 @@ public class phoneCamera : MonoBehaviour {
 	}
 
 	public void BackToMainMenu(){
-
+		taken = true;
 		Application.LoadLevel ("MainMenu");
 
 	}
