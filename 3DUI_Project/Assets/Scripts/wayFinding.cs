@@ -7,33 +7,62 @@ public class wayFinding : MonoBehaviour {
 
 	public GameObject arrowInstance;
 	public Material mat;
+	public string url;
 
-//	private List<GameObject> selectedList = new List<GameObject>();
-	private Hashtable selectedObjTable = new Hashtable();
+	private List<string> mat_List;
+	private string drawer;
+
+	private Hashtable selectedObjTable;
 
 	private Vector3 start;
 	private Hashtable table = new Hashtable();
 	private Hashtable database = new Hashtable();
 
-	void Start () {
+	private WandSelection ws;
+	private database db;
+	private bool traveling;
 
-		selectedObjTable.Add (GameObject.Find ("drawer1"), false);
-		selectedObjTable.Add (GameObject.Find ("drawer2"), false);
-		selectedObjTable.Add (GameObject.Find ("drawer3"), false);
-		selectedObjTable.Add (GameObject.Find ("drawer4"), false);
+	void Start () {
+		//		selectedObjTable = new Hashtable ();
+		//		selectedObjTable.Add (GameObject.Find ("drawer1"), false);
+		//		selectedObjTable.Add (GameObject.Find ("drawer2"), false);
+		//		selectedObjTable.Add (GameObject.Find ("drawer3"), false);
+		//		selectedObjTable.Add (GameObject.Find ("drawer4"), false);
 
 		database.Add (GameObject.Find ("drawer1"), new Vector3(-3, 3, 0));
 		database.Add (GameObject.Find ("drawer2"), new Vector3(4, 3, 0));
 		database.Add (GameObject.Find ("drawer3"), new Vector3(-3, -3, 0));
 		database.Add (GameObject.Find ("drawer4"), new Vector3(43, -3, 0));
 
+		ws = GameObject.Find ("Wand").GetComponent<WandSelection>();
+		db = GameObject.Find("ARCamera").GetComponent<database>();
+
+		traveling = false;
+
 		start = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane + 10));
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		Highlight ();
+		if (ws.isTravel) {
+			if (!traveling) {
+				initSelectedObjTable ();
+				traveling = true;
+			}
+			Highlight ();
+		}
+	}
+
+	private void initSelectedObjTable() {
+		selectedObjTable = new Hashtable();
+		mat_List = new List<string> ();
+		db.Lookup_URL (url, ref mat_List);
+		foreach (string mat in mat_List) {
+			db.Lookup_Mat (mat, ref drawer);
+			Debug.Log (drawer);
+			selectedObjTable.Add (GameObject.Find (drawer), false);
+		}
 	}
 
 	private void Highlight () {
@@ -44,20 +73,21 @@ public class wayFinding : MonoBehaviour {
 		ResetTable (selectedObjTable);
 
 		foreach (TrackableBehaviour tb in activeTrackables) {
-//			Debug.Log (tb.gameObject.name);
+			//			Debug.Log (tb.gameObject.name);
 			if (flag) {
 				relativeObj = tb.gameObject;
 				flag = false;
 			}
 			if (selectedObjTable.Contains (tb.gameObject)) {
 				selectedObjTable [tb.gameObject] = true;
-				Debug.Log (tb.transform.name + ", " + tb.transform.position);
+				//				Debug.Log (tb.transform.name + ", " + tb.transform.position);
 			}
 		}
 
 		if (relativeObj != null) {
 			foreach (DictionaryEntry pair in selectedObjTable) {
 				GameObject go = (GameObject)pair.Key;
+				SetMat (go, mat);
 				bool inSight = (bool)pair.Value;
 				if (!inSight) {
 					if (table.ContainsKey (pair.Key)) {
@@ -72,24 +102,6 @@ public class wayFinding : MonoBehaviour {
 				}
 			}
 		}
-
-//		foreach (GameObject go in list) {
-//			SetMat (go, mat);
-//			if (!InSight (go)) {
-//				start = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width/2, Screen.height/2, Camera.main.nearClipPlane+10));
-//				if (table.ContainsKey (go)) {
-//					TransformArrow (((GameObject)table [go]), start, go.transform.position);
-//				} else {
-//					table.Add (go, DrawArrow (arrowInstance, start, go.transform.position));
-//				}
-//			} else {
-//				if (table.ContainsKey (go)) {
-//					GameObject tempArrow = (GameObject)table [go];
-//					table.Remove (go);
-//					Destroy (tempArrow);
-//				}
-//			}
-//		}
 	}
 
 	private void SetMat(GameObject go, Material mat) {
@@ -141,6 +153,11 @@ public class wayFinding : MonoBehaviour {
 		foreach (GameObject go in temp) {
 			selectedObjTable [go] = false;
 		}
+	}
+
+	private void exitTraveling() {
+		ws.isTravel = false;
+		traveling = false;
 	}
 
 }
