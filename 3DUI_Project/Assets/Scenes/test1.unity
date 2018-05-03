@@ -4001,6 +4001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  isTravel: 0
 --- !u!1 &1234732017
 GameObject:
   m_ObjectHideFlags: 0
@@ -4532,6 +4533,7 @@ GameObject:
   - component: {fileID: 1718112298}
   - component: {fileID: 1718112297}
   - component: {fileID: 1718112299}
+  - component: {fileID: 1718112300}
   m_Layer: 5
   m_Name: MatImage1
   m_TagString: Untagged
@@ -4601,6 +4603,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 400, y: 400, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1718112300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1718112295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351095437b15f4a878650a9c90f8ea07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: 
 --- !u!1 &1736425460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,6 +4785,7 @@ GameObject:
   - component: {fileID: 1793181411}
   - component: {fileID: 1793181410}
   - component: {fileID: 1793181412}
+  - component: {fileID: 1793181413}
   m_Layer: 5
   m_Name: MatImage2
   m_TagString: Untagged
@@ -4840,6 +4855,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 400, y: 400, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1793181413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793181408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 351095437b15f4a878650a9c90f8ea07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  url: 
 --- !u!1 &1849980320
 GameObject:
   m_ObjectHideFlags: 0

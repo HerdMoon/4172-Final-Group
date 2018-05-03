@@ -58,6 +58,7 @@
      <Compile Include="Assets\Image05Script.cs" />
      <Compile Include="Assets\Image1pos.cs" />
      <Compile Include="Assets\Image2pos.cs" />
+     <Compile Include="Assets\MatImageSc.cs" />
      <Compile Include="Assets\Panelpos.cs" />
      <Compile Include="Assets\Positionset.cs" />
      <Compile Include="Assets\RadialProgressBar.cs" />

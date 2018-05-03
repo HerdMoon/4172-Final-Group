@@ -47,6 +47,11 @@ public class wandScript : MonoBehaviour {
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 3;
 				break;
+			case "MatImage1":
+				//send url to travel scripts
+				break;
+			case "MatImage2":
+				break;
 			default:
 				setinactive ();
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 0;
@@ -112,10 +117,14 @@ public class wandScript : MonoBehaviour {
 		www = new WWW (info[6]);
 		yield return www;
 		GameObject.Find ("MatImage1").GetComponent<RawImage> ().texture = www.texture;
+		GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url = info[6];
+
 		www = new WWW (info[7]);
 
 		yield return www;
 		GameObject.Find ("MatImage2").GetComponent<RawImage> ().texture = www.texture;
+		GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url = info[7];
+
 	}
 
 	public void setactive(){
