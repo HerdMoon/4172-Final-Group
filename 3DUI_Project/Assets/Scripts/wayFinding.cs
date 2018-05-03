@@ -23,11 +23,7 @@ public class wayFinding : MonoBehaviour {
 	private bool traveling;
 
 	void Start () {
-		//		selectedObjTable = new Hashtable ();
-		//		selectedObjTable.Add (GameObject.Find ("drawer1"), false);
-		//		selectedObjTable.Add (GameObject.Find ("drawer2"), false);
-		//		selectedObjTable.Add (GameObject.Find ("drawer3"), false);
-		//		selectedObjTable.Add (GameObject.Find ("drawer4"), false);
+
 
 		database.Add (GameObject.Find ("drawer1"), new Vector3(-3, 3, 0));
 		database.Add (GameObject.Find ("drawer2"), new Vector3(4, 3, 0));
@@ -40,6 +36,9 @@ public class wayFinding : MonoBehaviour {
 		traveling = false;
 
 		start = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane + 10));
+
+//		url = "herdmoon.org/static/f/silver_rose.png";
+		initSelectedObjTable ();
 
 	}
 
@@ -59,10 +58,18 @@ public class wayFinding : MonoBehaviour {
 		mat_List = new List<string> ();
 		db.Lookup_URL (url, ref mat_List);
 		foreach (string mat in mat_List) {
+			Debug.Log ("wayfind material is " + mat);
 			db.Lookup_Mat (mat, ref drawer);
-			Debug.Log (drawer);
-			selectedObjTable.Add (GameObject.Find (drawer), false);
+			Debug.Log ("wayfinding drawer is " + drawer);
+			if (drawer == "Wood_Drawer")
+				drawer = "drawer1";
+			selectedObjTable [GameObject.Find (drawer)] = false;
+//			selectedObjTable.Add (GameObject.Find (drawer), false);
 		}
+
+//		foreach (DictionaryEntry pair in selectedObjTable) {
+//			Debug.Log ("checking......."+pair.Key + " " + pair.Value);
+//		}
 	}
 
 	private void Highlight () {

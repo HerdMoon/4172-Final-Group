@@ -49,14 +49,16 @@ public class wandScript : MonoBehaviour {
 				break;
 			case "MatImage1":
 				//send url to travel scripts
+				setinactive();
 				GameObject.Find ("ARCamera").GetComponent<wayFinding> ().url = GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url;
 				GameObject.Find ("Wand").GetComponent<WandSelection>().isTravel = true;
 				break;
 			case "MatImage2":
+				setinactive ();
 				GameObject.Find("ARCamera").GetComponent<wayFinding>().url = GameObject.Find("MatImage2").GetComponent<MatImageSc>().url;
 				GameObject.Find ("Wand").GetComponent<WandSelection>().isTravel = true;
 				break;
-			default:
+			case "drawer4":
 				setinactive ();
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 0;
 				break;
