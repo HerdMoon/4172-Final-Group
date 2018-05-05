@@ -362,8 +362,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 203753513}
   m_HandleRect: {fileID: 203753512}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0
+  m_Value: 0.99998546
+  m_Size: 0.8561643
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7601,7 +7601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e8c931d95334612b9d7caf55f57f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowInstance: {fileID: 1557728314157906, guid: 9d21ef98c30e24627a9a093cd57a0437,
+  arrowInstance: {fileID: 1753089540984372, guid: 93e6f8e6056f9445881884763219c8eb,
     type: 2}
   mat: {fileID: 2100000, guid: 7ded070f52b5a4d7c9b627af7b051ab4, type: 2}
   url: 
