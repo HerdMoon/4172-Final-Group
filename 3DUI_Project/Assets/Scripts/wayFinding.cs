@@ -22,7 +22,7 @@ public class wayFinding : MonoBehaviour {
 	private Hashtable selectedObjTable;
 
 	private Vector3 start;
-	private Hashtable table = new Hashtable();
+	private Hashtable table;
 	public Hashtable database;
 
 	private WandSelection ws;
@@ -51,6 +51,7 @@ public class wayFinding : MonoBehaviour {
 
 //		url = "herdmoon.org/static/f/silver_rose.png";
 		initSelectedObjTable ();
+		table = new Hashtable ();
 
 	}
 
@@ -69,6 +70,9 @@ public class wayFinding : MonoBehaviour {
 				}
 				Highlight ();
 			}
+		} else {
+			flag1 = true;
+			flag2 = true;
 		}
 	}
 
@@ -127,7 +131,7 @@ public class wayFinding : MonoBehaviour {
 
 	private void SetMat(GameObject go, Material mat) {
 		Renderer rend = go.transform.GetChild (0).GetComponent<Renderer> ();
-
+//		go.transform.GetChild (0).GetComponent<Renderer> ().materials [0].color = Color.green;
 		if (rend != null) {
 			Debug.Log (rend.materials[0]);
 			rend.sharedMaterial = mat;
@@ -190,15 +194,28 @@ public class wayFinding : MonoBehaviour {
 	}
 
 	public void exitTraveling() {
+		
 		ws.isTravel = false;
 		traveling = false;
-		flag1 = true;
-		flag2 = true;
+//		flag1 = true;
+//		flag2 = true;
 		startTravelBtn.SetActive (false);
 		finishTravelBtn.SetActive (false);
 		startScanBtn.SetActive (false);
 		finishScanBtn.SetActive (false);
+
+//		Debug.Log ("aaaaaaaaaaaaaaaaaaaaaaaaaa    " + ws.isTravel);
+		destroyArrow();
 		wandCube.GetComponent<wandScript>().setactive();
+		wandCube.GetComponent<wandScript> ().nameCol = "";
+	}
+
+	private void destroyArrow () {
+
+		foreach (DictionaryEntry pair in table) {
+			Destroy((GameObject) table[pair.Key]);
+		}
+		table.Clear();
 	}
 
 }

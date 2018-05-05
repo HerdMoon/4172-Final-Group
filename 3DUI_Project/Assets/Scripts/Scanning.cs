@@ -45,6 +45,9 @@ public class Scanning : MonoBehaviour {
 
 		if (inDb.Count == 0) {
 			if (database.Count == 0) {
+				if (outDb.Count <= 1) {
+					return;
+				}
 				database [outDb [0]] = new Vector3 (0, 0, 0);
 				Debug.Log (outDb [0].name + "ready");
 				toggleOn (outDb [0]);

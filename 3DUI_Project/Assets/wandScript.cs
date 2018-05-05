@@ -9,7 +9,7 @@ public class wandScript : MonoBehaviour {
 
 	public bool signal;     //listen to the signal from radial progress bar, finishes = true
 
-	string nameCol;
+	public string nameCol;
 	GameObject canv1, canv2, canv3, canv4, UIcube, progress;
 
 	// Use this for initialization
@@ -54,14 +54,17 @@ public class wandScript : MonoBehaviour {
 				try {
 					GameObject.Find ("ARCamera").GetComponent<wayFinding> ().url = GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url;
 				} catch (NullReferenceException e) {
-//					Debug.Log ("catch!!!!!!!");
 					break;
 				}
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().isTravel = true;
 				setinactive ();
 				break;
 			case "MatImage2":
-				GameObject.Find("ARCamera").GetComponent<wayFinding>().url = GameObject.Find("MatImage2").GetComponent<MatImageSc>().url;
+				try {
+					GameObject.Find("ARCamera").GetComponent<wayFinding>().url = GameObject.Find("MatImage2").GetComponent<MatImageSc>().url;
+				} catch (NullReferenceException e) {
+					break;
+				}
 				GameObject.Find ("Wand").GetComponent<WandSelection>().isTravel = true;
 				setinactive ();
 				break;
