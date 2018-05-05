@@ -12,17 +12,52 @@ public class database : MonoBehaviour {
 	private string dbPath;
 
 	private void Start() {
+		InitDatabase ();
+	}
+
+	public void InitDatabase() {
 		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
-		Debug.Log (Application.persistentDataPath);
-		CreateSchema();
+		using (var conn = new SqliteConnection (dbPath)) {
+			conn.Open ();
+			Debug.Log (Application.persistentDataPath);
+			using (var cmd = conn.CreateCommand ()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "DROP TABLE if exists Mat_Info";
+				var result = cmd.ExecuteNonQuery ();
+				Debug.Log ("drop table: " + result);			
+			}
+			using (var cmd = conn.CreateCommand ()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "DROP TABLE if exists Pic_Info";
+				var result = cmd.ExecuteNonQuery ();
+				Debug.Log ("drop table: " + result);			
+			}
+			using (var cmd = conn.CreateCommand ()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "DROP TABLE if exists Mat_Drawer_Table";
+				var result = cmd.ExecuteNonQuery ();
+				Debug.Log ("drop table: " + result);			
+			}
+			using (var cmd = conn.CreateCommand ()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "DROP TABLE if exists Recipe_Dic";
+				var result = cmd.ExecuteNonQuery ();
+				Debug.Log ("drop table: " + result);			
+			}
+		}
+
+		CreateSchema ();
 
 		InsertMat_Info ("Wood", 0, "Wood is an usual Material.");
 		InsertMat_Info ("Iron", 0, "Iron is a kind of metal.");
 		InsertMat_Info ("Silver Pigment", 1, "Silver Pigment made from lead,poison.");
 		InsertMat_Info ("Yellow Pigment", 0, "Yellow Pigment made from oil,not poison.");
 
-		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Silver Pigment", "None", "None", 10000);
-		Insert_Photo_By_URL ("herdmoon.org/static/f/chair.jpg", "Wood", "Iron", "Yellow Pigment", "None", 20000);
+		Insert_Recipe ("Silver Rose", "Silver Rose is made by God7");
+		Insert_Recipe ("Chair", "Chair is made from woods definitely.");
+
+		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Silver Pigment", "None", "None", 10000, 1);
+		Insert_Photo_By_URL ("herdmoon.org/static/f/chair.jpg", "Wood", "Iron", "Yellow Pigment", "None", 20000 , 2);
 
 		InsertMat_Drawer_Pair ("Wood", "Wood_Drawer");
 
@@ -42,17 +77,20 @@ public class database : MonoBehaviour {
 		}
 
 		List<string> mat_List = new List<string> (4);
+		string read_recipe_name = "";
+		string read_recipe_content = "";
 		Debug.Log (mat_List.Count);
-		Lookup_URL ("herdmoon.org/static/f/silver_rose.png", ref mat_List);
+		Lookup_URL ("herdmoon.org/static/f/silver_rose.png", ref mat_List,ref read_recipe_name,ref read_recipe_content);
 		foreach (string res_Mat_Read in mat_List)
 		{
 			Debug.Log ("Mat Res" + res_Mat_Read);
 		}
 
 		Debug.Log (mat_List.Count);
+		Debug.Log ("Recipe Name:" + read_recipe_name);
+		Debug.Log ("Recipe Content" + read_recipe_content);
 
 	}
-
 
 	public void CreateSchema() {
 		using (var conn = new SqliteConnection(dbPath)) {
@@ -79,7 +117,8 @@ public class database : MonoBehaviour {
 					"  'Mat1' TEXT, " +
 					"  'Mat2' TEXT, " +
 					"  'Mat3' TEXT, " + 
-					"  'Mat4' TEXT " +
+					"  'Mat4' TEXT, " +
+					"  'Recipe_Id' INTEGER" +
 					");";
 
 				var result = cmd.ExecuteNonQuery();
@@ -97,17 +136,29 @@ public class database : MonoBehaviour {
 				var result = cmd.ExecuteNonQuery();
 				Debug.Log("create schema: " + result);			
 			}
+
+			using (var cmd = conn.CreateCommand ()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "CREATE TABLE IF NOT EXISTS 'Recipe_Dic' ( " +
+					"  'id' INTEGER PRIMARY KEY, " +
+					"  'Recipe_Name' TEXT," + 
+					"  'Recipe_Content' TEXT " +
+					");";
+
+				var result = cmd.ExecuteNonQuery();
+				Debug.Log("create schema: " + result);			
+			}
 		}
 	}
 
-	public void Insert_Photo_By_URL(string URL,string Mat1,string Mat2,string Mat3,string Mat4,int time_stamp)
+	public void Insert_Photo_By_URL(string URL,string Mat1,string Mat2,string Mat3,string Mat4,int time_stamp,int Recipe_Id)
 	{
 		using (var conn = new SqliteConnection(dbPath)) {
 			conn.Open();
 			using (var cmd = conn.CreateCommand()) {
 				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = "INSERT INTO Pic_Info (URL,Time_Stamp,Mat1,Mat2,Mat3,Mat4) " +
-					"VALUES (@URL, @Time,@Mat1,@Mat2,@Mat3,@Mat4);";
+				cmd.CommandText = "INSERT INTO Pic_Info (URL,Time_Stamp,Mat1,Mat2,Mat3,Mat4,Recipe_Id) " +
+					"VALUES (@URL, @Time,@Mat1,@Mat2,@Mat3,@Mat4,@Recipe_Id);";
 
 				cmd.Parameters.Add(new SqliteParameter {
 					ParameterName = "URL",
@@ -133,6 +184,10 @@ public class database : MonoBehaviour {
 				cmd.Parameters.Add (new SqliteParameter {
 					ParameterName = "Mat4",
 					Value = Mat4
+				});
+				cmd.Parameters.Add (new SqliteParameter {
+					ParameterName = "Recipe_Id",
+					Value = Recipe_Id
 				});
 				var result = cmd.ExecuteNonQuery();
 				Debug.Log("insert URL: " + result);
@@ -244,13 +299,14 @@ public class database : MonoBehaviour {
 		}			
 	}
 
-	public void Lookup_URL(string URL,ref List<string> Mat_List)
+	public void Lookup_URL(string URL,ref List<string> Mat_List ,ref string Recipe_Name,ref string Recipe_Content)
 	{
+
 		using (var conn = new SqliteConnection(dbPath)) {
 			conn.Open();
 			using (var cmd = conn.CreateCommand()) {
 				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = "SELECT distinct Mat1,Mat2,Mat3,Mat4 FROM Pic_Info WHERE URL =  @URL;";
+				cmd.CommandText = "SELECT distinct P.Mat1,P.Mat2,P.Mat3,P.Mat4,Recipe_Name,Recipe_Content FROM Pic_Info P, Recipe_Dic  R WHERE URL = @URL And P.Recipe_Id = R.id;";
 
 				cmd.Parameters.Add(new SqliteParameter {
 					ParameterName = "URL",
@@ -266,7 +322,10 @@ public class database : MonoBehaviour {
 					var Read_Mat2 = reader.GetString (1);
 					var Read_Mat3 = reader.GetString (2);
 					var Read_Mat4 = reader.GetString (3);
-
+					var read_recipe_name = reader.GetString(4);
+					var read_recipe_content = reader.GetString (5);
+					Recipe_Name = read_recipe_name;
+					Recipe_Content = read_recipe_content;
 					if (Read_Mat1 != "None") {
 						Mat_List.Add (Read_Mat1);
 					}
@@ -279,9 +338,15 @@ public class database : MonoBehaviour {
 					if (Read_Mat4 != "None") {
 						Mat_List.Add (Read_Mat4);
 					}
+
+
+
 				}
 				Debug.Log (count_num.ToString () + "Lines");
 				Debug.Log("Search_Mat_By_URL (end)");
+
+
+
 			}
 		}		
 	}
@@ -344,6 +409,53 @@ public class database : MonoBehaviour {
 			}
 
 		}
+	}
+
+	public void Insert_Recipe(string recipe_name,string recipe_content)
+	{
+		using (var conn = new SqliteConnection(dbPath)) {
+			conn.Open();
+			using (var cmd = conn.CreateCommand()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "INSERT INTO Recipe_Dic (Recipe_Name,Recipe_Content) " +
+					"VALUES (@recipe_name, @recipe_content);";
+
+				cmd.Parameters.Add(new SqliteParameter {
+					ParameterName = "recipe_name",
+					Value = recipe_name
+				});
+
+				cmd.Parameters.Add(new SqliteParameter {
+					ParameterName = "recipe_content",
+					Value = recipe_content
+				});
+				var result = cmd.ExecuteNonQuery();
+				Debug.Log("insert recipe: " + recipe_name);
+			}
+		}			
+	}
+
+	public void Get_All_Recipe_Name(ref List <string> recipe_name,ref List <int> recipe_id)
+	{
+		recipe_name.Clear ();
+		recipe_id.Clear ();
+		using (var conn = new SqliteConnection(dbPath)) {
+			conn.Open();
+			int count = 0;
+			using (var cmd = conn.CreateCommand()) {
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = "SELECT Recipe_Id,Recipe_Name FROM Recipe_Dic;";
+				var reader = cmd.ExecuteReader();
+				while (reader.Read()) {
+					var read_recipe_name = reader.GetString (0);
+					var read_recipe_id = reader.GetInt32 (1);
+					recipe_name.Add (read_recipe_name);
+					recipe_id.Add (read_recipe_id);
+					count++;
+				}
+				Debug.Log("Recipe_Show (end)" + count.ToString());
+			}
+		}		
 	}
 
 	public void Insert_Data(Texture2D Saved_Img,List<string> Chosen_Mat,int time_stamp)
