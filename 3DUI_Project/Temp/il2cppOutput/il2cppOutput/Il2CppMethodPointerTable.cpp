@@ -22285,6 +22285,13 @@ extern "C" void ResizePanel__ctor_m2282478011 ();
 extern "C" void ResizePanel_Awake_m3009818539 ();
 extern "C" void ResizePanel_OnPointerDown_m3366400817 ();
 extern "C" void ResizePanel_OnDrag_m4061856464 ();
+extern "C" void Scanning__ctor_m140994811 ();
+extern "C" void Scanning_Start_m452152981 ();
+extern "C" void Scanning_Update_m3163442067 ();
+extern "C" void Scanning_Scan_m3132931746 ();
+extern "C" void Scanning_ScanOn_m1836700839 ();
+extern "C" void Scanning_ScanOff_m3523975996 ();
+extern "C" void Scanning_toggleOn_m2982140418 ();
 extern "C" void ScrollDetailTexture__ctor_m3705192081 ();
 extern "C" void ScrollDetailTexture_OnEnable_m1987362712 ();
 extern "C" void ScrollDetailTexture_OnDisable_m79911482 ();
@@ -22333,8 +22340,9 @@ extern "C" void wayFinding_getDir_m2911279075 ();
 extern "C" void wayFinding_DrawArrow_m3284252164 ();
 extern "C" void wayFinding_TransformArrow_m2453897102 ();
 extern "C" void wayFinding_ResetTable_m429605708 ();
+extern "C" void wayFinding_startTraveling_m2168396428 ();
 extern "C" void wayFinding_exitTraveling_m256940023 ();
-extern const Il2CppMethodPointer g_MethodPointers[22316] = 
+extern const Il2CppMethodPointer g_MethodPointers[22324] = 
 {
 	Locale_GetText_m3374010885,
 	Locale_GetText_m1601577974,
@@ -44603,6 +44611,13 @@ extern const Il2CppMethodPointer g_MethodPointers[22316] =
 	ResizePanel_Awake_m3009818539,
 	ResizePanel_OnPointerDown_m3366400817,
 	ResizePanel_OnDrag_m4061856464,
+	Scanning__ctor_m140994811,
+	Scanning_Start_m452152981,
+	Scanning_Update_m3163442067,
+	Scanning_Scan_m3132931746,
+	Scanning_ScanOn_m1836700839,
+	Scanning_ScanOff_m3523975996,
+	Scanning_toggleOn_m2982140418,
 	ScrollDetailTexture__ctor_m3705192081,
 	ScrollDetailTexture_OnEnable_m1987362712,
 	ScrollDetailTexture_OnDisable_m79911482,
@@ -44651,5 +44666,6 @@ extern const Il2CppMethodPointer g_MethodPointers[22316] =
 	wayFinding_DrawArrow_m3284252164,
 	wayFinding_TransformArrow_m2453897102,
 	wayFinding_ResetTable_m429605708,
+	wayFinding_startTraveling_m2168396428,
 	wayFinding_exitTraveling_m256940023,
 };

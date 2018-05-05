@@ -9,6 +9,11 @@ public class wayFinding : MonoBehaviour {
 	public Material mat;
 	public string url;
 
+	public GameObject startTravelBtn;
+	public GameObject finishTravelBtn;
+	public GameObject startScanBtn;
+//	public GameObject finishScanBtn;
+
 	private List<string> mat_List;
 	private string drawer;
 
@@ -16,24 +21,29 @@ public class wayFinding : MonoBehaviour {
 
 	private Vector3 start;
 	private Hashtable table = new Hashtable();
-	private Hashtable database = new Hashtable();
+	public Hashtable database;
 
 	private WandSelection ws;
 	private database db;
 	private bool traveling;
 
+	private bool flag1;
+	private bool flag2;
+
 	void Start () {
 
 
-		database.Add (GameObject.Find ("drawer1"), new Vector3(-3, 3, 0));
-		database.Add (GameObject.Find ("drawer2"), new Vector3(4, 3, 0));
-		database.Add (GameObject.Find ("drawer3"), new Vector3(-3, -3, 0));
-		database.Add (GameObject.Find ("drawer4"), new Vector3(43, -3, 0));
+//		database.Add (GameObject.Find ("drawer1"), new Vector3(-3, 3, 0));
+//		database.Add (GameObject.Find ("drawer2"), new Vector3(4, 3, 0));
+//		database.Add (GameObject.Find ("drawer3"), new Vector3(-3, -3, 0));
+//		database.Add (GameObject.Find ("drawer4"), new Vector3(43, -3, 0));
 
 		ws = GameObject.Find ("Wand").GetComponent<WandSelection>();
 		db = GameObject.Find("ARCamera").GetComponent<database>();
 
 		traveling = false;
+		flag1 = true;
+		flag2 = true;
 
 		start = Camera.main.ScreenToWorldPoint (new Vector3 (Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane + 10));
 
@@ -45,11 +55,18 @@ public class wayFinding : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (ws.isTravel) {
-			if (!traveling) {
-				initSelectedObjTable ();
-				traveling = true;
+			if (flag1) {
+				startTravelBtn.SetActive (true);
+				startScanBtn.SetActive (true);
+				flag1 = false;
 			}
-			Highlight ();
+			if (traveling) {
+				if (flag2) {
+					initSelectedObjTable ();
+					flag2 = false;
+				}
+				Highlight ();
+			}
 		}
 	}
 
@@ -64,12 +81,7 @@ public class wayFinding : MonoBehaviour {
 			if (drawer == "Wood_Drawer")
 				drawer = "drawer1";
 			selectedObjTable [GameObject.Find (drawer)] = false;
-//			selectedObjTable.Add (GameObject.Find (drawer), false);
 		}
-
-//		foreach (DictionaryEntry pair in selectedObjTable) {
-//			Debug.Log ("checking......."+pair.Key + " " + pair.Value);
-//		}
 	}
 
 	private void Highlight () {
@@ -162,9 +174,25 @@ public class wayFinding : MonoBehaviour {
 		}
 	}
 
-	private void exitTraveling() {
+	public void startTraveling() {
+		if (database == null) {
+			GameObject.Find ("ARCamera").GetComponent<Scanning> ().scanning = true;
+			return;
+		}
+		traveling = true;
+		startTravelBtn.SetActive (false);
+		finishTravelBtn.SetActive (true);
+		startScanBtn.SetActive (false);
+	}
+
+	public void exitTraveling() {
 		ws.isTravel = false;
 		traveling = false;
+		flag1 = true;
+		flag2 = true;
+		startTravelBtn.SetActive (false);
+		finishTravelBtn.SetActive (false);
+		GameObject.Find ("WandCube").GetComponent<wandScript>().setactive();
 	}
 
 }

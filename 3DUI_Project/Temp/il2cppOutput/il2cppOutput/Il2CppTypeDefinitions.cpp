@@ -17884,21 +17884,24 @@ extern const RuntimeType database_t2832598855_0_0_0 = { (void*)3346, 0, IL2CPP_T
 extern const RuntimeType database_t2832598855_1_0_0 = { (void*)3346, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 extern const RuntimeType database_t2832598855_0_0_1 = { (void*)3346, 1, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 
-extern const RuntimeType wandScript_t1125606077_0_0_0 = { (void*)3365, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType wandScript_t1125606077_1_0_0 = { (void*)3365, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType wandScript_t1125606077_0_0_0 = { (void*)3366, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType wandScript_t1125606077_1_0_0 = { (void*)3366, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType WandSelection_t972065371_0_0_0 = { (void*)3367, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType WandSelection_t972065371_0_0_1 = { (void*)3367, 1, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType WandSelection_t972065371_1_0_0 = { (void*)3367, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType wayFinding_t2735345900_0_0_0 = { (void*)3360, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType wayFinding_t2735345900_1_0_0 = { (void*)3360, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType wayFinding_t2735345900_0_0_0 = { (void*)3359, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType wayFinding_t2735345900_1_0_0 = { (void*)3359, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType WandSelection_t972065371_0_0_0 = { (void*)3368, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType WandSelection_t972065371_0_0_1 = { (void*)3368, 1, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType WandSelection_t972065371_1_0_0 = { (void*)3368, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
 extern const RuntimeType MatImageSc_t920972473_0_0_0 = { (void*)3338, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType MatImageSc_t920972473_1_0_0 = { (void*)3338, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
 extern const RuntimeType RadialProgressBar_t2821283243_0_0_0 = { (void*)3341, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType RadialProgressBar_t2821283243_1_0_0 = { (void*)3341, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+
+extern const RuntimeType Scanning_t651759208_0_0_0 = { (void*)3356, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType Scanning_t651759208_1_0_0 = { (void*)3356, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
 extern const RuntimeType GenericComparer_1_t3581574675_0_0_0 = { (void*)1039, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType GenericComparer_1_t3581574675_1_0_0 = { (void*)1039, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
@@ -29702,32 +29705,32 @@ extern const RuntimeType phoneCamera_t2918078011_1_0_0 = { (void*)3354, 0, IL2CP
 extern const RuntimeType ResizePanel_t4061714193_0_0_0 = { (void*)3355, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType ResizePanel_t4061714193_1_0_0 = { (void*)3355, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType ScrollDetailTexture_t3112174197_0_0_0 = { (void*)3356, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType ScrollDetailTexture_t3112174197_1_0_0 = { (void*)3356, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType ScrollDetailTexture_t3112174197_0_0_0 = { (void*)3357, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType ScrollDetailTexture_t3112174197_1_0_0 = { (void*)3357, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType ShowSliderValue_t410941925_0_0_0 = { (void*)3357, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType ShowSliderValue_t410941925_1_0_0 = { (void*)3357, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType ShowSliderValue_t410941925_0_0_0 = { (void*)3358, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType ShowSliderValue_t410941925_1_0_0 = { (void*)3358, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType TiltWindow_t335293945_0_0_0 = { (void*)3358, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType TiltWindow_t335293945_1_0_0 = { (void*)3358, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType TiltWindow_t335293945_0_0_0 = { (void*)3359, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType TiltWindow_t335293945_1_0_0 = { (void*)3359, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType Scrollpos_t1103970193_0_0_0 = { (void*)3360, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType Scrollpos_t1103970193_1_0_0 = { (void*)3360, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType Scrollpos_t1103970193_0_0_0 = { (void*)3361, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType Scrollpos_t1103970193_1_0_0 = { (void*)3361, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType UICube_t784951944_0_0_0 = { (void*)3361, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType UICube_t784951944_1_0_0 = { (void*)3361, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType UICube_t784951944_0_0_0 = { (void*)3362, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType UICube_t784951944_1_0_0 = { (void*)3362, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType DefaultInitializationErrorHandler_t3109936861_0_0_0 = { (void*)3362, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType DefaultInitializationErrorHandler_t3109936861_1_0_0 = { (void*)3362, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType DefaultInitializationErrorHandler_t3109936861_0_0_0 = { (void*)3363, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType DefaultInitializationErrorHandler_t3109936861_1_0_0 = { (void*)3363, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType DefaultTrackableEventHandler_t1588957063_0_0_0 = { (void*)3363, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType DefaultTrackableEventHandler_t1588957063_1_0_0 = { (void*)3363, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType DefaultTrackableEventHandler_t1588957063_0_0_0 = { (void*)3364, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType DefaultTrackableEventHandler_t1588957063_1_0_0 = { (void*)3364, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType WandPanelpos_t1049921294_0_0_0 = { (void*)3364, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType WandPanelpos_t1049921294_1_0_0 = { (void*)3364, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType WandPanelpos_t1049921294_0_0_0 = { (void*)3365, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType WandPanelpos_t1049921294_1_0_0 = { (void*)3365, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType U3CinfoprocessU3Ec__Iterator0_t196706046_0_0_0 = { (void*)3366, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType U3CinfoprocessU3Ec__Iterator0_t196706046_1_0_0 = { (void*)3366, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType U3CinfoprocessU3Ec__Iterator0_t196706046_0_0_0 = { (void*)3367, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType U3CinfoprocessU3Ec__Iterator0_t196706046_1_0_0 = { (void*)3367, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
 Il2CppGenericClass IEqualityComparer_1_t2502945182_GenericClass = { 1023, { &GenInst_DefaultComparer_t4042948011_gp_0_0_0_0, NULL }, NULL };
 extern const RuntimeType IEqualityComparer_1_t2502945182_0_0_0 = { &IEqualityComparer_1_t2502945182_GenericClass, 0, IL2CPP_TYPE_GENERICINST, 0, 0, 0 };
@@ -29774,7 +29777,7 @@ extern const RuntimeType ITrackingHandlerU5BU5D_t3758023570_0_0_0 = { (void*)&IT
 extern const RuntimeType TrackableBehaviourU5BU5D_t1497733925_0_0_0 = { (void*)&TrackableBehaviour_t1113559212_0_0_0, 0, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
 
 extern const RuntimeType WordBehaviourU5BU5D_t3948822938_0_0_0 = { (void*)&WordBehaviour_t209462683_0_0_0, 0, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
-extern const RuntimeType* const  g_Il2CppTypeTable[15097] = 
+extern const RuntimeType* const  g_Il2CppTypeTable[15099] = 
 {
 	&IEnumerator_1_t3512676632_0_0_0,
 	&RuntimeObject_0_0_0,
@@ -34937,10 +34940,11 @@ extern const RuntimeType* const  g_Il2CppTypeTable[15097] =
 	&Image01Script_t2305065612_0_0_0,
 	&database_t2832598855_0_0_0,
 	&wandScript_t1125606077_0_0_0,
-	&WandSelection_t972065371_0_0_0,
 	&wayFinding_t2735345900_0_0_0,
+	&WandSelection_t972065371_0_0_0,
 	&MatImageSc_t920972473_0_0_0,
 	&RadialProgressBar_t2821283243_0_0_0,
+	&Scanning_t651759208_0_0_0,
 	&GenericComparer_1_t3581574675_0_0_0,
 	&GenericEqualityComparer_1_t2270490560_0_0_0,
 	&U3CModuleU3E_t692745525_0_0_0,
@@ -44731,6 +44735,7 @@ extern const RuntimeType* const  g_Il2CppTypeTable[15097] =
 	&RawImage_t3182918964_0_0_6,
 	&ResizePanel_t4061714193_0_0_0,
 	&ResizePanel_t4061714193_1_0_0,
+	&Scanning_t651759208_1_0_0,
 	&ScrollDetailTexture_t3112174197_0_0_0,
 	&ScrollDetailTexture_t3112174197_1_0_0,
 	&ShowSliderValue_t410941925_0_0_0,

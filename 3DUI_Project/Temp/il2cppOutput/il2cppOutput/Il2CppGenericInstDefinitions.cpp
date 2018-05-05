@@ -602,10 +602,11 @@ extern const Il2CppType DragMe_t1855460060_0_0_0;
 extern const Il2CppType Image01Script_t2305065612_0_0_0;
 extern const Il2CppType database_t2832598855_0_0_0;
 extern const Il2CppType wandScript_t1125606077_0_0_0;
-extern const Il2CppType WandSelection_t972065371_0_0_0;
 extern const Il2CppType wayFinding_t2735345900_0_0_0;
+extern const Il2CppType WandSelection_t972065371_0_0_0;
 extern const Il2CppType MatImageSc_t920972473_0_0_0;
 extern const Il2CppType RadialProgressBar_t2821283243_0_0_0;
+extern const Il2CppType Scanning_t651759208_0_0_0;
 extern const Il2CppType IEnumerable_1_t1615002100_gp_0_0_0_0;
 extern const Il2CppType Array_InternalArray__IEnumerable_GetEnumerator_m370636962_gp_0_0_0_0;
 extern const Il2CppType Array_Sort_m673391272_gp_0_0_0_0;
@@ -2585,14 +2586,16 @@ static const RuntimeType* GenInst_database_t2832598855_0_0_0_Types[] = { (&datab
 extern const Il2CppGenericInst GenInst_database_t2832598855_0_0_0 = { 1, GenInst_database_t2832598855_0_0_0_Types };
 static const RuntimeType* GenInst_wandScript_t1125606077_0_0_0_Types[] = { (&wandScript_t1125606077_0_0_0) };
 extern const Il2CppGenericInst GenInst_wandScript_t1125606077_0_0_0 = { 1, GenInst_wandScript_t1125606077_0_0_0_Types };
-static const RuntimeType* GenInst_WandSelection_t972065371_0_0_0_Types[] = { (&WandSelection_t972065371_0_0_0) };
-extern const Il2CppGenericInst GenInst_WandSelection_t972065371_0_0_0 = { 1, GenInst_WandSelection_t972065371_0_0_0_Types };
 static const RuntimeType* GenInst_wayFinding_t2735345900_0_0_0_Types[] = { (&wayFinding_t2735345900_0_0_0) };
 extern const Il2CppGenericInst GenInst_wayFinding_t2735345900_0_0_0 = { 1, GenInst_wayFinding_t2735345900_0_0_0_Types };
+static const RuntimeType* GenInst_WandSelection_t972065371_0_0_0_Types[] = { (&WandSelection_t972065371_0_0_0) };
+extern const Il2CppGenericInst GenInst_WandSelection_t972065371_0_0_0 = { 1, GenInst_WandSelection_t972065371_0_0_0_Types };
 static const RuntimeType* GenInst_MatImageSc_t920972473_0_0_0_Types[] = { (&MatImageSc_t920972473_0_0_0) };
 extern const Il2CppGenericInst GenInst_MatImageSc_t920972473_0_0_0 = { 1, GenInst_MatImageSc_t920972473_0_0_0_Types };
 static const RuntimeType* GenInst_RadialProgressBar_t2821283243_0_0_0_Types[] = { (&RadialProgressBar_t2821283243_0_0_0) };
 extern const Il2CppGenericInst GenInst_RadialProgressBar_t2821283243_0_0_0 = { 1, GenInst_RadialProgressBar_t2821283243_0_0_0_Types };
+static const RuntimeType* GenInst_Scanning_t651759208_0_0_0_Types[] = { (&Scanning_t651759208_0_0_0) };
+extern const Il2CppGenericInst GenInst_Scanning_t651759208_0_0_0 = { 1, GenInst_Scanning_t651759208_0_0_0_Types };
 static const RuntimeType* GenInst_KeyInfo_t3680340371_0_0_0_KeyInfo_t3680340371_0_0_0_Types[] = { (&KeyInfo_t3680340371_0_0_0), (&KeyInfo_t3680340371_0_0_0) };
 extern const Il2CppGenericInst GenInst_KeyInfo_t3680340371_0_0_0_KeyInfo_t3680340371_0_0_0 = { 2, GenInst_KeyInfo_t3680340371_0_0_0_KeyInfo_t3680340371_0_0_0_Types };
 static const RuntimeType* GenInst_Boolean_t97287965_0_0_0_Boolean_t97287965_0_0_0_Types[] = { (&Boolean_t97287965_0_0_0), (&Boolean_t97287965_0_0_0) };
@@ -3175,7 +3178,7 @@ static const RuntimeType* GenInst_TrackerManager_DeinitTracker_m2259286816_gp_0_
 extern const Il2CppGenericInst GenInst_TrackerManager_DeinitTracker_m2259286816_gp_0_0_0_0 = { 1, GenInst_TrackerManager_DeinitTracker_m2259286816_gp_0_0_0_0_Types };
 static const RuntimeType* GenInst_DragMe_FindInParents_m2999157332_gp_0_0_0_0_Types[] = { (&DragMe_FindInParents_m2999157332_gp_0_0_0_0) };
 extern const Il2CppGenericInst GenInst_DragMe_FindInParents_m2999157332_gp_0_0_0_0 = { 1, GenInst_DragMe_FindInParents_m2999157332_gp_0_0_0_0_Types };
-extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[1178] = 
+extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[1179] = 
 {
 	&GenInst_RuntimeObject_0_0_0,
 	&GenInst_Int32_t2950945753_0_0_0,
@@ -4060,10 +4063,11 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[1178] =
 	&GenInst_Image01Script_t2305065612_0_0_0,
 	&GenInst_database_t2832598855_0_0_0,
 	&GenInst_wandScript_t1125606077_0_0_0,
-	&GenInst_WandSelection_t972065371_0_0_0,
 	&GenInst_wayFinding_t2735345900_0_0_0,
+	&GenInst_WandSelection_t972065371_0_0_0,
 	&GenInst_MatImageSc_t920972473_0_0_0,
 	&GenInst_RadialProgressBar_t2821283243_0_0_0,
+	&GenInst_Scanning_t651759208_0_0_0,
 	&GenInst_KeyInfo_t3680340371_0_0_0_KeyInfo_t3680340371_0_0_0,
 	&GenInst_Boolean_t97287965_0_0_0_Boolean_t97287965_0_0_0,
 	&GenInst_KeyValuePair_2_t71524366_0_0_0_KeyValuePair_2_t71524366_0_0_0,
