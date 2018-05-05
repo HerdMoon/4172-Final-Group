@@ -79,7 +79,9 @@ public class wayFinding : MonoBehaviour {
 	private void initSelectedObjTable() {
 		selectedObjTable = new Hashtable();
 		mat_List = new List<string> ();
-		db.Lookup_URL (url, ref mat_List);
+		string temp_name = "";
+		string temp_content = "";
+		db.Lookup_URL (url, ref mat_List , ref temp_name, ref temp_content);
 		foreach (string mat in mat_List) {
 			Debug.Log ("wayfind material is " + mat);
 			db.Lookup_Mat (mat, ref drawer);
