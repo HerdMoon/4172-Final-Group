@@ -840,6 +840,7 @@ extern const uint32_t wayFinding_TransformArrow_m2453897102_MetadataUsageId;
 extern RuntimeClass* IEnumerable_t1941168011_il2cpp_TypeInfo_var;
 extern const uint32_t wayFinding_ResetTable_m429605708_MetadataUsageId;
 extern const RuntimeMethod* GameObject_GetComponent_TisScanning_t651759208_m2415015816_RuntimeMethod_var;
+extern String_t* _stringLiteral129914063;
 extern const uint32_t wayFinding_startTraveling_m2168396428_MetadataUsageId;
 extern const uint32_t wayFinding_exitTraveling_m256940023_MetadataUsageId;
 struct GUIStyle_t3956901511_marshaled_pinvoke;
@@ -9008,28 +9009,32 @@ public:
 	GameObject_t1113636619 * ___finishTravelBtn_6;
 	// UnityEngine.GameObject wayFinding::startScanBtn
 	GameObject_t1113636619 * ___startScanBtn_7;
+	// UnityEngine.GameObject wayFinding::finishScanBtn
+	GameObject_t1113636619 * ___finishScanBtn_8;
+	// UnityEngine.GameObject wayFinding::wandCube
+	GameObject_t1113636619 * ___wandCube_9;
 	// System.Collections.Generic.List`1<System.String> wayFinding::mat_List
-	List_1_t3319525431 * ___mat_List_8;
+	List_1_t3319525431 * ___mat_List_10;
 	// System.String wayFinding::drawer
-	String_t* ___drawer_9;
+	String_t* ___drawer_11;
 	// System.Collections.Hashtable wayFinding::selectedObjTable
-	Hashtable_t1853889766 * ___selectedObjTable_10;
+	Hashtable_t1853889766 * ___selectedObjTable_12;
 	// UnityEngine.Vector3 wayFinding::start
-	Vector3_t3722313464  ___start_11;
+	Vector3_t3722313464  ___start_13;
 	// System.Collections.Hashtable wayFinding::table
-	Hashtable_t1853889766 * ___table_12;
+	Hashtable_t1853889766 * ___table_14;
 	// System.Collections.Hashtable wayFinding::database
-	Hashtable_t1853889766 * ___database_13;
+	Hashtable_t1853889766 * ___database_15;
 	// WandSelection wayFinding::ws
-	WandSelection_t972065371 * ___ws_14;
+	WandSelection_t972065371 * ___ws_16;
 	// database wayFinding::db
-	database_t2832598855 * ___db_15;
+	database_t2832598855 * ___db_17;
 	// System.Boolean wayFinding::traveling
-	bool ___traveling_16;
+	bool ___traveling_18;
 	// System.Boolean wayFinding::flag1
-	bool ___flag1_17;
+	bool ___flag1_19;
 	// System.Boolean wayFinding::flag2
-	bool ___flag2_18;
+	bool ___flag2_20;
 
 public:
 	inline static int32_t get_offset_of_arrowInstance_2() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___arrowInstance_2)); }
@@ -9086,99 +9091,117 @@ public:
 		Il2CppCodeGenWriteBarrier((&___startScanBtn_7), value);
 	}
 
-	inline static int32_t get_offset_of_mat_List_8() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___mat_List_8)); }
-	inline List_1_t3319525431 * get_mat_List_8() const { return ___mat_List_8; }
-	inline List_1_t3319525431 ** get_address_of_mat_List_8() { return &___mat_List_8; }
-	inline void set_mat_List_8(List_1_t3319525431 * value)
+	inline static int32_t get_offset_of_finishScanBtn_8() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___finishScanBtn_8)); }
+	inline GameObject_t1113636619 * get_finishScanBtn_8() const { return ___finishScanBtn_8; }
+	inline GameObject_t1113636619 ** get_address_of_finishScanBtn_8() { return &___finishScanBtn_8; }
+	inline void set_finishScanBtn_8(GameObject_t1113636619 * value)
 	{
-		___mat_List_8 = value;
-		Il2CppCodeGenWriteBarrier((&___mat_List_8), value);
+		___finishScanBtn_8 = value;
+		Il2CppCodeGenWriteBarrier((&___finishScanBtn_8), value);
 	}
 
-	inline static int32_t get_offset_of_drawer_9() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___drawer_9)); }
-	inline String_t* get_drawer_9() const { return ___drawer_9; }
-	inline String_t** get_address_of_drawer_9() { return &___drawer_9; }
-	inline void set_drawer_9(String_t* value)
+	inline static int32_t get_offset_of_wandCube_9() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___wandCube_9)); }
+	inline GameObject_t1113636619 * get_wandCube_9() const { return ___wandCube_9; }
+	inline GameObject_t1113636619 ** get_address_of_wandCube_9() { return &___wandCube_9; }
+	inline void set_wandCube_9(GameObject_t1113636619 * value)
 	{
-		___drawer_9 = value;
-		Il2CppCodeGenWriteBarrier((&___drawer_9), value);
+		___wandCube_9 = value;
+		Il2CppCodeGenWriteBarrier((&___wandCube_9), value);
 	}
 
-	inline static int32_t get_offset_of_selectedObjTable_10() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___selectedObjTable_10)); }
-	inline Hashtable_t1853889766 * get_selectedObjTable_10() const { return ___selectedObjTable_10; }
-	inline Hashtable_t1853889766 ** get_address_of_selectedObjTable_10() { return &___selectedObjTable_10; }
-	inline void set_selectedObjTable_10(Hashtable_t1853889766 * value)
+	inline static int32_t get_offset_of_mat_List_10() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___mat_List_10)); }
+	inline List_1_t3319525431 * get_mat_List_10() const { return ___mat_List_10; }
+	inline List_1_t3319525431 ** get_address_of_mat_List_10() { return &___mat_List_10; }
+	inline void set_mat_List_10(List_1_t3319525431 * value)
 	{
-		___selectedObjTable_10 = value;
-		Il2CppCodeGenWriteBarrier((&___selectedObjTable_10), value);
+		___mat_List_10 = value;
+		Il2CppCodeGenWriteBarrier((&___mat_List_10), value);
 	}
 
-	inline static int32_t get_offset_of_start_11() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___start_11)); }
-	inline Vector3_t3722313464  get_start_11() const { return ___start_11; }
-	inline Vector3_t3722313464 * get_address_of_start_11() { return &___start_11; }
-	inline void set_start_11(Vector3_t3722313464  value)
+	inline static int32_t get_offset_of_drawer_11() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___drawer_11)); }
+	inline String_t* get_drawer_11() const { return ___drawer_11; }
+	inline String_t** get_address_of_drawer_11() { return &___drawer_11; }
+	inline void set_drawer_11(String_t* value)
 	{
-		___start_11 = value;
+		___drawer_11 = value;
+		Il2CppCodeGenWriteBarrier((&___drawer_11), value);
 	}
 
-	inline static int32_t get_offset_of_table_12() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___table_12)); }
-	inline Hashtable_t1853889766 * get_table_12() const { return ___table_12; }
-	inline Hashtable_t1853889766 ** get_address_of_table_12() { return &___table_12; }
-	inline void set_table_12(Hashtable_t1853889766 * value)
+	inline static int32_t get_offset_of_selectedObjTable_12() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___selectedObjTable_12)); }
+	inline Hashtable_t1853889766 * get_selectedObjTable_12() const { return ___selectedObjTable_12; }
+	inline Hashtable_t1853889766 ** get_address_of_selectedObjTable_12() { return &___selectedObjTable_12; }
+	inline void set_selectedObjTable_12(Hashtable_t1853889766 * value)
 	{
-		___table_12 = value;
-		Il2CppCodeGenWriteBarrier((&___table_12), value);
+		___selectedObjTable_12 = value;
+		Il2CppCodeGenWriteBarrier((&___selectedObjTable_12), value);
 	}
 
-	inline static int32_t get_offset_of_database_13() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___database_13)); }
-	inline Hashtable_t1853889766 * get_database_13() const { return ___database_13; }
-	inline Hashtable_t1853889766 ** get_address_of_database_13() { return &___database_13; }
-	inline void set_database_13(Hashtable_t1853889766 * value)
+	inline static int32_t get_offset_of_start_13() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___start_13)); }
+	inline Vector3_t3722313464  get_start_13() const { return ___start_13; }
+	inline Vector3_t3722313464 * get_address_of_start_13() { return &___start_13; }
+	inline void set_start_13(Vector3_t3722313464  value)
 	{
-		___database_13 = value;
-		Il2CppCodeGenWriteBarrier((&___database_13), value);
+		___start_13 = value;
 	}
 
-	inline static int32_t get_offset_of_ws_14() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___ws_14)); }
-	inline WandSelection_t972065371 * get_ws_14() const { return ___ws_14; }
-	inline WandSelection_t972065371 ** get_address_of_ws_14() { return &___ws_14; }
-	inline void set_ws_14(WandSelection_t972065371 * value)
+	inline static int32_t get_offset_of_table_14() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___table_14)); }
+	inline Hashtable_t1853889766 * get_table_14() const { return ___table_14; }
+	inline Hashtable_t1853889766 ** get_address_of_table_14() { return &___table_14; }
+	inline void set_table_14(Hashtable_t1853889766 * value)
 	{
-		___ws_14 = value;
-		Il2CppCodeGenWriteBarrier((&___ws_14), value);
+		___table_14 = value;
+		Il2CppCodeGenWriteBarrier((&___table_14), value);
 	}
 
-	inline static int32_t get_offset_of_db_15() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___db_15)); }
-	inline database_t2832598855 * get_db_15() const { return ___db_15; }
-	inline database_t2832598855 ** get_address_of_db_15() { return &___db_15; }
-	inline void set_db_15(database_t2832598855 * value)
+	inline static int32_t get_offset_of_database_15() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___database_15)); }
+	inline Hashtable_t1853889766 * get_database_15() const { return ___database_15; }
+	inline Hashtable_t1853889766 ** get_address_of_database_15() { return &___database_15; }
+	inline void set_database_15(Hashtable_t1853889766 * value)
 	{
-		___db_15 = value;
-		Il2CppCodeGenWriteBarrier((&___db_15), value);
+		___database_15 = value;
+		Il2CppCodeGenWriteBarrier((&___database_15), value);
 	}
 
-	inline static int32_t get_offset_of_traveling_16() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___traveling_16)); }
-	inline bool get_traveling_16() const { return ___traveling_16; }
-	inline bool* get_address_of_traveling_16() { return &___traveling_16; }
-	inline void set_traveling_16(bool value)
+	inline static int32_t get_offset_of_ws_16() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___ws_16)); }
+	inline WandSelection_t972065371 * get_ws_16() const { return ___ws_16; }
+	inline WandSelection_t972065371 ** get_address_of_ws_16() { return &___ws_16; }
+	inline void set_ws_16(WandSelection_t972065371 * value)
 	{
-		___traveling_16 = value;
+		___ws_16 = value;
+		Il2CppCodeGenWriteBarrier((&___ws_16), value);
 	}
 
-	inline static int32_t get_offset_of_flag1_17() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___flag1_17)); }
-	inline bool get_flag1_17() const { return ___flag1_17; }
-	inline bool* get_address_of_flag1_17() { return &___flag1_17; }
-	inline void set_flag1_17(bool value)
+	inline static int32_t get_offset_of_db_17() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___db_17)); }
+	inline database_t2832598855 * get_db_17() const { return ___db_17; }
+	inline database_t2832598855 ** get_address_of_db_17() { return &___db_17; }
+	inline void set_db_17(database_t2832598855 * value)
 	{
-		___flag1_17 = value;
+		___db_17 = value;
+		Il2CppCodeGenWriteBarrier((&___db_17), value);
 	}
 
-	inline static int32_t get_offset_of_flag2_18() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___flag2_18)); }
-	inline bool get_flag2_18() const { return ___flag2_18; }
-	inline bool* get_address_of_flag2_18() { return &___flag2_18; }
-	inline void set_flag2_18(bool value)
+	inline static int32_t get_offset_of_traveling_18() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___traveling_18)); }
+	inline bool get_traveling_18() const { return ___traveling_18; }
+	inline bool* get_address_of_traveling_18() { return &___traveling_18; }
+	inline void set_traveling_18(bool value)
 	{
-		___flag2_18 = value;
+		___traveling_18 = value;
+	}
+
+	inline static int32_t get_offset_of_flag1_19() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___flag1_19)); }
+	inline bool get_flag1_19() const { return ___flag1_19; }
+	inline bool* get_address_of_flag1_19() { return &___flag1_19; }
+	inline void set_flag1_19(bool value)
+	{
+		___flag1_19 = value;
+	}
+
+	inline static int32_t get_offset_of_flag2_20() { return static_cast<int32_t>(offsetof(wayFinding_t2735345900, ___flag2_20)); }
+	inline bool get_flag2_20() const { return ___flag2_20; }
+	inline bool* get_address_of_flag2_20() { return &___flag2_20; }
+	inline void set_flag2_20(bool value)
+	{
+		___flag2_20 = value;
 	}
 };
 
@@ -9785,8 +9808,12 @@ public:
 	GameObject_t1113636619 * ___startScanBtn_4;
 	// UnityEngine.GameObject Scanning::finishScanBtn
 	GameObject_t1113636619 * ___finishScanBtn_5;
+	// UnityEngine.GameObject Scanning::startTravelBtn
+	GameObject_t1113636619 * ___startTravelBtn_6;
+	// UnityEngine.GameObject Scanning::finishTravelBtn
+	GameObject_t1113636619 * ___finishTravelBtn_7;
 	// UnityEngine.GameObject Scanning::scanStatus
-	GameObject_t1113636619 * ___scanStatus_6;
+	GameObject_t1113636619 * ___scanStatus_8;
 
 public:
 	inline static int32_t get_offset_of_database_2() { return static_cast<int32_t>(offsetof(Scanning_t651759208, ___database_2)); }
@@ -9824,13 +9851,31 @@ public:
 		Il2CppCodeGenWriteBarrier((&___finishScanBtn_5), value);
 	}
 
-	inline static int32_t get_offset_of_scanStatus_6() { return static_cast<int32_t>(offsetof(Scanning_t651759208, ___scanStatus_6)); }
-	inline GameObject_t1113636619 * get_scanStatus_6() const { return ___scanStatus_6; }
-	inline GameObject_t1113636619 ** get_address_of_scanStatus_6() { return &___scanStatus_6; }
-	inline void set_scanStatus_6(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_startTravelBtn_6() { return static_cast<int32_t>(offsetof(Scanning_t651759208, ___startTravelBtn_6)); }
+	inline GameObject_t1113636619 * get_startTravelBtn_6() const { return ___startTravelBtn_6; }
+	inline GameObject_t1113636619 ** get_address_of_startTravelBtn_6() { return &___startTravelBtn_6; }
+	inline void set_startTravelBtn_6(GameObject_t1113636619 * value)
 	{
-		___scanStatus_6 = value;
-		Il2CppCodeGenWriteBarrier((&___scanStatus_6), value);
+		___startTravelBtn_6 = value;
+		Il2CppCodeGenWriteBarrier((&___startTravelBtn_6), value);
+	}
+
+	inline static int32_t get_offset_of_finishTravelBtn_7() { return static_cast<int32_t>(offsetof(Scanning_t651759208, ___finishTravelBtn_7)); }
+	inline GameObject_t1113636619 * get_finishTravelBtn_7() const { return ___finishTravelBtn_7; }
+	inline GameObject_t1113636619 ** get_address_of_finishTravelBtn_7() { return &___finishTravelBtn_7; }
+	inline void set_finishTravelBtn_7(GameObject_t1113636619 * value)
+	{
+		___finishTravelBtn_7 = value;
+		Il2CppCodeGenWriteBarrier((&___finishTravelBtn_7), value);
+	}
+
+	inline static int32_t get_offset_of_scanStatus_8() { return static_cast<int32_t>(offsetof(Scanning_t651759208, ___scanStatus_8)); }
+	inline GameObject_t1113636619 * get_scanStatus_8() const { return ___scanStatus_8; }
+	inline GameObject_t1113636619 ** get_address_of_scanStatus_8() { return &___scanStatus_8; }
+	inline void set_scanStatus_8(GameObject_t1113636619 * value)
+	{
+		___scanStatus_8 = value;
+		Il2CppCodeGenWriteBarrier((&___scanStatus_8), value);
 	}
 };
 
@@ -11909,6 +11954,8 @@ extern "C"  Quaternion_t2301928331  Quaternion_LookRotation_m3197602968 (Runtime
 extern "C"  Quaternion_t2301928331  Quaternion_Inverse_m1311579081 (RuntimeObject * __this /* static, unused */, Quaternion_t2301928331  p0, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // !!0 UnityEngine.GameObject::GetComponent<Scanning>()
 #define GameObject_GetComponent_TisScanning_t651759208_m2415015816(__this, method) ((  Scanning_t651759208 * (*) (GameObject_t1113636619 *, const RuntimeMethod*))GameObject_GetComponent_TisRuntimeObject_m2049753423_gshared)(__this, method)
+// System.Void Scanning::ScanOn()
+extern "C"  void Scanning_ScanOn_m1836700839 (Scanning_t651759208 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -19100,9 +19147,15 @@ extern "C"  void Scanning_ScanOn_m1836700839 (Scanning_t651759208 * __this, cons
 		GameObject_t1113636619 * L_1 = __this->get_finishScanBtn_5();
 		NullCheck(L_1);
 		GameObject_SetActive_m796801857(L_1, (bool)1, /*hidden argument*/NULL);
-		GameObject_t1113636619 * L_2 = __this->get_scanStatus_6();
+		GameObject_t1113636619 * L_2 = __this->get_startTravelBtn_6();
 		NullCheck(L_2);
-		GameObject_SetActive_m796801857(L_2, (bool)1, /*hidden argument*/NULL);
+		GameObject_SetActive_m796801857(L_2, (bool)0, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_3 = __this->get_finishTravelBtn_7();
+		NullCheck(L_3);
+		GameObject_SetActive_m796801857(L_3, (bool)0, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_4 = __this->get_scanStatus_8();
+		NullCheck(L_4);
+		GameObject_SetActive_m796801857(L_4, (bool)1, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -19123,15 +19176,21 @@ extern "C"  void Scanning_ScanOff_m3523975996 (Scanning_t651759208 * __this, con
 		GameObject_t1113636619 * L_1 = __this->get_finishScanBtn_5();
 		NullCheck(L_1);
 		GameObject_SetActive_m796801857(L_1, (bool)0, /*hidden argument*/NULL);
-		GameObject_t1113636619 * L_2 = GameObject_Find_m2032535176(NULL /*static, unused*/, _stringLiteral371078329, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_2 = __this->get_startTravelBtn_6();
 		NullCheck(L_2);
-		wayFinding_t2735345900 * L_3 = GameObject_GetComponent_TiswayFinding_t2735345900_m927213380(L_2, /*hidden argument*/GameObject_GetComponent_TiswayFinding_t2735345900_m927213380_RuntimeMethod_var);
-		Hashtable_t1853889766 * L_4 = __this->get_database_2();
+		GameObject_SetActive_m796801857(L_2, (bool)1, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_3 = __this->get_finishTravelBtn_7();
 		NullCheck(L_3);
-		L_3->set_database_13(L_4);
-		GameObject_t1113636619 * L_5 = __this->get_scanStatus_6();
+		GameObject_SetActive_m796801857(L_3, (bool)0, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_4 = GameObject_Find_m2032535176(NULL /*static, unused*/, _stringLiteral371078329, /*hidden argument*/NULL);
+		NullCheck(L_4);
+		wayFinding_t2735345900 * L_5 = GameObject_GetComponent_TiswayFinding_t2735345900_m927213380(L_4, /*hidden argument*/GameObject_GetComponent_TiswayFinding_t2735345900_m927213380_RuntimeMethod_var);
+		Hashtable_t1853889766 * L_6 = __this->get_database_2();
 		NullCheck(L_5);
-		GameObject_SetActive_m796801857(L_5, (bool)0, /*hidden argument*/NULL);
+		L_5->set_database_15(L_6);
+		GameObject_t1113636619 * L_7 = __this->get_scanStatus_8();
+		NullCheck(L_7);
+		GameObject_SetActive_m796801857(L_7, (bool)0, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -21077,7 +21136,7 @@ extern "C"  void wayFinding__ctor_m4203325114 (wayFinding_t2735345900 * __this, 
 	{
 		Hashtable_t1853889766 * L_0 = (Hashtable_t1853889766 *)il2cpp_codegen_object_new(Hashtable_t1853889766_il2cpp_TypeInfo_var);
 		Hashtable__ctor_m1815022027(L_0, /*hidden argument*/NULL);
-		__this->set_table_12(L_0);
+		__this->set_table_14(L_0);
 		MonoBehaviour__ctor_m1579109191(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -21095,14 +21154,14 @@ extern "C"  void wayFinding_Start_m3959844388 (wayFinding_t2735345900 * __this, 
 		GameObject_t1113636619 * L_0 = GameObject_Find_m2032535176(NULL /*static, unused*/, _stringLiteral835293501, /*hidden argument*/NULL);
 		NullCheck(L_0);
 		WandSelection_t972065371 * L_1 = GameObject_GetComponent_TisWandSelection_t972065371_m280005558(L_0, /*hidden argument*/GameObject_GetComponent_TisWandSelection_t972065371_m280005558_RuntimeMethod_var);
-		__this->set_ws_14(L_1);
+		__this->set_ws_16(L_1);
 		GameObject_t1113636619 * L_2 = GameObject_Find_m2032535176(NULL /*static, unused*/, _stringLiteral371078329, /*hidden argument*/NULL);
 		NullCheck(L_2);
 		database_t2832598855 * L_3 = GameObject_GetComponent_Tisdatabase_t2832598855_m1122944689(L_2, /*hidden argument*/GameObject_GetComponent_Tisdatabase_t2832598855_m1122944689_RuntimeMethod_var);
-		__this->set_db_15(L_3);
-		__this->set_traveling_16((bool)0);
-		__this->set_flag1_17((bool)1);
-		__this->set_flag2_18((bool)1);
+		__this->set_db_17(L_3);
+		__this->set_traveling_18((bool)0);
+		__this->set_flag1_19((bool)1);
+		__this->set_flag2_20((bool)1);
 		Camera_t4157153871 * L_4 = Camera_get_main_m3643453163(NULL /*static, unused*/, /*hidden argument*/NULL);
 		int32_t L_5 = Screen_get_width_m345039817(NULL /*static, unused*/, /*hidden argument*/NULL);
 		int32_t L_6 = Screen_get_height_m1623532518(NULL /*static, unused*/, /*hidden argument*/NULL);
@@ -21114,7 +21173,7 @@ extern "C"  void wayFinding_Start_m3959844388 (wayFinding_t2735345900 * __this, 
 		Vector3__ctor_m3353183577((&L_9), (((float)((float)((int32_t)((int32_t)L_5/(int32_t)2))))), (((float)((float)((int32_t)((int32_t)L_6/(int32_t)2))))), ((float)il2cpp_codegen_add((float)L_8, (float)(10.0f))), /*hidden argument*/NULL);
 		NullCheck(L_4);
 		Vector3_t3722313464  L_10 = Camera_ScreenToWorldPoint_m3978588570(L_4, L_9, /*hidden argument*/NULL);
-		__this->set_start_11(L_10);
+		__this->set_start_13(L_10);
 		wayFinding_initSelectedObjTable_m1636343849(__this, /*hidden argument*/NULL);
 		return;
 	}
@@ -21123,7 +21182,7 @@ extern "C"  void wayFinding_Start_m3959844388 (wayFinding_t2735345900 * __this, 
 extern "C"  void wayFinding_Update_m768467670 (wayFinding_t2735345900 * __this, const RuntimeMethod* method)
 {
 	{
-		WandSelection_t972065371 * L_0 = __this->get_ws_14();
+		WandSelection_t972065371 * L_0 = __this->get_ws_16();
 		NullCheck(L_0);
 		bool L_1 = L_0->get_isTravel_3();
 		if (!L_1)
@@ -21132,7 +21191,7 @@ extern "C"  void wayFinding_Update_m768467670 (wayFinding_t2735345900 * __this, 
 		}
 	}
 	{
-		bool L_2 = __this->get_flag1_17();
+		bool L_2 = __this->get_flag1_19();
 		if (!L_2)
 		{
 			goto IL_003a;
@@ -21145,19 +21204,19 @@ extern "C"  void wayFinding_Update_m768467670 (wayFinding_t2735345900 * __this, 
 		GameObject_t1113636619 * L_4 = __this->get_startScanBtn_7();
 		NullCheck(L_4);
 		GameObject_SetActive_m796801857(L_4, (bool)1, /*hidden argument*/NULL);
-		__this->set_flag1_17((bool)0);
+		__this->set_flag1_19((bool)0);
 	}
 
 IL_003a:
 	{
-		bool L_5 = __this->get_traveling_16();
+		bool L_5 = __this->get_traveling_18();
 		if (!L_5)
 		{
 			goto IL_0063;
 		}
 	}
 	{
-		bool L_6 = __this->get_flag2_18();
+		bool L_6 = __this->get_flag2_20();
 		if (!L_6)
 		{
 			goto IL_005d;
@@ -21165,7 +21224,7 @@ IL_003a:
 	}
 	{
 		wayFinding_initSelectedObjTable_m1636343849(__this, /*hidden argument*/NULL);
-		__this->set_flag2_18((bool)0);
+		__this->set_flag2_20((bool)0);
 	}
 
 IL_005d:
@@ -21199,16 +21258,16 @@ extern "C"  void wayFinding_initSelectedObjTable_m1636343849 (wayFinding_t273534
 	{
 		Hashtable_t1853889766 * L_0 = (Hashtable_t1853889766 *)il2cpp_codegen_object_new(Hashtable_t1853889766_il2cpp_TypeInfo_var);
 		Hashtable__ctor_m1815022027(L_0, /*hidden argument*/NULL);
-		__this->set_selectedObjTable_10(L_0);
+		__this->set_selectedObjTable_12(L_0);
 		List_1_t3319525431 * L_1 = (List_1_t3319525431 *)il2cpp_codegen_object_new(List_1_t3319525431_il2cpp_TypeInfo_var);
 		List_1__ctor_m706204246(L_1, /*hidden argument*/List_1__ctor_m706204246_RuntimeMethod_var);
-		__this->set_mat_List_8(L_1);
-		database_t2832598855 * L_2 = __this->get_db_15();
+		__this->set_mat_List_10(L_1);
+		database_t2832598855 * L_2 = __this->get_db_17();
 		String_t* L_3 = __this->get_url_4();
-		List_1_t3319525431 ** L_4 = __this->get_address_of_mat_List_8();
+		List_1_t3319525431 ** L_4 = __this->get_address_of_mat_List_10();
 		NullCheck(L_2);
 		database_Lookup_URL_m2247219714(L_2, L_3, L_4, /*hidden argument*/NULL);
-		List_1_t3319525431 * L_5 = __this->get_mat_List_8();
+		List_1_t3319525431 * L_5 = __this->get_mat_List_10();
 		NullCheck(L_5);
 		Enumerator_t913802012  L_6 = List_1_GetEnumerator_m669319585(L_5, /*hidden argument*/List_1_GetEnumerator_m669319585_RuntimeMethod_var);
 		V_1 = L_6;
@@ -21230,15 +21289,15 @@ IL_003e:
 			String_t* L_9 = String_Concat_m3937257545(NULL /*static, unused*/, _stringLiteral2270779390, L_8, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
 			Debug_Log_m4051431634(NULL /*static, unused*/, L_9, /*hidden argument*/NULL);
-			database_t2832598855 * L_10 = __this->get_db_15();
+			database_t2832598855 * L_10 = __this->get_db_17();
 			String_t* L_11 = V_0;
-			String_t** L_12 = __this->get_address_of_drawer_9();
+			String_t** L_12 = __this->get_address_of_drawer_11();
 			NullCheck(L_10);
 			database_Lookup_Mat_m148036058(L_10, L_11, L_12, /*hidden argument*/NULL);
-			String_t* L_13 = __this->get_drawer_9();
+			String_t* L_13 = __this->get_drawer_11();
 			String_t* L_14 = String_Concat_m3937257545(NULL /*static, unused*/, _stringLiteral2339461447, L_13, /*hidden argument*/NULL);
 			Debug_Log_m4051431634(NULL /*static, unused*/, L_14, /*hidden argument*/NULL);
-			String_t* L_15 = __this->get_drawer_9();
+			String_t* L_15 = __this->get_drawer_11();
 			bool L_16 = String_op_Equality_m920492651(NULL /*static, unused*/, L_15, _stringLiteral3335371912, /*hidden argument*/NULL);
 			if (!L_16)
 			{
@@ -21248,13 +21307,13 @@ IL_003e:
 
 IL_0092:
 		{
-			__this->set_drawer_9(_stringLiteral598262237);
+			__this->set_drawer_11(_stringLiteral598262237);
 		}
 
 IL_009d:
 		{
-			Hashtable_t1853889766 * L_17 = __this->get_selectedObjTable_10();
-			String_t* L_18 = __this->get_drawer_9();
+			Hashtable_t1853889766 * L_17 = __this->get_selectedObjTable_12();
+			String_t* L_18 = __this->get_drawer_11();
 			GameObject_t1113636619 * L_19 = GameObject_Find_m2032535176(NULL /*static, unused*/, L_18, /*hidden argument*/NULL);
 			bool L_20 = ((bool)0);
 			RuntimeObject * L_21 = Box(Boolean_t97287965_il2cpp_TypeInfo_var, &L_20);
@@ -21337,7 +21396,7 @@ extern "C"  void wayFinding_Highlight_m3273843370 (wayFinding_t2735345900 * __th
 		V_1 = L_3;
 		V_2 = (GameObject_t1113636619 *)NULL;
 		V_3 = (bool)1;
-		Hashtable_t1853889766 * L_4 = __this->get_selectedObjTable_10();
+		Hashtable_t1853889766 * L_4 = __this->get_selectedObjTable_12();
 		wayFinding_ResetTable_m429605708(__this, L_4, /*hidden argument*/NULL);
 		RuntimeObject* L_5 = V_1;
 		NullCheck(L_5);
@@ -21376,7 +21435,7 @@ IL_003e:
 
 IL_0048:
 		{
-			Hashtable_t1853889766 * L_12 = __this->get_selectedObjTable_10();
+			Hashtable_t1853889766 * L_12 = __this->get_selectedObjTable_12();
 			TrackableBehaviour_t1113559212 * L_13 = V_4;
 			NullCheck(L_13);
 			GameObject_t1113636619 * L_14 = Component_get_gameObject_m442555142(L_13, /*hidden argument*/NULL);
@@ -21390,7 +21449,7 @@ IL_0048:
 
 IL_005f:
 		{
-			Hashtable_t1853889766 * L_16 = __this->get_selectedObjTable_10();
+			Hashtable_t1853889766 * L_16 = __this->get_selectedObjTable_12();
 			TrackableBehaviour_t1113559212 * L_17 = V_4;
 			NullCheck(L_17);
 			GameObject_t1113636619 * L_18 = Component_get_gameObject_m442555142(L_17, /*hidden argument*/NULL);
@@ -21461,7 +21520,7 @@ IL_0097:
 		}
 	}
 	{
-		Hashtable_t1853889766 * L_27 = __this->get_selectedObjTable_10();
+		Hashtable_t1853889766 * L_27 = __this->get_selectedObjTable_12();
 		NullCheck(L_27);
 		RuntimeObject* L_28 = VirtFuncInvoker0< RuntimeObject* >::Invoke(32 /* System.Collections.IDictionaryEnumerator System.Collections.Hashtable::GetEnumerator() */, L_27);
 		V_7 = L_28;
@@ -21496,7 +21555,7 @@ IL_00b5:
 
 IL_00f4:
 		{
-			Hashtable_t1853889766 * L_36 = __this->get_table_12();
+			Hashtable_t1853889766 * L_36 = __this->get_table_14();
 			RuntimeObject * L_37 = DictionaryEntry_get_Key_m3117378551((&V_6), /*hidden argument*/NULL);
 			NullCheck(L_36);
 			bool L_38 = VirtFuncInvoker1< bool, RuntimeObject * >::Invoke(34 /* System.Boolean System.Collections.Hashtable::ContainsKey(System.Object) */, L_36, L_37);
@@ -21508,14 +21567,14 @@ IL_00f4:
 
 IL_010b:
 		{
-			Hashtable_t1853889766 * L_39 = __this->get_table_12();
+			Hashtable_t1853889766 * L_39 = __this->get_table_14();
 			GameObject_t1113636619 * L_40 = V_8;
 			NullCheck(L_39);
 			RuntimeObject * L_41 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(26 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_39, L_40);
-			Vector3_t3722313464  L_42 = __this->get_start_11();
+			Vector3_t3722313464  L_42 = __this->get_start_13();
 			GameObject_t1113636619 * L_43 = V_2;
 			GameObject_t1113636619 * L_44 = V_8;
-			Vector3_t3722313464  L_45 = __this->get_start_11();
+			Vector3_t3722313464  L_45 = __this->get_start_13();
 			Vector3_t3722313464  L_46 = wayFinding_getDir_m2911279075(__this, L_43, L_44, L_45, /*hidden argument*/NULL);
 			wayFinding_TransformArrow_m2453897102(__this, ((GameObject_t1113636619 *)CastclassSealed((RuntimeObject*)L_41, GameObject_t1113636619_il2cpp_TypeInfo_var)), L_42, L_46, (0.0f), /*hidden argument*/NULL);
 			goto IL_0170;
@@ -21523,13 +21582,13 @@ IL_010b:
 
 IL_0142:
 		{
-			Hashtable_t1853889766 * L_47 = __this->get_table_12();
+			Hashtable_t1853889766 * L_47 = __this->get_table_14();
 			GameObject_t1113636619 * L_48 = V_8;
 			GameObject_t1113636619 * L_49 = __this->get_arrowInstance_2();
-			Vector3_t3722313464  L_50 = __this->get_start_11();
+			Vector3_t3722313464  L_50 = __this->get_start_13();
 			GameObject_t1113636619 * L_51 = V_2;
 			GameObject_t1113636619 * L_52 = V_8;
-			Vector3_t3722313464  L_53 = __this->get_start_11();
+			Vector3_t3722313464  L_53 = __this->get_start_13();
 			Vector3_t3722313464  L_54 = wayFinding_getDir_m2911279075(__this, L_51, L_52, L_53, /*hidden argument*/NULL);
 			GameObject_t1113636619 * L_55 = wayFinding_DrawArrow_m3284252164(__this, L_49, L_50, L_54, /*hidden argument*/NULL);
 			NullCheck(L_47);
@@ -21543,7 +21602,7 @@ IL_0170:
 
 IL_0175:
 		{
-			Hashtable_t1853889766 * L_56 = __this->get_table_12();
+			Hashtable_t1853889766 * L_56 = __this->get_table_14();
 			GameObject_t1113636619 * L_57 = V_8;
 			NullCheck(L_56);
 			bool L_58 = VirtFuncInvoker1< bool, RuntimeObject * >::Invoke(34 /* System.Boolean System.Collections.Hashtable::ContainsKey(System.Object) */, L_56, L_57);
@@ -21555,12 +21614,12 @@ IL_0175:
 
 IL_0187:
 		{
-			Hashtable_t1853889766 * L_59 = __this->get_table_12();
+			Hashtable_t1853889766 * L_59 = __this->get_table_14();
 			GameObject_t1113636619 * L_60 = V_8;
 			NullCheck(L_59);
 			RuntimeObject * L_61 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(26 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_59, L_60);
 			V_10 = ((GameObject_t1113636619 *)CastclassSealed((RuntimeObject*)L_61, GameObject_t1113636619_il2cpp_TypeInfo_var));
-			Hashtable_t1853889766 * L_62 = __this->get_table_12();
+			Hashtable_t1853889766 * L_62 = __this->get_table_14();
 			GameObject_t1113636619 * L_63 = V_8;
 			NullCheck(L_62);
 			VirtActionInvoker1< RuntimeObject * >::Invoke(33 /* System.Void System.Collections.Hashtable::Remove(System.Object) */, L_62, L_63);
@@ -21696,11 +21755,11 @@ extern "C"  Vector3_t3722313464  wayFinding_getDir_m2911279075 (wayFinding_t2735
 		IL2CPP_RUNTIME_CLASS_INIT(Vector3_t3722313464_il2cpp_TypeInfo_var);
 		Vector3_t3722313464  L_4 = Vector3_op_Subtraction_m3073674971(NULL /*static, unused*/, L_2, L_3, /*hidden argument*/NULL);
 		V_0 = L_4;
-		Hashtable_t1853889766 * L_5 = __this->get_database_13();
+		Hashtable_t1853889766 * L_5 = __this->get_database_15();
 		GameObject_t1113636619 * L_6 = ___endObj1;
 		NullCheck(L_5);
 		RuntimeObject * L_7 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(26 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_5, L_6);
-		Hashtable_t1853889766 * L_8 = __this->get_database_13();
+		Hashtable_t1853889766 * L_8 = __this->get_database_15();
 		GameObject_t1113636619 * L_9 = ___relativeObj0;
 		NullCheck(L_8);
 		RuntimeObject * L_10 = VirtFuncInvoker1< RuntimeObject *, RuntimeObject * >::Invoke(26 /* System.Object System.Collections.Hashtable::get_Item(System.Object) */, L_8, L_9);
@@ -21975,24 +22034,26 @@ extern "C"  void wayFinding_startTraveling_m2168396428 (wayFinding_t2735345900 *
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		Hashtable_t1853889766 * L_0 = __this->get_database_13();
+		Hashtable_t1853889766 * L_0 = __this->get_database_15();
 		if (L_0)
 		{
-			goto IL_0021;
+			goto IL_002a;
 		}
 	}
 	{
+		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
+		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral129914063, /*hidden argument*/NULL);
 		GameObject_t1113636619 * L_1 = GameObject_Find_m2032535176(NULL /*static, unused*/, _stringLiteral371078329, /*hidden argument*/NULL);
 		NullCheck(L_1);
 		Scanning_t651759208 * L_2 = GameObject_GetComponent_TisScanning_t651759208_m2415015816(L_1, /*hidden argument*/GameObject_GetComponent_TisScanning_t651759208_m2415015816_RuntimeMethod_var);
 		NullCheck(L_2);
-		L_2->set_scanning_3((bool)1);
+		Scanning_ScanOn_m1836700839(L_2, /*hidden argument*/NULL);
 		return;
 	}
 
-IL_0021:
+IL_002a:
 	{
-		__this->set_traveling_16((bool)1);
+		__this->set_traveling_18((bool)1);
 		GameObject_t1113636619 * L_3 = __this->get_startTravelBtn_5();
 		NullCheck(L_3);
 		GameObject_SetActive_m796801857(L_3, (bool)0, /*hidden argument*/NULL);
@@ -22002,6 +22063,9 @@ IL_0021:
 		GameObject_t1113636619 * L_5 = __this->get_startScanBtn_7();
 		NullCheck(L_5);
 		GameObject_SetActive_m796801857(L_5, (bool)0, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_6 = __this->get_finishTravelBtn_6();
+		NullCheck(L_6);
+		GameObject_SetActive_m796801857(L_6, (bool)1, /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -22015,23 +22079,29 @@ extern "C"  void wayFinding_exitTraveling_m256940023 (wayFinding_t2735345900 * _
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		WandSelection_t972065371 * L_0 = __this->get_ws_14();
+		WandSelection_t972065371 * L_0 = __this->get_ws_16();
 		NullCheck(L_0);
 		L_0->set_isTravel_3((bool)0);
-		__this->set_traveling_16((bool)0);
-		__this->set_flag1_17((bool)1);
-		__this->set_flag2_18((bool)1);
+		__this->set_traveling_18((bool)0);
+		__this->set_flag1_19((bool)1);
+		__this->set_flag2_20((bool)1);
 		GameObject_t1113636619 * L_1 = __this->get_startTravelBtn_5();
 		NullCheck(L_1);
 		GameObject_SetActive_m796801857(L_1, (bool)0, /*hidden argument*/NULL);
 		GameObject_t1113636619 * L_2 = __this->get_finishTravelBtn_6();
 		NullCheck(L_2);
 		GameObject_SetActive_m796801857(L_2, (bool)0, /*hidden argument*/NULL);
-		GameObject_t1113636619 * L_3 = GameObject_Find_m2032535176(NULL /*static, unused*/, _stringLiteral2242364214, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_3 = __this->get_startScanBtn_7();
 		NullCheck(L_3);
-		wandScript_t1125606077 * L_4 = GameObject_GetComponent_TiswandScript_t1125606077_m2772890611(L_3, /*hidden argument*/GameObject_GetComponent_TiswandScript_t1125606077_m2772890611_RuntimeMethod_var);
+		GameObject_SetActive_m796801857(L_3, (bool)0, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_4 = __this->get_finishScanBtn_8();
 		NullCheck(L_4);
-		wandScript_setactive_m2438207176(L_4, /*hidden argument*/NULL);
+		GameObject_SetActive_m796801857(L_4, (bool)0, /*hidden argument*/NULL);
+		GameObject_t1113636619 * L_5 = __this->get_wandCube_9();
+		NullCheck(L_5);
+		wandScript_t1125606077 * L_6 = GameObject_GetComponent_TiswandScript_t1125606077_m2772890611(L_5, /*hidden argument*/GameObject_GetComponent_TiswandScript_t1125606077_m2772890611_RuntimeMethod_var);
+		NullCheck(L_6);
+		wandScript_setactive_m2438207176(L_6, /*hidden argument*/NULL);
 		return;
 	}
 }

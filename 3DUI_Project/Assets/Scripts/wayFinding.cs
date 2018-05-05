@@ -12,7 +12,9 @@ public class wayFinding : MonoBehaviour {
 	public GameObject startTravelBtn;
 	public GameObject finishTravelBtn;
 	public GameObject startScanBtn;
-//	public GameObject finishScanBtn;
+	public GameObject finishScanBtn;
+
+	public GameObject wandCube;
 
 	private List<string> mat_List;
 	private string drawer;
@@ -176,13 +178,15 @@ public class wayFinding : MonoBehaviour {
 
 	public void startTraveling() {
 		if (database == null) {
-			GameObject.Find ("ARCamera").GetComponent<Scanning> ().scanning = true;
+			Debug.Log ("start traveling!!!!!!!!!!!!");
+			GameObject.Find ("ARCamera").GetComponent<Scanning> ().ScanOn();
 			return;
 		}
 		traveling = true;
 		startTravelBtn.SetActive (false);
 		finishTravelBtn.SetActive (true);
 		startScanBtn.SetActive (false);
+		finishTravelBtn.SetActive (true);
 	}
 
 	public void exitTraveling() {
@@ -192,7 +196,9 @@ public class wayFinding : MonoBehaviour {
 		flag2 = true;
 		startTravelBtn.SetActive (false);
 		finishTravelBtn.SetActive (false);
-		GameObject.Find ("WandCube").GetComponent<wandScript>().setactive();
+		startScanBtn.SetActive (false);
+		finishScanBtn.SetActive (false);
+		wandCube.GetComponent<wandScript>().setactive();
 	}
 
 }

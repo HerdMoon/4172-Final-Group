@@ -362,8 +362,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 203753513}
   m_HandleRect: {fileID: 203753512}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0
+  m_Value: 0.99998546
+  m_Size: 0.8561643
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7607,6 +7607,8 @@ MonoBehaviour:
   startTravelBtn: {fileID: 607027167}
   finishTravelBtn: {fileID: 1079823834}
   startScanBtn: {fileID: 135202876}
+  finishScanBtn: {fileID: 1840120510}
+  wandCube: {fileID: 983815583}
 --- !u!114 &2061447270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7621,6 +7623,8 @@ MonoBehaviour:
   scanning: 0
   startScanBtn: {fileID: 135202876}
   finishScanBtn: {fileID: 1840120510}
+  startTravelBtn: {fileID: 607027167}
+  finishTravelBtn: {fileID: 1079823834}
   scanStatus: {fileID: 1567683329}
 --- !u!1 &2083279951
 GameObject:

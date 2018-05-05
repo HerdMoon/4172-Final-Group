@@ -11,6 +11,8 @@ public class Scanning : MonoBehaviour {
 
 	public GameObject startScanBtn;
 	public GameObject finishScanBtn;
+	public GameObject startTravelBtn;
+	public GameObject finishTravelBtn;
 //	public bool finishScan;
 	public GameObject scanStatus;
 
@@ -70,6 +72,8 @@ public class Scanning : MonoBehaviour {
 		scanning = true;
 		startScanBtn.SetActive (false);
 		finishScanBtn.SetActive (true);
+		startTravelBtn.SetActive (false);
+		finishTravelBtn.SetActive (false);
 		scanStatus.SetActive (true);
 //		finishScan = false;
 	}
@@ -78,6 +82,8 @@ public class Scanning : MonoBehaviour {
 		scanning = false;
 		startScanBtn.SetActive (true);
 		finishScanBtn.SetActive (false);
+		startTravelBtn.SetActive (true);
+		finishTravelBtn.SetActive (false);
 		GameObject.Find ("ARCamera").GetComponent<wayFinding> ().database = database;
 		scanStatus.SetActive (false);
 //		finishScan = true;
