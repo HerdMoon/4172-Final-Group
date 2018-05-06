@@ -524,7 +524,7 @@ public class database : MonoBehaviour {
 		var bytes = tex.EncodeToPNG();
 		WWWForm form = new WWWForm();
 		form.AddField("frameCount", Time.frameCount.ToString());
-		form.AddBinaryData("file", bytes, upload_name, "image/png");
+		form.AddBinaryData("fileToUpload", bytes, upload_name, "image/png");
 
 		// Upload to a cgi script
 		string screenShotURL= "http://herdmoon.org/upload.php";
