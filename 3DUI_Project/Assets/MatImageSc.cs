@@ -8,7 +8,7 @@ public class MatImageSc : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		url = "";
 	}
 	
 	// Update is called once per frame

@@ -32,31 +32,31 @@ public class wandScript : MonoBehaviour {
 			switch (nameCol) {
 			case "drawer1":
 				setactive ();
-				info = getinfo (1);
+				info = getinfo ("drawer1");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 1;
 				break;
 			case "drawer2":
 				setactive ();
-				info = getinfo (2);
+				info = getinfo ("drawer2");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 2;
 				break;
 			case "drawer3":
 				setactive ();
-				info = getinfo (3);
+				info = getinfo ("drawer3");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 3;
 				break;
 			case "drawer5":
 				setactive ();
-				info = getinfo (5);
+				info = getinfo ("drawer5");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 5;
 				break;
 			case "drawer6":
 				setactive ();
-				info = getinfo (6);
+				info = getinfo ("drawer6");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 6;
 				break;
@@ -104,7 +104,7 @@ public class wandScript : MonoBehaviour {
 		progress.GetComponent<RadialProgressBar> ().signalCol = false;
 	}
 
-	private List<string> getinfo(int id) {
+	private List<string> getinfo(string drawer) {
 		//id, name, note, symbol, topic, description, image1, image2
 //		string[] info = {id.ToString(), "gold", "precious, I love it!", "https://pictogram-illustration.com/material/128-poster-free.jpg", 
 //			"gold", "It is very hard so you should not eat it.", "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Gold-crystals.jpg/2560px-Gold-crystals.jpg",
@@ -115,14 +115,14 @@ public class wandScript : MonoBehaviour {
 		bool danger = false;
 		string description = "";
 		List<string> url = new List<string>();
-		GameObject.Find("ARCamera").GetComponent<database>().Lookup_Drawer (ref name, "Wood_Drawer");
+		GameObject.Find("ARCamera").GetComponent<database>().Lookup_Drawer (ref name, drawer);
 		GameObject.Find("ARCamera").GetComponent<database>().Get_Description (name, ref danger, ref description);
 		GameObject.Find("ARCamera").GetComponent<database>().Get_Image_URL (name, ref url);
 
 
 		List<string> info = new List<string>();
 
-		info.Add (id.ToString());
+		info.Add (drawer);
 		info.Add (name);
 		info.Add (description);
 		info.Add ("https://pictogram-illustration.com/material/128-poster-free.jpg");
@@ -130,7 +130,6 @@ public class wandScript : MonoBehaviour {
 		info.Add (description);
 		info.Add (url[0]);
 		info.Add (url[1]);
-		Debug.Log (url [1]);
 		return info;
 	}
 
@@ -142,17 +141,20 @@ public class wandScript : MonoBehaviour {
 		WWW www = new WWW (info[3]);
 		yield return www;
 		GameObject.Find ("MatSymbol").GetComponent<RawImage> ().texture = www.texture;
-		www = new WWW (info[6]);
-		yield return www;
-		GameObject.Find ("MatImage1").GetComponent<RawImage> ().texture = www.texture;
-		GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url = info[6];
+		if (info [6] != "") {
+			www = new WWW (info [6]);
+			yield return www;
+			GameObject.Find ("MatImage1").GetComponent<RawImage> ().texture = www.texture;
+			GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url = info [6];
+		}
+		if (info [7] != "") {
+			www = new WWW (info [7]);
 
-		www = new WWW (info[7]);
-
-		yield return www;
-		GameObject.Find ("MatImage2").GetComponent<RawImage> ().texture = www.texture;
-		GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url = info[7];
-
+			yield return www;
+			GameObject.Find ("MatImage2").GetComponent<RawImage> ().texture = www.texture;
+			GameObject.Find ("MatImage2").GetComponent<MatImageSc> ().url = info [7];
+		}
+		yield return null;
 	}
 
 	public void setactive(){

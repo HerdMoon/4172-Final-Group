@@ -61,7 +61,7 @@ public class database : MonoBehaviour {
 		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Silver Pigment", "None", "None", 10000, 1);
 		Insert_Photo_By_URL ("herdmoon.org/static/f/chair.jpg", "Wood", "Iron", "Yellow Pigment", "None", 20000 , 2);
 
-		InsertMat_Drawer_Pair ("Wood", "Wood_Drawer");
+		InsertMat_Drawer_Pair ("Wood", "drawer1");
 //		InsertMat_Drawer_Pair ("Wood", "drawer1");
 //		InsertMat_Drawer_Pair ("Copper_Powder", "drawer2");
 //		InsertMat_Drawer_Pair ("Ochre", "drawer3");
@@ -415,6 +415,9 @@ public class database : MonoBehaviour {
 
 			}
 
+		}
+		while (URL_List.Count < 2) {
+			URL_List.Add ("");
 		}
 	}
 
