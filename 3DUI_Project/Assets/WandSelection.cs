@@ -19,6 +19,11 @@ public class WandSelection : MonoBehaviour {
 		canv4 = GameObject.Find("Canvas4");
 		UIcube = GameObject.Find ("UICube");
 //		canv1.SetActive (false);
+		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Wood", "drawer1");
+		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Copper_Powder", "drawer2");
+		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Ochre", "drawer3");
+		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Gold_Leaf", "drawer4");
+		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Vermillion", "drawer5");
 	}
 	
 	// Update is called once per frame
