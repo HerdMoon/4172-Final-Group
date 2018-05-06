@@ -24,7 +24,7 @@ public class phoneCamera2 : MonoBehaviour {
 		background = GameObject.Find ("Background").GetComponent<RawImage>();
 		background.enabled = true;
 		buttonpanel = GameObject.Find ("ButtonPanel");
-		scroll = GameObject.Find ("Scroll");
+		scroll = GameObject.Find ("OnSelectPanel");
 		buttonpanel.SetActive (true);
 		scroll.SetActive (false);
 		nontexture = true;

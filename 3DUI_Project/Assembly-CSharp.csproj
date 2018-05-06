@@ -58,6 +58,7 @@
      <Compile Include="Assets\Image05Script.cs" />
      <Compile Include="Assets\Image1pos.cs" />
      <Compile Include="Assets\Image2pos.cs" />
+     <Compile Include="Assets\MaterialsButtonScript.cs" />
      <Compile Include="Assets\MatImageSc.cs" />
      <Compile Include="Assets\Panelpos.cs" />
      <Compile Include="Assets\Positionset.cs" />
@@ -169,50 +170,53 @@
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>/Applications/Unity/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.iOS.Extensions">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="System.Configuration">
- <HintPath>/Users/syu/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/System.Configuration.dll</HintPath>
- </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>/Users/syu/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/Mono.Data.Sqlite.dll</HintPath>
- </Reference>
- <Reference Include="System.EnterpriseServices">
- <HintPath>/Users/syu/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/System.EnterpriseServices.dll</HintPath>
- </Reference>
- <Reference Include="System.Data">
- <HintPath>/Users/syu/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/System.Data.dll</HintPath>
- </Reference>
- <Reference Include="System.Security">
- <HintPath>/Users/syu/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/System.Security.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Documents/Columbia/3DUI/project/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.SqliteClient">
- <HintPath>/Users/syu/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/Mono.Data.SqliteClient.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Documents/Columbia/3DUI/project/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/Mono.Data.SqliteClient.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Configuration">
+ <HintPath>/Users/chenqinxu/Documents/Columbia/3DUI/project/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/System.Configuration.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>/Users/chenqinxu/Documents/Columbia/3DUI/project/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="System.EnterpriseServices">
+ <HintPath>/Users/chenqinxu/Documents/Columbia/3DUI/project/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/System.EnterpriseServices.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Security">
+ <HintPath>/Users/chenqinxu/Documents/Columbia/3DUI/project/4172-Final-Group/3DUI_Project/Assets/Plugins/SQLite/System.Security.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements">
- <HintPath>/Users/syu/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
- <HintPath>/Users/syu/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>/Users/syu/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Analytics">
- <HintPath>/Users/syu/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/Editor/UnityEditor.Analytics.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Library/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/Editor/UnityEditor.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>/Users/syu/Library/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Library/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
- <HintPath>/Users/syu/Library/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/Editor/UnityEditor.Purchasing.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Library/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
- <HintPath>/Users/syu/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+ <HintPath>/Users/chenqinxu/Library/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

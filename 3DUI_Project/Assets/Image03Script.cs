@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Image03Script : MonoBehaviour {
 
 	public bool selected = false;
-	public string name = "m3";
+	public string name = "Lead_White";
 	private Color origincolor;
 
 	public void buttonClick(){
