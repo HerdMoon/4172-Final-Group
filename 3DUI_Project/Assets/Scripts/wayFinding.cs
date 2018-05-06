@@ -58,6 +58,8 @@ public class wayFinding : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (ws.isTravel) {
+			if (url == "")
+				exitTraveling ();
 			if (flag1) {
 				startTravelBtn.SetActive (true);
 				startScanBtn.SetActive (true);
