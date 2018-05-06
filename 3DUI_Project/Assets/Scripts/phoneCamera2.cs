@@ -17,6 +17,7 @@ public class phoneCamera2 : MonoBehaviour {
 	private RawImage background;
 	private Texture2D texture;
 	private bool nontexture;
+	private GameObject successInfo;
 
 	// Use this for initialization
 	void Start () {
@@ -25,9 +26,12 @@ public class phoneCamera2 : MonoBehaviour {
 		background.enabled = true;
 		buttonpanel = GameObject.Find ("ButtonPanel");
 		scroll = GameObject.Find ("OnSelectPanel");
+		successInfo = GameObject.Find ("Info");
 		buttonpanel.SetActive (true);
 		scroll.SetActive (false);
 		nontexture = true;
+
+//		successInfo.SetActive (false);
 
 
 		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
@@ -101,6 +105,7 @@ public class phoneCamera2 : MonoBehaviour {
 
 		buttonpanel.SetActive (false);
 		scroll.SetActive (true);
+		successInfo.GetComponent<Text>().enabled = false;
 		mAccessCameraImage = false;
 
 	}
@@ -137,6 +142,8 @@ public class phoneCamera2 : MonoBehaviour {
 		System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
 		int time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 		gameObject.GetComponent<database>().Insert_Data (texture, mats, time, 1);
+
+			
 	}
 
 

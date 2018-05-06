@@ -13,10 +13,12 @@ public class database : MonoBehaviour {
 	private string dbPath;
 
 
-
 	private void Start() {
 		InitDatabase ();
 	}
+
+
+
 	public void InitDatabase() {
 		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
 		using (var conn = new SqliteConnection (dbPath)) {
@@ -519,7 +521,7 @@ public class database : MonoBehaviour {
 			}
 		}
 		StartCoroutine (upload_graph (Saved_Img, file_name));
-
+	
 	}
 
 	IEnumerator upload_graph(Texture2D tex,string upload_name)
@@ -536,6 +538,8 @@ public class database : MonoBehaviour {
 
 		// Upload to a cgi script
 		string screenShotURL= "http://herdmoon.org/upload.php";
+		GameObject.Find ("Info").GetComponent<Text> ().text = "Submitting...";
+		GameObject.Find ("Info").GetComponent<Text> ().enabled = true;
 		WWW w = new WWW(screenShotURL, form);
 		yield return w;
 		if (w.error != null){
@@ -544,6 +548,15 @@ public class database : MonoBehaviour {
 		else{
 			Debug.Log("Image Uploaded!");
 			Debug.Log (w.text);
+			int find_string = w.text.IndexOf ("has been uploaded.");
+			if (find_string >= 0) {
+				GameObject.Find ("Info").GetComponent<Text>().text = "Submit Successfully!";
+				GameObject.Find("Info").GetComponent<Text>().enabled =  true;
+			} else {
+				GameObject.Find ("Info").GetComponent<Text>().text = "Submit Failed!";
+				GameObject.Find ("Info").GetComponent<Text> ().enabled = true;
+
+			}
 			Debug.Log (w.url);
 		}
 
