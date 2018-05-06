@@ -270,6 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a020de86ed00641ea8abe148a60b7ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  name: m4
 --- !u!1 &244211936
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +433,7 @@ GameObject:
   - component: {fileID: 366151602}
   - component: {fileID: 366151601}
   - component: {fileID: 366151600}
+  - component: {fileID: 366151606}
   m_Layer: 0
   m_Name: ARCamera
   m_TagString: Untagged
@@ -444,7 +447,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366151599}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ac000265b8554da38614e1e1582e7e9, type: 3}
   m_Name: 
@@ -531,6 +534,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &366151606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 366151599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452cfd3025f8041ea8a7fc7d466ff430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &413854526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1439.3, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &893927551
@@ -1251,6 +1265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5bdcfc5123142bea02beea250f1617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  name: m1
 --- !u!1 &1019332223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,9 +1565,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 366151600}
-        m_MethodName: BackToMainMenu
-        m_Mode: 5
+      - m_Target: {fileID: 366151606}
+        m_MethodName: backToMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1824,6 +1840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611f08d4a161c4f3eafbca0e06ecb169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  name: m5
 --- !u!1 &1252886982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,6 +1923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe979ee9581314ba2816968f062827c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  name: m2
 --- !u!1 &1329330248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,8 +3126,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 366151600}
-        m_MethodName: TakePhoto
+      - m_Target: {fileID: 366151606}
+        m_MethodName: startTaking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3228,8 +3248,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 366151600}
-        m_MethodName: BackToCamera
+      - m_Target: {fileID: 366151606}
+        m_MethodName: endTaking
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3355,6 +3375,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5ed936fc26843299d50a0343b6ecfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selected: 0
+  name: m3
 --- !u!1 &2092520841
 GameObject:
   m_ObjectHideFlags: 0
@@ -3430,8 +3452,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 413854528}
   m_HandleRect: {fileID: 413854527}
   m_Direction: 0
-  m_Value: 0.00000005658739
-  m_Size: 0.625304
+  m_Value: 0
+  m_Size: 0.62518245
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
