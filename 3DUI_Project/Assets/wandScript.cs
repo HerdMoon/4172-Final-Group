@@ -114,9 +114,10 @@ public class wandScript : MonoBehaviour {
 		string name = "";
 		bool danger = false;
 		string description = "";
+		string note = "";
 		List<string> url = new List<string>();
 		GameObject.Find("ARCamera").GetComponent<database>().Lookup_Drawer (ref name, drawer);
-		GameObject.Find("ARCamera").GetComponent<database>().Get_Description (name, ref danger, ref description);
+		GameObject.Find("ARCamera").GetComponent<database>().Get_Description (name, ref danger, ref description, ref note);
 		GameObject.Find("ARCamera").GetComponent<database>().Get_Image_URL (name, ref url);
 
 
@@ -124,12 +125,13 @@ public class wandScript : MonoBehaviour {
 
 		info.Add (drawer);
 		info.Add (name);
-		info.Add (description);
+		info.Add (note);
 		info.Add ("https://pictogram-illustration.com/material/128-poster-free.jpg");
 		info.Add (name);
 		info.Add (description);
 		info.Add (url[0]);
 		info.Add (url[1]);
+		info.Add ("herdmoon.org/static/f/mat/"+name+".png");
 		return info;
 	}
 
@@ -153,6 +155,13 @@ public class wandScript : MonoBehaviour {
 			yield return www;
 			GameObject.Find ("MatImage2").GetComponent<RawImage> ().texture = www.texture;
 			GameObject.Find ("MatImage2").GetComponent<MatImageSc> ().url = info [7];
+		}
+		if (info [8] != "") {
+			www = new WWW (info [7]);
+
+			yield return www;
+			GameObject.Find ("MatPic").GetComponent<RawImage> ().texture = www.texture;
+			GameObject.Find ("MatPic").GetComponent<MatImageSc> ().url = info [8];
 		}
 		yield return null;
 	}

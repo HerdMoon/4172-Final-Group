@@ -52,10 +52,11 @@ public class database : MonoBehaviour {
 
 		CreateSchema ();
 
-		InsertMat_Info ("Wood", 0, "Wood is an usual Material.");
-		InsertMat_Info ("Iron", 0, "Iron is a kind of metal.");
-		InsertMat_Info ("Silver Pigment", 1, "Silver Pigment made from lead,poison.");
-		InsertMat_Info ("Yellow Pigment", 0, "Yellow Pigment made from oil,not poison.");
+		InsertMat_Info ("Wood", 0, "Wood is an usual Material.","Wood Note");
+		Debug.Log ("Insert here!");
+		InsertMat_Info ("Iron", 0, "Iron is a kind of metal.","2 Note");
+		InsertMat_Info ("Silver Pigment", 1, "Silver Pigment made from lead,poison.","2 Note");
+		InsertMat_Info ("Yellow Pigment", 0, "Yellow Pigment made from oil,not poison.","3 Note");
 
 		Insert_Recipe ("Silver Rose", "Silver Rose is made by God7");
 		Insert_Recipe ("Chair", "Chair is made from woods definitely.");
@@ -75,9 +76,10 @@ public class database : MonoBehaviour {
 		Debug.Log (res_Mat);
 		bool res_Dangerous = true;
 		string res_Descripton = "";
-		Get_Description ("Wood", ref res_Dangerous, ref res_Descripton);
+		string res_Note = "";
+		Get_Description ("Wood", ref res_Dangerous, ref res_Descripton,ref res_Note);
 		Debug.Log (res_Descripton);
-
+		Debug.Log (res_Note);
 		List<string> res_List = new List<string> (4);
 		Get_Image_URL ("Wood", ref res_List);
 		foreach (string res_URL in res_List)
@@ -110,7 +112,8 @@ public class database : MonoBehaviour {
 					"  'id' INTEGER PRIMARY KEY, " +
 					"  'name' TEXT NOT NULL, " +
 					"  'dangerous' INTEGER NOT NULL," +
-					"  'description' TEXT" +
+					"  'description' TEXT," +
+					"  'note' TEXT" +
 					");";
 
 				var result = cmd.ExecuteNonQuery();
@@ -207,14 +210,14 @@ public class database : MonoBehaviour {
 
 
 
-	public void InsertMat_Info(string mat_name,int is_dangerous, string mat_des)
+	public void InsertMat_Info(string mat_name,int is_dangerous, string mat_des,string mat_note)
 	{
 		using (var conn = new SqliteConnection(dbPath)) {
 			conn.Open();
 			using (var cmd = conn.CreateCommand()) {
 				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = "INSERT INTO Mat_info (name,dangerous,description) " +
-					"VALUES (@Name, @Dang,@Desc);";
+				cmd.CommandText = "INSERT INTO Mat_info (name,dangerous,description,note) " +
+					"VALUES (@Name, @Dang,@Desc ,@mat_note);";
 
 				cmd.Parameters.Add(new SqliteParameter {
 					ParameterName = "Name",
@@ -229,8 +232,12 @@ public class database : MonoBehaviour {
 					ParameterName = "Desc",
 					Value = mat_des
 				});
+				cmd.Parameters.Add (new SqliteParameter {
+					ParameterName = "mat_note",
+					Value = mat_note
+				});
 				var result = cmd.ExecuteNonQuery();
-				Debug.Log("insert mat: " + result);
+				Debug.Log("insert mat: " + mat_name);
 			}
 		}		
 	}
@@ -361,7 +368,7 @@ public class database : MonoBehaviour {
 	}
 
 
-	public void Get_Description(string Mat_name, ref bool is_dangerous, ref string description)
+	public void Get_Description(string Mat_name, ref bool is_dangerous, ref string description,ref string note)
 	{
 		using (var conn = new SqliteConnection(dbPath)) {
 			conn.Open();
@@ -388,6 +395,8 @@ public class database : MonoBehaviour {
 
 					var read_description = reader.GetString(3);
 					description = read_description;
+					var read_note = reader.GetString (4);
+					note = read_note;
 				}
 				Debug.Log("Mat_Search (end)");
 			}
