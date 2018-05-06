@@ -48,6 +48,18 @@ public class wandScript : MonoBehaviour {
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 3;
 				break;
+			case "drawer5":
+				setactive ();
+				info = getinfo (5);
+				StartCoroutine(infoprocess (info));
+				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 5;
+				break;
+			case "drawer6":
+				setactive ();
+				info = getinfo (6);
+				StartCoroutine(infoprocess (info));
+				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 6;
+				break;
 			case "MatImage1":
 				//send url to travel scripts
 //				Debug.Log ("aaaaaaaaaaaaa " + GameObject.Find ("MatImage1"));

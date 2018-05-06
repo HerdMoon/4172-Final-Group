@@ -9,7 +9,7 @@ public class WandSelection : MonoBehaviour {
 
 	public bool isTravel = false;
 
-	GameObject canv1, canv2, canv3, canv4, UIcube, drawer1, drawer2, drawer3;
+	GameObject canv1, canv2, canv3, canv4, UIcube, drawer1, drawer2, drawer3, drawer5, drawer6;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +28,8 @@ public class WandSelection : MonoBehaviour {
 			drawer1 = GameObject.Find ("d1Plane");
 			drawer2 = GameObject.Find ("d2Plane");
 			drawer3 = GameObject.Find ("d3Plane");
+			drawer5 = GameObject.Find ("d5Plane");
+			drawer6 = GameObject.Find ("d6Plane");
 			switch (state) {
 			case 1:
 				setactive ();
@@ -38,6 +40,10 @@ public class WandSelection : MonoBehaviour {
 					drawer2.GetComponent<Renderer> ().materials [0].color = Color.yellow;
 				if (drawer3.GetComponent<Renderer> () != null)
 					drawer3.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer5.GetComponent<Renderer> () != null)
+					drawer5.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer6.GetComponent<Renderer> () != null)
+					drawer6.GetComponent<Renderer> ().materials [0].color = Color.yellow;
 				break;
 			case 2:
 				setactive ();
@@ -48,6 +54,10 @@ public class WandSelection : MonoBehaviour {
 					drawer1.GetComponent<Renderer> ().materials [0].color = Color.yellow;
 				if (drawer3.GetComponent<Renderer> () != null)
 					drawer3.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer5.GetComponent<Renderer> () != null)
+					drawer5.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer6.GetComponent<Renderer> () != null)
+					drawer6.GetComponent<Renderer> ().materials [0].color = Color.yellow;
 				break;
 			case 3:
 				setactive ();
@@ -58,6 +68,38 @@ public class WandSelection : MonoBehaviour {
 					drawer2.GetComponent<Renderer> ().materials [0].color = Color.yellow;
 				if (drawer1.GetComponent<Renderer> () != null)
 					drawer1.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer5.GetComponent<Renderer> () != null)
+					drawer5.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer6.GetComponent<Renderer> () != null)
+					drawer6.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				break;
+			case 5:
+				setactive ();
+				//			GameObject.Find ("PanelTopic").GetComponent<Text> ().text = "silver";
+				if (drawer3.GetComponent<Renderer> () != null)
+					drawer3.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer2.GetComponent<Renderer> () != null)
+					drawer2.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer1.GetComponent<Renderer> () != null)
+					drawer1.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer5.GetComponent<Renderer> () != null)
+					drawer5.GetComponent<Renderer> ().materials [0].color = Color.red;
+				if (drawer6.GetComponent<Renderer> () != null)
+					drawer6.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				break;
+			case 6:
+				setactive ();
+				//			GameObject.Find ("PanelTopic").GetComponent<Text> ().text = "silver";
+				if (drawer3.GetComponent<Renderer> () != null)
+					drawer3.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer2.GetComponent<Renderer> () != null)
+					drawer2.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer1.GetComponent<Renderer> () != null)
+					drawer1.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer5.GetComponent<Renderer> () != null)
+					drawer5.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer6.GetComponent<Renderer> () != null)
+					drawer6.GetComponent<Renderer> ().materials [0].color = Color.red;
 				break;
 			default:
 				setinactive ();
@@ -68,6 +110,10 @@ public class WandSelection : MonoBehaviour {
 					drawer2.GetComponent<Renderer> ().materials [0].color = Color.yellow;
 				if (drawer3.GetComponent<Renderer> () != null)
 					drawer3.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer5.GetComponent<Renderer> () != null)
+					drawer5.GetComponent<Renderer> ().materials [0].color = Color.yellow;
+				if (drawer6.GetComponent<Renderer> () != null)
+					drawer6.GetComponent<Renderer> ().materials [0].color = Color.yellow;
 				break;
 			}
 		}
