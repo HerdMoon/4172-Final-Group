@@ -86,8 +86,8 @@ public class wayFinding : MonoBehaviour {
 			Debug.Log ("wayfind material is " + mat);
 			db.Lookup_Mat (mat, ref drawer);
 			Debug.Log ("wayfinding drawer is " + drawer);
-			if (drawer == "Wood_Drawer")
-				drawer = "drawer1";
+//			if (drawer == "Wood_Drawer")
+//				drawer = "drawer1";
 			selectedObjTable [GameObject.Find (drawer)] = false;
 		}
 	}

@@ -62,6 +62,11 @@ public class database : MonoBehaviour {
 		Insert_Photo_By_URL ("herdmoon.org/static/f/chair.jpg", "Wood", "Iron", "Yellow Pigment", "None", 20000 , 2);
 
 		InsertMat_Drawer_Pair ("Wood", "Wood_Drawer");
+//		InsertMat_Drawer_Pair ("Wood", "drawer1");
+//		InsertMat_Drawer_Pair ("Copper_Powder", "drawer2");
+//		InsertMat_Drawer_Pair ("Ochre", "drawer3");
+//		InsertMat_Drawer_Pair ("Gold_Leaf", "drawer5");
+//		InsertMat_Drawer_Pair ("Vermillion", "drawer6");
 
 		string res_Mat = "";
 		Lookup_Mat ("Wood", ref res_Mat);

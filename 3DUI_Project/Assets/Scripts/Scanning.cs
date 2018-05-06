@@ -99,8 +99,10 @@ public class Scanning : MonoBehaviour {
 			GameObject.Find ("Toggle2").GetComponent<Toggle> ().isOn = true;
 		} else if (go.name == "drawer3") {
 			GameObject.Find ("Toggle3").GetComponent<Toggle> ().isOn = true;
-		} else if (go.name == "drawer4") {
-			GameObject.Find ("Toggle4").GetComponent<Toggle> ().isOn = true;
+		} else if (go.name == "drawer5") {
+			GameObject.Find ("Toggle5").GetComponent<Toggle> ().isOn = true;
+		} else if (go.name == "drawer6") {
+			GameObject.Find ("Toggle6").GetComponent<Toggle> ().isOn = true;
 		}
 	}
 		
