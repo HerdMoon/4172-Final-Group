@@ -5,16 +5,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using Mono.Data.Sqlite;
 using System.Data;
-
+using System.Net.NetworkInformation;
+using System.Net;
 
 public class database : MonoBehaviour {
 
 	private string dbPath;
 
+
+
 	private void Start() {
 		InitDatabase ();
 	}
-
 	public void InitDatabase() {
 		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
 		using (var conn = new SqliteConnection (dbPath)) {
@@ -458,7 +460,7 @@ public class database : MonoBehaviour {
 		}		
 	}
 
-	public void Insert_Data(Texture2D Saved_Img,List<string> Chosen_Mat,int time_stamp)
+	public void Insert_Data(Texture2D Saved_Img,List<string> Chosen_Mat,int time_stamp,int recipe_id)
 	{
 		string file_name = time_stamp.ToString () + ".png";
 		while (Chosen_Mat.Count <= 4) {
@@ -472,8 +474,8 @@ public class database : MonoBehaviour {
 			conn.Open();
 			using (var cmd = conn.CreateCommand()) {
 				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = "INSERT INTO Pic_Info (URL,Time_Stamp,Mat1,Mat2,Mat3,Mat4) " +
-					"VALUES (@URL, @Time,@Mat1,@Mat2,@Mat3,@Mat4);";
+				cmd.CommandText = "INSERT INTO Pic_Info (URL,Time_Stamp,Mat1,Mat2,Mat3,Mat4,Recipe_id) " +
+					"VALUES (@URL, @Time,@Mat1,@Mat2,@Mat3,@Mat4,@Recipe_Id);";
 
 				cmd.Parameters.Add(new SqliteParameter {
 					ParameterName = "URL",
@@ -500,6 +502,10 @@ public class database : MonoBehaviour {
 					ParameterName = "Mat4",
 					Value = Chosen_Mat[3]
 				});
+				cmd.Parameters.Add (new SqliteParameter {
+					ParameterName = "Recipe_id",
+					Value = recipe_id
+				});
 				var result = cmd.ExecuteNonQuery();
 				Debug.Log("insert URL: " + result);
 			}
@@ -510,7 +516,7 @@ public class database : MonoBehaviour {
 
 	IEnumerator upload_graph(Texture2D tex,string upload_name)
 	{
-
+		
 		yield return new WaitForEndOfFrame (); 
 
 		int width = Screen.width;
@@ -532,6 +538,7 @@ public class database : MonoBehaviour {
 			Debug.Log (w.text);
 			Debug.Log (w.url);
 		}
+
 	}
 
 
