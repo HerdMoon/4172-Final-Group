@@ -30,8 +30,8 @@ public class phoneCamera2 : MonoBehaviour {
 		nontexture = true;
 
 
-//		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
-		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
+		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
+//		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
  
 
         // Register Vuforia life-cycle callbacks:
@@ -115,6 +115,28 @@ public class phoneCamera2 : MonoBehaviour {
 	public void backToMenu(){
 //		Debug.Log ("Go to MainMenu");
 		SceneManager.LoadScene ("MainMenu");
+	}
+
+	public void submit(){
+		List<string> mats = new List<string> ();
+		if (GameObject.Find ("Image01").GetComponent<Image01Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image01").GetComponent<Image01Script> ().name);
+		}
+		if (GameObject.Find ("Image02").GetComponent<Image02Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image02").GetComponent<Image02Script> ().name);
+		}
+		if (GameObject.Find ("Image03").GetComponent<Image03Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image03").GetComponent<Image03Script> ().name);
+		}
+		if (GameObject.Find ("Image04").GetComponent<Image04Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image04").GetComponent<Image04Script> ().name);
+		}
+		if (GameObject.Find ("Image05").GetComponent<Image05Script> ().selected == true){
+			mats.Add (GameObject.Find ("Image05").GetComponent<Image05Script> ().name);
+		}
+		System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
+		int time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
+		gameObject.GetComponent<database>().Insert_Data (texture, mats, time, 1);
 	}
 
 

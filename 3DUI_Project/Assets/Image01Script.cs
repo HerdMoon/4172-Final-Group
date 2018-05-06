@@ -10,12 +10,13 @@ public class Image01Script : MonoBehaviour {
 	private Color origincolor;
 
 	public void buttonClick(){
+		Debug.Log ("On Click!");
 		if (!selected) {
-			origincolor = gameObject.GetComponent<Image> ().color;
-			gameObject.GetComponent<Image> ().color = Color.grey;
+			origincolor = gameObject.GetComponent<RawImage> ().color;
+			gameObject.GetComponent<RawImage> ().color = Color.grey;
 			selected = true;
 		} else {
-			gameObject.GetComponent<Image> ().color = origincolor;
+			gameObject.GetComponent<RawImage> ().color = origincolor;
 			selected = false;
 		}
 	}
