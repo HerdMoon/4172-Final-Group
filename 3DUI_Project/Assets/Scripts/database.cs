@@ -527,7 +527,7 @@ public class database : MonoBehaviour {
 		form.AddBinaryData("file", bytes, upload_name, "image/png");
 
 		// Upload to a cgi script
-		string screenShotURL= "http://herdmoon.org/upload_file.php";
+		string screenShotURL= "http://herdmoon.org/upload.php";
 		WWW w = new WWW(screenShotURL, form);
 		yield return w;
 		if (w.error != null){
