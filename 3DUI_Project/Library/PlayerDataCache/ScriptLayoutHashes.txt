@@ -3,6 +3,7 @@ SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/test1.unity
 Assets/Scenes/TakePhoto.unity
+Assets/Scenes/Scanning.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.phoneCamera2
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -206,6 +207,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Positionset
 1dec5e52dbfef7a79ff355870a701603 Assembly-CSharp.dll:.menuScript
 7b131b8e7ebdf69b5592a08e53b6c1b4 Assembly-CSharp.dll:.Image04Script
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HelperFunction
 847108a4f4300c8402f74cce11a88a67 Assembly-CSharp.dll:.DropMe
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
@@ -235,6 +237,7 @@ df343383b9d2e96226a204a164f3994d Assembly-CSharp.dll:.DragMe
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
+64f977a8e473cce91e8b172fee29e12c Assembly-CSharp.dll:.InitScan
 c3a7c63da12ee0ab5d27da25ab521ed7 Assembly-CSharp.dll:.Scrollpos
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -282,6 +285,7 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ApplicationManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ChangeColor
+a61f60e86e80e3653cc459920b7c022c Assembly-CSharp.dll:.RecipesButtonScript
 26215f135eeb48d8fa1189498c107f6c Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
 0561521e336e270e6e5a9c61387cb838 Vuforia.UnityExtensions.dll:Vuforia.AnchorInputListenerBehaviour
 2e0fd93f459db951da0e2e94e2e33fb7 Vuforia.UnityExtensions.dll:Vuforia.AnchorStageBehaviour

@@ -96,17 +96,27 @@ public class database : MonoBehaviour {
 			"What has been scraped off they then beat to powder and boil for a long time, and what at last subsides to the bottom of the vessel is " +
 			"ceruse.","Lead White is used to paint");
 
-		Insert_Recipe ("Silver Rose", "Our Silver Rose is not based on silver. To save money, we used wood and lead white to make it. " +
-			"First cut a wood and polish it to 6cm. Then use lead white to make a flower and add it to the wood. " +
-			"To make them blend in quickly, we could heat it or use some glue. Wait till it cools down, the very end step is to brush some " +
+		Insert_Recipe ("Silver Rose", "Our Silver Rose is not based on silver. To save money, we used wood and lead white to make it. \n" +
+			"First cut a wood and polish it to 6cm.\n Then use lead white to make a flower and add it to the wood. " +
+			"To make them blend in quickly, we could heat it or use some glue.\n Wait till it cools down, the very end step is to brush some " +
 			"lead white to the wood so we can make it look more like silver.");
 		Insert_Recipe ("Gold Tree", "Our Gold Tree is made from gold leaf. Although the gold tree sounds like a wood product, we actually did not use " +
-			"any wood in it. So first use scissors and cut gold leaf to small pieces. Then heat them up to make the color more natural. " +
-			"Next, take reference from the sheet that tell you how to fold each piece of leaf and follow the instruction. " +
+			"any wood in it. \nSo first use scissors and cut gold leaf to small pieces.\n Then heat them up to make the color more natural. \n" +
+			"Next, take reference from the sheet that tell you how to fold each piece of leaf and follow the instruction. \n" +
 			"Finally, dye some vermillion on the surface so it appears less shiny.");
+		Insert_Recipe ("medal", "First a model is shaped in wax. To make a mold, sand, clay, or even old molds are finely grounded and mixed with a liquid " +
+			"binder.\nThen, half of a box frame, or flask, is placed on a flat surface, and tightly packed with the wet sand. The wax model is pressed " +
+			"firmly into the sand. \nThe surface is dusted to prevent the two halves from sticking together. \nThe other half of the frame is packed with " +
+			"sand. \nDry the mold, remove the model. \nMelt metal and pour it into the mold. \nOnce cool, the mold is opened, revealing the cast medal. \n" +
+			"Then use the chasing process to finish the medal.");
+		Insert_Recipe ("crab", "1. Melt the refined rosin in a container.\n2. Prepare pigment: mix vermilion with walnut oil and mix them up.\n" +
+			"3. Add pigment to rosin and keep string while melting.\n4. Prepare wood pieces and dip them into the finished pigment.\n" +
+			"5. Rest them for 10 minutes to make the color will stick on wood pieces.\n6. Design your product by shaping the wood pieces with knife or scissor");
 
 		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Lead_White", "None", "None", 10000, 1);
 		Insert_Photo_By_URL ("herdmoon.org/static/f/gold_tree.jpg", "Gold_Leaf", "Vermillion", "None", "None", 20000 , 2);
+		Insert_Photo_By_URL ("herdmoon.org/static/f/medal.png", "Copper_Powder", "Vermillion", "Gold_Leaf", "Lead_White", 12000, 3);
+		Insert_Photo_By_URL ("herdmoon.org/static/f/crab.png", "Wood", "Vermillion", "None", "None", 16000, 4);
 
 //		InsertMat_Drawer_Pair ("Wood", "drawer1");
 		InsertMat_Drawer_Pair ("Wood", "drawer1");

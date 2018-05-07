@@ -5,7 +5,7 @@ using UnityEngine;
 public class UICube : MonoBehaviour {
 
 	float angle;
-	float speed = 0.50f;
+	float speed = 0.80f;
 	public float distance;
 
 	// Use this for initialization

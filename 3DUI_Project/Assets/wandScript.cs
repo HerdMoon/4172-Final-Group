@@ -153,6 +153,7 @@ public class wandScript : MonoBehaviour {
 		info.Add (name);
 		info.Add (description);
 		info.Add (url[0]);
+		Debug.Log (url[0]);
 		info.Add (url[1]);
 		info.Add ("herdmoon.org/static/f/mat/"+name+".png");
 		return info;
@@ -180,7 +181,7 @@ public class wandScript : MonoBehaviour {
 			GameObject.Find ("MatImage2").GetComponent<MatImageSc> ().url = info [7];
 		}
 		if (info [8] != "") {
-			www = new WWW (info [7]);
+			www = new WWW (info [8]);
 
 			yield return www;
 			GameObject.Find ("MatPic").GetComponent<RawImage> ().texture = www.texture;
