@@ -32,6 +32,8 @@ public class wayFinding : MonoBehaviour {
 	private bool flag1;
 	private bool flag2;
 
+	private HelperFunction helpFunctionScript;
+
 	void Start () {
 
 
@@ -42,6 +44,7 @@ public class wayFinding : MonoBehaviour {
 
 		ws = GameObject.Find ("Wand").GetComponent<WandSelection>();
 		db = GameObject.Find("ARCamera").GetComponent<database>();
+		helpFunctionScript = GameObject.Find ("ARCamera").GetComponent<HelperFunction> ();
 
 		traveling = false;
 		flag1 = true;
@@ -61,6 +64,8 @@ public class wayFinding : MonoBehaviour {
 			if (url == "")
 				exitTraveling ();
 			if (flag1) {
+				database = helpFunctionScript.GetTableFromText ();
+				printTable ();
 				startTravelBtn.SetActive (true);
 				startScanBtn.SetActive (true);
 				flag1 = false;
@@ -186,8 +191,8 @@ public class wayFinding : MonoBehaviour {
 
 	public void startTraveling() {
 		wandCube.GetComponent<wandScript> ().setRecipeinactive ();
-		if (database == null) {
-			Debug.Log ("start traveling!!!!!!!!!!!!");
+		if (database == null || database.Count != 5) {
+			Debug.Log ("start scanning!!!!!!!!!!!!");
 			GameObject.Find ("ARCamera").GetComponent<Scanning> ().ScanOn();
 			return;
 		}
@@ -221,6 +226,14 @@ public class wayFinding : MonoBehaviour {
 			Destroy((GameObject) table[pair.Key]);
 		}
 		table.Clear();
+	}
+
+	private void printTable() {
+		foreach (DictionaryEntry pair in table) {
+			string name = ((GameObject)pair.Key).name;
+			Vector3 pos = (Vector3)pair.Value;
+			Debug.Log (name + " " + pos);
+		}
 	}
 
 }
