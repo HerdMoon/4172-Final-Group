@@ -19,6 +19,7 @@ public class phoneCamera2 : MonoBehaviour {
 	private bool nontexture;
 	private GameObject successInfo;
 
+
 	// Use this for initialization
 	void Start () {
 //		Debug.Log ("Enter the take photo scene!!!!!!!!!!");
@@ -27,9 +28,13 @@ public class phoneCamera2 : MonoBehaviour {
 		buttonpanel = GameObject.Find ("ButtonPanel");
 		scroll = GameObject.Find ("OnSelectPanel");
 		successInfo = GameObject.Find ("Info");
+
 		buttonpanel.SetActive (true);
 		scroll.SetActive (false);
 		nontexture = true;
+
+//		mScroll.SetActive (false);
+
 
 //		successInfo.SetActive (false);
 
@@ -116,7 +121,7 @@ public class phoneCamera2 : MonoBehaviour {
 		scroll.SetActive (false);
 		mAccessCameraImage = true;
 	}
-
+		
 	public void backToMenu(){
 //		Debug.Log ("Go to MainMenu");
 		SceneManager.LoadScene ("MainMenu");
