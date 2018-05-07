@@ -19,6 +19,9 @@ public class phoneCamera2 : MonoBehaviour {
 	private bool nontexture;
 	private GameObject successInfo;
 
+	private int recipe = -1;
+	private string selectedRecipe = ""; 
+
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +35,7 @@ public class phoneCamera2 : MonoBehaviour {
 		buttonpanel.SetActive (true);
 		scroll.SetActive (false);
 		nontexture = true;
+
 
 //		mScroll.SetActive (false);
 
@@ -120,11 +124,25 @@ public class phoneCamera2 : MonoBehaviour {
 		buttonpanel.SetActive (true);
 		scroll.SetActive (false);
 		mAccessCameraImage = true;
+		recipe = -1;
+		selectedRecipe = "";
 	}
 		
 	public void backToMenu(){
 //		Debug.Log ("Go to MainMenu");
 		SceneManager.LoadScene ("MainMenu");
+	}
+
+
+	public void addRecipe(int num){
+		string currentRecipe = "Recipe" + num.ToString();
+		recipe = num;
+		if (currentRecipe == selectedRecipe)
+			return;
+		GameObject.Find (currentRecipe).GetComponent<RawImage> ().color = Color.grey;
+		if(selectedRecipe != "")
+			GameObject.Find (selectedRecipe).GetComponent<RawImage> ().color = Color.white;
+		selectedRecipe = currentRecipe;
 	}
 
 	public void submit(){
@@ -146,8 +164,9 @@ public class phoneCamera2 : MonoBehaviour {
 		}
 		System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
 		int time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
-		gameObject.GetComponent<database>().Insert_Data (texture, mats, time, 1);
-
+		if (mats.Count > 0 && recipe != -1) {
+			gameObject.GetComponent<database>().Insert_Data (texture, mats, time, recipe);
+		}
 			
 	}
 

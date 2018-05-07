@@ -16,10 +16,14 @@ public class MaterialsButtonScript : MonoBehaviour {
 		MatPanel.SetActive (false);
 	}
 	public void ButtonClick(){
+		if (GameObject.Find ("Recipes").GetComponent<RecipesButtonScript> ().selected) {
+			GameObject.Find ("Recipes").GetComponent<RecipesButtonScript> ().ButtonClick ();
+		}
 		if (selected == false) {
 			MatPanel.SetActive (true);
 			origincolor = gameObject.GetComponent<Image>().color;
 			gameObject.GetComponent<Image> ().color = Color.green;
+			backButton.transform.localScale = new Vector3 (1.0f, -1.0f, 1.0f);
 			backButton.SetActive (false);
 		} else {
 			MatPanel.SetActive (false);
