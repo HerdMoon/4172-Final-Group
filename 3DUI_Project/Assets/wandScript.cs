@@ -153,7 +153,7 @@ public class wandScript : MonoBehaviour {
 		info.Add (name);
 		info.Add (description);
 		info.Add (url[0]);
-		Debug.Log (url[0]);
+		Debug.Log (url[1]);
 		info.Add (url[1]);
 		info.Add ("herdmoon.org/static/f/mat/"+name+".png");
 		return info;
