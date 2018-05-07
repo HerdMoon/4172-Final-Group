@@ -18,6 +18,11 @@ public class phoneCamera2 : MonoBehaviour {
 	private Texture2D texture;
 	private bool nontexture;
 	private GameObject successInfo;
+	private GameObject Image01;
+	private GameObject Image02;
+	private GameObject Image03;
+	private GameObject Image04;
+	private GameObject Image05;
 
 	private int recipe = -1;
 	private string selectedRecipe = ""; 
@@ -25,11 +30,16 @@ public class phoneCamera2 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		Debug.Log ("Enter the take photo scene!!!!!!!!!!");
+		//		Debug.Log ("Enter the take photo scene!!!!!!!!!!");
 		background = GameObject.Find ("Background").GetComponent<RawImage>();
 		background.enabled = true;
 		buttonpanel = GameObject.Find ("ButtonPanel");
 		scroll = GameObject.Find ("OnSelectPanel");
+		Image01 = GameObject.Find ("Image01");
+		Image02 = GameObject.Find ("Image02");
+		Image03 = GameObject.Find ("Image03");
+		Image04 = GameObject.Find ("Image04");
+		Image05 = GameObject.Find ("Image05");
 		successInfo = GameObject.Find ("Info");
 
 		buttonpanel.SetActive (true);
@@ -37,20 +47,20 @@ public class phoneCamera2 : MonoBehaviour {
 		nontexture = true;
 
 
-//		mScroll.SetActive (false);
+		//		mScroll.SetActive (false);
 
 
-//		successInfo.SetActive (false);
+		//		successInfo.SetActive (false);
 
 
 		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
-//		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
- 
+		//		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
 
-        // Register Vuforia life-cycle callbacks:
-        VuforiaARController.Instance.RegisterVuforiaStartedCallback(OnVuforiaStarted);
-        VuforiaARController.Instance.RegisterTrackablesUpdatedCallback(OnTrackablesUpdated);
-        VuforiaARController.Instance.RegisterOnPauseCallback(OnPause);
+
+		// Register Vuforia life-cycle callbacks:
+		VuforiaARController.Instance.RegisterVuforiaStartedCallback(OnVuforiaStarted);
+		VuforiaARController.Instance.RegisterTrackablesUpdatedCallback(OnTrackablesUpdated);
+		VuforiaARController.Instance.RegisterOnPauseCallback(OnPause);
 	}
 
 	void OnVuforiaStarted()
@@ -59,7 +69,7 @@ public class phoneCamera2 : MonoBehaviour {
 		CameraDevice.Instance.SetFrameFormat(mPixelFormat, false);
 		if (CameraDevice.Instance.SetFrameFormat(mPixelFormat, true))
 		{
-//			CameraDevice.Instance.Start ();
+			//			CameraDevice.Instance.Start ();
 
 			Debug.Log("Successfully registered pixel format " + mPixelFormat.ToString());
 
@@ -80,7 +90,7 @@ public class phoneCamera2 : MonoBehaviour {
 
 	void OnTrackablesUpdated()
 	{
-		
+
 	}
 
 	void Update(){
@@ -95,12 +105,12 @@ public class phoneCamera2 : MonoBehaviour {
 						texture = new Texture2D (image.Width, image.Height);
 						nontexture = false;
 					}
-//					Debug.Log (image.Pixels[50]);   
+					//					Debug.Log (image.Pixels[50]);   
 					image.CopyToTexture (texture);
 					texture.Apply ();
 					if (background != null) {
-//						Debug.Log (texture.GetPixel(30, 30));
-//						Debug.Log ("NOT NULL BACKGROUND");
+						//						Debug.Log (texture.GetPixel(30, 30));
+						//						Debug.Log ("NOT NULL BACKGROUND");
 						background.texture = texture;
 						background.transform.localScale = new Vector3 (1f, -1f, 1f);
 					}
@@ -118,7 +128,7 @@ public class phoneCamera2 : MonoBehaviour {
 		mAccessCameraImage = false;
 
 	}
-		
+
 
 	public void endTaking(){
 		buttonpanel.SetActive (true);
@@ -127,9 +137,9 @@ public class phoneCamera2 : MonoBehaviour {
 		recipe = -1;
 		selectedRecipe = "";
 	}
-		
+
 	public void backToMenu(){
-//		Debug.Log ("Go to MainMenu");
+		//		Debug.Log ("Go to MainMenu");
 		SceneManager.LoadScene ("MainMenu");
 	}
 
@@ -147,27 +157,27 @@ public class phoneCamera2 : MonoBehaviour {
 
 	public void submit(){
 		List<string> mats = new List<string> ();
-		if (GameObject.Find ("Image01").GetComponent<Image01Script> ().selected == true){
-			mats.Add (GameObject.Find ("Image01").GetComponent<Image01Script> ().name);
+		if (Image01.GetComponent<Image01Script> ().selected == true){
+			mats.Add (Image01.GetComponent<Image01Script> ().name);
 		}
-		if (GameObject.Find ("Image02").GetComponent<Image02Script> ().selected == true){
-			mats.Add (GameObject.Find ("Image02").GetComponent<Image02Script> ().name);
+		if (Image02.GetComponent<Image02Script> ().selected == true){
+			mats.Add (Image02.GetComponent<Image02Script> ().name);
 		}
-		if (GameObject.Find ("Image03").GetComponent<Image03Script> ().selected == true){
-			mats.Add (GameObject.Find ("Image03").GetComponent<Image03Script> ().name);
+		if (Image03.GetComponent<Image03Script> ().selected == true){
+			mats.Add (Image03.GetComponent<Image03Script> ().name);
 		}
-		if (GameObject.Find ("Image04").GetComponent<Image04Script> ().selected == true){
-			mats.Add (GameObject.Find ("Image04").GetComponent<Image04Script> ().name);
+		if (Image04.GetComponent<Image04Script> ().selected == true){
+			mats.Add (Image04.GetComponent<Image04Script> ().name);
 		}
-		if (GameObject.Find ("Image05").GetComponent<Image05Script> ().selected == true){
-			mats.Add (GameObject.Find ("Image05").GetComponent<Image05Script> ().name);
+		if (Image05.GetComponent<Image05Script> ().selected == true){
+			mats.Add (Image05.GetComponent<Image05Script> ().name);
 		}
 		System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
 		int time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 		if (mats.Count > 0 && recipe != -1) {
 			gameObject.GetComponent<database>().Insert_Data (texture, mats, time, recipe);
 		}
-			
+
 	}
 
 
