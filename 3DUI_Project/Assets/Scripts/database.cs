@@ -17,7 +17,7 @@ public class database : MonoBehaviour {
 		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
 		try 
 		{
-			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag1.txt");
+			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag2.txt");
 			string input = null;
 			Debug.Log("Exist!");
 			while ((input = sr.ReadLine())!=null)
@@ -27,7 +27,7 @@ public class database : MonoBehaviour {
 		}
 		catch (FileNotFoundException) {
 			InitDatabase ();
-			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag1.txt", false);
+			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag2.txt", false);
 			sw.WriteLine ("Exist");
 			Debug.Log ("None init!");
 			sw.Close ();
@@ -540,54 +540,15 @@ public class database : MonoBehaviour {
 			Chosen_Mat.Add ("None");
 		}
 
-		//string upload_URL = "herdmoon.org/upload/" + file_name;
-		string upload_URL = "herdmoon.org/static/f/silver_rose.png";
+		string upload_URL = "herdmoon.org/upload/" + file_name;
+		//string upload_URL = "herdmoon.org/static/f/silver_rose.png";
 
-		using (var conn = new SqliteConnection(dbPath)) {
-			conn.Open();
-			using (var cmd = conn.CreateCommand()) {
-				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = "INSERT INTO Pic_Info (URL,Time_Stamp,Mat1,Mat2,Mat3,Mat4,Recipe_id) " +
-					"VALUES (@URL, @Time,@Mat1,@Mat2,@Mat3,@Mat4,@Recipe_Id);";
 
-				cmd.Parameters.Add(new SqliteParameter {
-					ParameterName = "URL",
-					Value = upload_URL
-				});
-
-				cmd.Parameters.Add(new SqliteParameter {
-					ParameterName = "Time",
-					Value = time_stamp
-				});
-				cmd.Parameters.Add (new SqliteParameter {
-					ParameterName = "Mat1",
-					Value = Chosen_Mat[0]
-				});
-				cmd.Parameters.Add (new SqliteParameter {
-					ParameterName = "Mat2",
-					Value = Chosen_Mat[1]
-				});
-				cmd.Parameters.Add (new SqliteParameter {
-					ParameterName = "Mat3",
-					Value = Chosen_Mat[2]
-				});
-				cmd.Parameters.Add (new SqliteParameter {
-					ParameterName = "Mat4",
-					Value = Chosen_Mat[3]
-				});
-				cmd.Parameters.Add (new SqliteParameter {
-					ParameterName = "Recipe_id",
-					Value = recipe_id
-				});
-				var result = cmd.ExecuteNonQuery();
-				Debug.Log("insert URL: " + result);
-			}
-		}
-		StartCoroutine (upload_graph (Saved_Img, file_name));
+		StartCoroutine (upload_graph (Saved_Img, file_name , upload_URL,time_stamp,Chosen_Mat,recipe_id));
 	
 	}
 
-	IEnumerator upload_graph(Texture2D tex,string upload_name)
+	IEnumerator upload_graph(Texture2D tex,string upload_name,string upload_URL,int time_stamp,List<string> Chosen_Mat,int recipe_id)
 	{
 		
 		yield return new WaitForEndOfFrame (); 
@@ -615,8 +576,53 @@ public class database : MonoBehaviour {
 			if (find_string >= 0) {
 				GameObject.Find ("Info").GetComponent<Text>().text = "Submit Successfully!";
 				GameObject.Find("Info").GetComponent<Text>().enabled =  true;
+
+				using (var conn = new SqliteConnection(dbPath)) {
+					conn.Open();
+					using (var cmd = conn.CreateCommand()) {
+						cmd.CommandType = CommandType.Text;
+						cmd.CommandText = "INSERT INTO Pic_Info (URL,Time_Stamp,Mat1,Mat2,Mat3,Mat4,Recipe_id) " +
+							"VALUES (@URL, @Time,@Mat1,@Mat2,@Mat3,@Mat4,@Recipe_Id);";
+
+						cmd.Parameters.Add(new SqliteParameter {
+							ParameterName = "URL",
+							Value = upload_URL
+						});
+
+						cmd.Parameters.Add(new SqliteParameter {
+							ParameterName = "Time",
+							Value = time_stamp
+						});
+						cmd.Parameters.Add (new SqliteParameter {
+							ParameterName = "Mat1",
+							Value = Chosen_Mat[0]
+						});
+						cmd.Parameters.Add (new SqliteParameter {
+							ParameterName = "Mat2",
+							Value = Chosen_Mat[1]
+						});
+						cmd.Parameters.Add (new SqliteParameter {
+							ParameterName = "Mat3",
+							Value = Chosen_Mat[2]
+						});
+						cmd.Parameters.Add (new SqliteParameter {
+							ParameterName = "Mat4",
+							Value = Chosen_Mat[3]
+						});
+						cmd.Parameters.Add (new SqliteParameter {
+							ParameterName = "Recipe_id",
+							Value = recipe_id
+						});
+						var result = cmd.ExecuteNonQuery();
+						Debug.Log("insert URL: " + result);
+					}
+				}
+
+
+
 			} else {
 				GameObject.Find ("Info").GetComponent<Text>().text = "Submit Failed!";
+				GameObject.Find ("Info").GetComponent<Text> ().text += "\n" + w.text;
 				GameObject.Find ("Info").GetComponent<Text> ().enabled = true;
 
 			}
