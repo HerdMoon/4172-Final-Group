@@ -185,6 +185,7 @@ public class wayFinding : MonoBehaviour {
 	}
 
 	public void startTraveling() {
+		wandCube.GetComponent<wandScript> ().setRecipeinactive ();
 		if (database == null) {
 			Debug.Log ("start traveling!!!!!!!!!!!!");
 			GameObject.Find ("ARCamera").GetComponent<Scanning> ().ScanOn();

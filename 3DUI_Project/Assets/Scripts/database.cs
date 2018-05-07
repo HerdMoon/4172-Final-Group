@@ -14,13 +14,30 @@ public class database : MonoBehaviour {
 
 
 	private void Start() {
-		InitDatabase ();
+		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
+		try 
+		{
+			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag.txt");
+			string input = null;
+			Debug.Log("Exist!");
+			while ((input = sr.ReadLine())!=null)
+			{
+			}
+			sr.Close();
+		}
+		catch (FileNotFoundException) {
+			InitDatabase ();
+			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag.txt", false);
+			sw.WriteLine ("Exist");
+			Debug.Log ("None init!");
+			sw.Close ();
+		}
 	}
 
 
 
 	public void InitDatabase() {
-		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
+
 		using (var conn = new SqliteConnection (dbPath)) {
 			conn.Open ();
 			Debug.Log (Application.persistentDataPath);
