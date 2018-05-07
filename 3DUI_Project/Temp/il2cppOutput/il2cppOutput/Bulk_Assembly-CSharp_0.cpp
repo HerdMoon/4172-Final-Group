@@ -554,7 +554,7 @@ extern RuntimeClass* FileNotFoundException_t225391025_il2cpp_TypeInfo_var;
 extern RuntimeClass* StreamWriter_t1266378904_il2cpp_TypeInfo_var;
 extern String_t* _stringLiteral1604535310;
 extern String_t* _stringLiteral3394506779;
-extern String_t* _stringLiteral1223761705;
+extern String_t* _stringLiteral1222254377;
 extern String_t* _stringLiteral40502962;
 extern String_t* _stringLiteral38340274;
 extern String_t* _stringLiteral1039373709;
@@ -693,8 +693,7 @@ extern String_t* _stringLiteral370170837;
 extern String_t* _stringLiteral1387316804;
 extern String_t* _stringLiteral3182178309;
 extern String_t* _stringLiteral4250630373;
-extern String_t* _stringLiteral2997839759;
-extern String_t* _stringLiteral3452614566;
+extern String_t* _stringLiteral1024747681;
 extern const uint32_t U3Cupload_graphU3Ec__Iterator0_MoveNext_m196589103_MetadataUsageId;
 extern RuntimeClass* NotSupportedException_t1314879016_il2cpp_TypeInfo_var;
 extern const uint32_t U3Cupload_graphU3Ec__Iterator0_Reset_m602822813_MetadataUsageId;
@@ -14252,7 +14251,7 @@ IL_001a:
 		{
 			String_t* L_2 = Application_get_persistentDataPath_m1428108154(NULL /*static, unused*/, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-			String_t* L_3 = String_Concat_m3937257545(NULL /*static, unused*/, L_2, _stringLiteral1223761705, /*hidden argument*/NULL);
+			String_t* L_3 = String_Concat_m3937257545(NULL /*static, unused*/, L_2, _stringLiteral1222254377, /*hidden argument*/NULL);
 			StreamReader_t4009935899 * L_4 = File_OpenText_m196858847(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 			V_0 = L_4;
 			V_1 = (String_t*)NULL;
@@ -14295,7 +14294,7 @@ CATCH_0058:
 		database_InitDatabase_m236474145(__this, /*hidden argument*/NULL);
 		String_t* L_9 = Application_get_persistentDataPath_m1428108154(NULL /*static, unused*/, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_10 = String_Concat_m3937257545(NULL /*static, unused*/, L_9, _stringLiteral1223761705, /*hidden argument*/NULL);
+		String_t* L_10 = String_Concat_m3937257545(NULL /*static, unused*/, L_9, _stringLiteral1222254377, /*hidden argument*/NULL);
 		StreamWriter_t1266378904 * L_11 = (StreamWriter_t1266378904 *)il2cpp_codegen_object_new(StreamWriter_t1266378904_il2cpp_TypeInfo_var);
 		StreamWriter__ctor_m587286950(L_11, L_10, (bool)0, /*hidden argument*/NULL);
 		V_2 = L_11;
@@ -17416,7 +17415,7 @@ extern "C"  bool U3Cupload_graphU3Ec__Iterator0_MoveNext_m196589103 (U3Cupload_g
 		}
 	}
 	{
-		goto IL_0410;
+		goto IL_040b;
 	}
 
 IL_0025:
@@ -17436,7 +17435,7 @@ IL_0025:
 
 IL_003f:
 	{
-		goto IL_0412;
+		goto IL_040d;
 	}
 
 IL_0044:
@@ -17492,7 +17491,7 @@ IL_0044:
 
 IL_0125:
 	{
-		goto IL_0412;
+		goto IL_040d;
 	}
 
 IL_012a:
@@ -17511,7 +17510,7 @@ IL_012a:
 		String_t* L_27 = WWW_get_error_m3055313367(L_26, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
 		Debug_Log_m4051431634(NULL /*static, unused*/, L_27, /*hidden argument*/NULL);
-		goto IL_0409;
+		goto IL_0404;
 	}
 
 IL_014f:
@@ -17787,7 +17786,7 @@ IL_0396:
 
 IL_0397:
 	{
-		goto IL_03f9;
+		goto IL_03f4;
 	}
 
 IL_039c:
@@ -17796,7 +17795,7 @@ IL_039c:
 		NullCheck(L_113);
 		Text_t1901882714 * L_114 = GameObject_GetComponent_TisText_t1901882714_m2114913816(L_113, /*hidden argument*/GameObject_GetComponent_TisText_t1901882714_m2114913816_RuntimeMethod_var);
 		NullCheck(L_114);
-		VirtActionInvoker1< String_t* >::Invoke(72 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_114, _stringLiteral2997839759);
+		VirtActionInvoker1< String_t* >::Invoke(72 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_114, _stringLiteral1024747681);
 		GameObject_t1113636619 * L_115 = GameObject_Find_m2032535176(NULL /*static, unused*/, _stringLiteral79379, /*hidden argument*/NULL);
 		NullCheck(L_115);
 		Text_t1901882714 * L_116 = GameObject_GetComponent_TisText_t1901882714_m2114913816(L_115, /*hidden argument*/GameObject_GetComponent_TisText_t1901882714_m2114913816_RuntimeMethod_var);
@@ -17807,7 +17806,7 @@ IL_039c:
 		NullCheck(L_119);
 		String_t* L_120 = WWW_get_text_m898164367(L_119, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_121 = String_Concat_m3755062657(NULL /*static, unused*/, L_118, _stringLiteral3452614566, L_120, /*hidden argument*/NULL);
+		String_t* L_121 = String_Concat_m3937257545(NULL /*static, unused*/, L_118, L_120, /*hidden argument*/NULL);
 		NullCheck(L_117);
 		VirtActionInvoker1< String_t* >::Invoke(72 /* System.Void UnityEngine.UI.Text::set_text(System.String) */, L_117, L_121);
 		GameObject_t1113636619 * L_122 = GameObject_Find_m2032535176(NULL /*static, unused*/, _stringLiteral79379, /*hidden argument*/NULL);
@@ -17817,7 +17816,7 @@ IL_039c:
 		Behaviour_set_enabled_m20417929(L_123, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_03f9:
+IL_03f4:
 	{
 		WWW_t3688466362 * L_124 = __this->get_U3CwU3E__0_7();
 		NullCheck(L_124);
@@ -17826,17 +17825,17 @@ IL_03f9:
 		Debug_Log_m4051431634(NULL /*static, unused*/, L_125, /*hidden argument*/NULL);
 	}
 
-IL_0409:
+IL_0404:
 	{
 		__this->set_U24PC_15((-1));
 	}
 
-IL_0410:
+IL_040b:
 	{
 		return (bool)0;
 	}
 
-IL_0412:
+IL_040d:
 	{
 		return (bool)1;
 	}

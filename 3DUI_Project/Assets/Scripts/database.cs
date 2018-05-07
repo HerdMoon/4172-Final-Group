@@ -17,7 +17,7 @@ public class database : MonoBehaviour {
 		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
 		try 
 		{
-			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag2.txt");
+			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag3.txt");
 			string input = null;
 			Debug.Log("Exist!");
 			while ((input = sr.ReadLine())!=null)
@@ -27,7 +27,7 @@ public class database : MonoBehaviour {
 		}
 		catch (FileNotFoundException) {
 			InitDatabase ();
-			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag2.txt", false);
+			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag3.txt", false);
 			sw.WriteLine ("Exist");
 			Debug.Log ("None init!");
 			sw.Close ();
@@ -45,25 +45,25 @@ public class database : MonoBehaviour {
 				cmd.CommandType = CommandType.Text;
 				cmd.CommandText = "DROP TABLE if exists Mat_Info";
 				var result = cmd.ExecuteNonQuery ();
-				Debug.Log ("drop table: " + result);			
+				Debug.Log ("drop table: " + result);      
 			}
 			using (var cmd = conn.CreateCommand ()) {
 				cmd.CommandType = CommandType.Text;
 				cmd.CommandText = "DROP TABLE if exists Pic_Info";
 				var result = cmd.ExecuteNonQuery ();
-				Debug.Log ("drop table: " + result);			
+				Debug.Log ("drop table: " + result);      
 			}
 			using (var cmd = conn.CreateCommand ()) {
 				cmd.CommandType = CommandType.Text;
 				cmd.CommandText = "DROP TABLE if exists Mat_Drawer_Table";
 				var result = cmd.ExecuteNonQuery ();
-				Debug.Log ("drop table: " + result);			
+				Debug.Log ("drop table: " + result);      
 			}
 			using (var cmd = conn.CreateCommand ()) {
 				cmd.CommandType = CommandType.Text;
 				cmd.CommandText = "DROP TABLE if exists Recipe_Dic";
 				var result = cmd.ExecuteNonQuery ();
-				Debug.Log ("drop table: " + result);			
+				Debug.Log ("drop table: " + result);      
 			}
 		}
 
@@ -118,7 +118,7 @@ public class database : MonoBehaviour {
 		Insert_Photo_By_URL ("herdmoon.org/static/f/medal.png", "Copper_Powder", "Vermillion", "Gold_Leaf", "Lead_White", 12000, 3);
 		Insert_Photo_By_URL ("herdmoon.org/static/f/crab.png", "Wood", "Vermillion", "None", "None", 16000, 4);
 
-//		InsertMat_Drawer_Pair ("Wood", "drawer1");
+		//    InsertMat_Drawer_Pair ("Wood", "drawer1");
 		InsertMat_Drawer_Pair ("Wood", "drawer1");
 		InsertMat_Drawer_Pair ("Copper_Powder", "drawer2");
 		InsertMat_Drawer_Pair ("Lead_White", "drawer3");
@@ -188,7 +188,7 @@ public class database : MonoBehaviour {
 					");";
 
 				var result = cmd.ExecuteNonQuery();
-				Debug.Log("create schema: " + result);			
+				Debug.Log("create schema: " + result);      
 			}
 
 			using (var cmd = conn.CreateCommand ()) {
@@ -200,7 +200,7 @@ public class database : MonoBehaviour {
 					");";
 
 				var result = cmd.ExecuteNonQuery();
-				Debug.Log("create schema: " + result);			
+				Debug.Log("create schema: " + result);      
 			}
 
 			using (var cmd = conn.CreateCommand ()) {
@@ -212,7 +212,7 @@ public class database : MonoBehaviour {
 					");";
 
 				var result = cmd.ExecuteNonQuery();
-				Debug.Log("create schema: " + result);			
+				Debug.Log("create schema: " + result);      
 			}
 		}
 	}
@@ -258,7 +258,7 @@ public class database : MonoBehaviour {
 				var result = cmd.ExecuteNonQuery();
 				Debug.Log("insert URL: " + result);
 			}
-		}		
+		}   
 	}
 
 
@@ -293,7 +293,7 @@ public class database : MonoBehaviour {
 				var result = cmd.ExecuteNonQuery();
 				Debug.Log("insert mat: " + mat_name);
 			}
-		}		
+		}   
 	}
 
 	public void InsertMat_Drawer_Pair(string mat_name,string drawer_name)
@@ -317,7 +317,7 @@ public class database : MonoBehaviour {
 				var result = cmd.ExecuteNonQuery();
 				Debug.Log("insert pair: " + result);
 			}
-		}				
+		}       
 	}
 
 
@@ -342,7 +342,7 @@ public class database : MonoBehaviour {
 				}
 				Debug.Log("Mat_Name_Search (end)");
 			}
-		}		
+		}   
 	}
 
 	public void Lookup_Mat(string mat_name,ref string drawer_name)
@@ -366,7 +366,7 @@ public class database : MonoBehaviour {
 				}
 				Debug.Log("Drawer_Name_Search (end)");
 			}
-		}			
+		}     
 	}
 
 	public void Lookup_URL(string URL,ref List<string> Mat_List ,ref string Recipe_Name,ref string Recipe_Content)
@@ -418,7 +418,7 @@ public class database : MonoBehaviour {
 
 
 			}
-		}		
+		}   
 	}
 
 
@@ -454,7 +454,7 @@ public class database : MonoBehaviour {
 				}
 				Debug.Log("Mat_Search (end)");
 			}
-		}		
+		}   
 	}
 
 	public void Get_Image_URL(string Mat_name, ref List<string> URL_List)
@@ -507,7 +507,7 @@ public class database : MonoBehaviour {
 				var result = cmd.ExecuteNonQuery();
 				Debug.Log("insert recipe: " + recipe_name);
 			}
-		}			
+		}     
 	}
 
 	public void Get_All_Recipe_Name(ref List <string> recipe_name,ref List <int> recipe_id)
@@ -530,7 +530,7 @@ public class database : MonoBehaviour {
 				}
 				Debug.Log("Recipe_Show (end)" + count.ToString());
 			}
-		}		
+		}   
 	}
 
 	public void Insert_Data(Texture2D Saved_Img,List<string> Chosen_Mat,int time_stamp,int recipe_id)
@@ -545,12 +545,12 @@ public class database : MonoBehaviour {
 
 
 		StartCoroutine (upload_graph (Saved_Img, file_name , upload_URL,time_stamp,Chosen_Mat,recipe_id));
-	
+
 	}
 
 	IEnumerator upload_graph(Texture2D tex,string upload_name,string upload_URL,int time_stamp,List<string> Chosen_Mat,int recipe_id)
 	{
-		
+
 		yield return new WaitForEndOfFrame (); 
 
 		int width = Screen.width;
@@ -621,8 +621,8 @@ public class database : MonoBehaviour {
 
 
 			} else {
-				GameObject.Find ("Info").GetComponent<Text>().text = "Submit Failed!";
-				GameObject.Find ("Info").GetComponent<Text> ().text += "\n" + w.text;
+				GameObject.Find ("Info").GetComponent<Text>().text = "Submit Failed!!";
+				GameObject.Find ("Info").GetComponent<Text> ().text += w.text;
 				GameObject.Find ("Info").GetComponent<Text> ().enabled = true;
 
 			}
