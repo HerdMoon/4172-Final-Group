@@ -69,23 +69,49 @@ public class database : MonoBehaviour {
 
 		CreateSchema ();
 
-		InsertMat_Info ("Wood", 0, "Wood is an usual Material.","Wood Note");
-		Debug.Log ("Insert here!");
-		InsertMat_Info ("Iron", 0, "Iron is a kind of metal.","2 Note");
-		InsertMat_Info ("Silver Pigment", 1, "Silver Pigment made from lead,poison.","2 Note");
-		InsertMat_Info ("Yellow Pigment", 0, "Yellow Pigment made from oil,not poison.","3 Note");
+		InsertMat_Info ("Wood", 0,"Wood is a porous and fibrous structural tissue found in the stems " +
+			"and roots of trees and other woody plants. It is an organic material, a natural composite of cellulose fibers that are " +
+			"strong in tension and embedded in a matrix of lignin that resists compression. " +
+			"Wood is sometimes defined as only the secondary xylem in the stems of trees.", "Wood is an usual Material.");
+		InsertMat_Info ("Copper_Powder", 0, "This is a fine grade of 325 mesh the correct fineness " +
+			"for cold casting. Copper or other metallic powder is added to polyester resin, polyurethane resin," +
+			" epoxy, gypsum cement or other binders. Small objects are cast and cured in suitable molds. " +
+			"To conserve metal when casting large pieces you can dust (salt) the mold surface, brush a thin " +
+			"coating on the surface, spread or roll the metal on or spray a thin coating. The mold is then back " +
+			"filled with resin or fiberglass, iron or steel shot, sand or calcium carbonate to increase the weight to " +
+			"give it the heft and feel of a hot foundry ‘pour.’", "Copper Powder is copper and powder");
+		InsertMat_Info ("Gold_Leaf", 0, "Size: approx. 5.5 x 5.5 inch/ 14 x 14 cm.\nMaterial: copper\nColor: gold\nQuantity: 200 sheets\n" +
+			"Notes:\nDue to the light and screen difference, the item's color may be slightly different from the pictures, thanks for " +
+			"understanding.\nTo use gold leaf: Avoid touching gold leaf with your hands or fingers as it will stick. Do not breath directly on " +
+			"gold leaf, it will blow away or wrinkle. Using a pair of knife, tweezers, or razor, cut away the portion of gold sheet that you " +
+			"wish to use. Pick up the piece of gold using just the tip of your knife or tool and gently touch the item you are applying the " +
+			"gold leaf to. It should stick as it applies very easily to surfaces.","Gold Leaf is paper with golden color");
+		InsertMat_Info ("Vermillion", 1, "Chemical name: Mercuric sulfide; HgS Common name: Vermilion Formula: HgS (C.I. 77766) CAS no.: 1344-48-5 " +
+			"Chemical family: C.I. Pigment Red 106 Physical properties: Appearance: yellowish red, very fine, odorless powder, without " +
+			"crystallines Molecular weight: 232.68 Theoretical content: 86.22 % Hg Solubility: soluble in a mixture of HCl / HNO3, under " +
+			"separation of sulphur Specifications: Humidity: 0.5 % max. Oil absorption: 7 - 12 % Remainder through 300 mesh: 1.5 % max. ","Vermillion is a type of red powder");
+		InsertMat_Info ("Lead_White", 0, "Lead is placed in earthen vessels over sharp vinegar, and after it has acquired some thickness of a " +
+			"sort of rust, which it commonly does in about ten days, they open the vessels and scrape it off, as it were, in a sort of foulness; " +
+			"they then place the lead over vinegar again, repeating over and over again the same method of scraping it till it has wholly dissolved. " +
+			"What has been scraped off they then beat to powder and boil for a long time, and what at last subsides to the bottom of the vessel is " +
+			"ceruse.","Lead White is used to paint");
 
 		Insert_Recipe ("Silver Rose", "Our Silver Rose is not based on silver. To save money, we used wood and lead white to make it. " +
-			"First cut ");
-		Insert_Recipe ("Chair", "Chair is made from woods definitely.");
+			"First cut a wood and polish it to 6cm. Then use lead white to make a flower and add it to the wood. " +
+			"To make them blend in quickly, we could heat it or use some glue. Wait till it cools down, the very end step is to brush some " +
+			"lead white to the wood so we can make it look more like silver.");
+		Insert_Recipe ("Gold Tree", "Our Gold Tree is made from gold leaf. Although the gold tree sounds like a wood product, we actually did not use " +
+			"any wood in it. So first use scissors and cut gold leaf to small pieces. Then heat them up to make the color more natural. " +
+			"Next, take reference from the sheet that tell you how to fold each piece of leaf and follow the instruction. " +
+			"Finally, dye some vermillion on the surface so it appears less shiny.");
 
-		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Silver Pigment", "None", "None", 10000, 1);
-		Insert_Photo_By_URL ("herdmoon.org/static/f/chair.jpg", "Wood", "Iron", "Yellow Pigment", "None", 20000 , 2);
+		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Lead_White", "None", "None", 10000, 1);
+		Insert_Photo_By_URL ("herdmoon.org/static/f/gold_tree.jpg", "Gold_Leaf", "Vermillion", "None", "None", 20000 , 2);
 
 //		InsertMat_Drawer_Pair ("Wood", "drawer1");
 		InsertMat_Drawer_Pair ("Wood", "drawer1");
 		InsertMat_Drawer_Pair ("Copper_Powder", "drawer2");
-		InsertMat_Drawer_Pair ("Ochre", "drawer3");
+		InsertMat_Drawer_Pair ("Lead_White", "drawer3");
 		InsertMat_Drawer_Pair ("Gold_Leaf", "drawer5");
 		InsertMat_Drawer_Pair ("Vermillion", "drawer6");
 
