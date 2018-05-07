@@ -10,7 +10,7 @@ public class wandScript : MonoBehaviour {
 	public bool signal;     //listen to the signal from radial progress bar, finishes = true
 
 	public string nameCol;
-	GameObject canv1, canv2, canv3, canv4, UIcube, progress;
+	GameObject canv1, canv2, canv3, canv4, canvr, UIcube, progress;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +19,7 @@ public class wandScript : MonoBehaviour {
 		canv2 = GameObject.Find("Canvas2");
 		canv3 = GameObject.Find ("Canvas3");
 		canv4 = GameObject.Find("Canvas4");
+		canvr = GameObject.Find ("Canvas_Recipe");
 		UIcube = GameObject.Find ("UICube");
 		signal = false;
 
@@ -32,30 +33,35 @@ public class wandScript : MonoBehaviour {
 			switch (nameCol) {
 			case "drawer1":
 				setactive ();
+				setRecipeinactive ();
 				info = getinfo ("drawer1");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 1;
 				break;
 			case "drawer2":
 				setactive ();
+				setRecipeinactive ();
 				info = getinfo ("drawer2");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 2;
 				break;
 			case "drawer3":
 				setactive ();
+				setRecipeinactive ();
 				info = getinfo ("drawer3");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 3;
 				break;
 			case "drawer5":
 				setactive ();
+				setRecipeinactive ();
 				info = getinfo ("drawer5");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 5;
 				break;
 			case "drawer6":
 				setactive ();
+				setRecipeinactive ();
 				info = getinfo ("drawer6");
 				StartCoroutine(infoprocess (info));
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 6;
@@ -63,8 +69,16 @@ public class wandScript : MonoBehaviour {
 			case "MatImage1":
 				//send url to travel scripts
 //				Debug.Log ("aaaaaaaaaaaaa " + GameObject.Find ("MatImage1"));
+				string url1; 
 				try {
-					GameObject.Find ("ARCamera").GetComponent<wayFinding> ().url = GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url;
+					url1 = GameObject.Find ("MatImage1").GetComponent<MatImageSc> ().url;
+					GameObject.Find ("ARCamera").GetComponent<wayFinding> ().url = url1;
+					setRecipeactive ();
+					List<string> mat_list1 = new List<string> ();
+					string recipe_name1 = "";
+					string recipe1 = "";
+					GameObject.Find ("ARCamera").GetComponent<database> ().Lookup_URL (url1, ref mat_list1, ref recipe_name1, ref recipe1);
+					GameObject.Find ("Recipe").GetComponent<Text>().text = recipe1;
 				} catch (NullReferenceException e) {
 					break;
 				}
@@ -72,16 +86,25 @@ public class wandScript : MonoBehaviour {
 				setinactive ();
 				break;
 			case "MatImage2":
+				string url2; 
 				try {
-					GameObject.Find("ARCamera").GetComponent<wayFinding>().url = GameObject.Find("MatImage2").GetComponent<MatImageSc>().url;
+					url2 = GameObject.Find ("MatImage2").GetComponent<MatImageSc> ().url;
+					GameObject.Find ("ARCamera").GetComponent<wayFinding> ().url = url2;
+					setRecipeactive ();
+					List<string> mat_list2 = new List<string> ();
+					string recipe_name2 = "";
+					string recipe2 = "";
+					GameObject.Find ("ARCamera").GetComponent<database> ().Lookup_URL (url2, ref mat_list2, ref recipe_name2, ref recipe2);
+					GameObject.Find ("Recipe").GetComponent<Text>().text = recipe2;
 				} catch (NullReferenceException e) {
 					break;
 				}
-				GameObject.Find ("Wand").GetComponent<WandSelection>().isTravel = true;
+				GameObject.Find ("Wand").GetComponent<WandSelection> ().isTravel = true;
 				setinactive ();
 				break;
 			case "drawer4":
 				setinactive ();
+				setRecipeinactive ();
 				GameObject.Find ("Wand").GetComponent<WandSelection> ().state = 0;
 				break;
 			}
@@ -180,5 +203,13 @@ public class wandScript : MonoBehaviour {
 		canv3.SetActive (false);
 		canv4.SetActive (false);
 		UIcube.SetActive (false);
+	}
+
+	public void setRecipeactive() {
+		canvr.SetActive (true);
+	}
+
+	public void setRecipeinactive() {
+		canvr.SetActive (false);
 	}
 }

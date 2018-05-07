@@ -58,7 +58,8 @@ public class database : MonoBehaviour {
 		InsertMat_Info ("Silver Pigment", 1, "Silver Pigment made from lead,poison.","2 Note");
 		InsertMat_Info ("Yellow Pigment", 0, "Yellow Pigment made from oil,not poison.","3 Note");
 
-		Insert_Recipe ("Silver Rose", "Silver Rose is made by God7");
+		Insert_Recipe ("Silver Rose", "Our Silver Rose is not based on silver. To save money, we used wood and lead white to make it. " +
+			"First cut ");
 		Insert_Recipe ("Chair", "Chair is made from woods definitely.");
 
 		Insert_Photo_By_URL ("herdmoon.org/static/f/silver_rose.png", "Wood", "Silver Pigment", "None", "None", 10000, 1);

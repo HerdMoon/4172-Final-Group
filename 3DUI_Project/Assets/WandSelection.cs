@@ -9,7 +9,7 @@ public class WandSelection : MonoBehaviour {
 
 	public bool isTravel = false;
 
-	GameObject canv1, canv2, canv3, canv4, UIcube, drawer1, drawer2, drawer3, drawer5, drawer6;
+	GameObject canv1, canv2, canv3, canv4, canvr, UIcube, drawer1, drawer2, drawer3, drawer5, drawer6;
 
 	// Use this for initialization
 	void Start () {
@@ -17,13 +17,14 @@ public class WandSelection : MonoBehaviour {
 		canv2 = GameObject.Find("Canvas2");
 		canv3 = GameObject.Find ("Canvas3");
 		canv4 = GameObject.Find("Canvas4");
+		canvr = GameObject.Find ("Canvas_Recipe");
 		UIcube = GameObject.Find ("UICube");
 //		canv1.SetActive (false);
-		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Wood", "drawer1");
-		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Copper_Powder", "drawer2");
-		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Ochre", "drawer3");
-		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Gold_Leaf", "drawer4");
-		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Vermillion", "drawer5");
+//		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Wood", "drawer1");
+//		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Copper_Powder", "drawer2");
+//		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Ochre", "drawer3");
+//		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Gold_Leaf", "drawer4");
+//		GameObject.Find("ARCamera").GetComponent<database>().InsertMat_Drawer_Pair ("Vermillion", "drawer5");
 	}
 	
 	// Update is called once per frame
@@ -108,7 +109,7 @@ public class WandSelection : MonoBehaviour {
 				break;
 			default:
 				setinactive ();
-
+				canvr.SetActive (false);
 				if (drawer1.GetComponent<Renderer> () != null)
 					drawer1.GetComponent<Renderer> ().materials [0].color = Color.yellow;
 				if (drawer2.GetComponent<Renderer> () != null)
