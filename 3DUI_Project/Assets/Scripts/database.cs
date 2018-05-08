@@ -11,6 +11,7 @@ using System.Net;
 public class database : MonoBehaviour {
 
 	private string dbPath;
+	public int submitNum = 0;
 
 
 	private void Start() {
@@ -556,6 +557,7 @@ public class database : MonoBehaviour {
 		int width = Screen.width;
 		int height = Screen.height;
 		var bytes = tex.EncodeToPNG();
+		submitNum = 0;
 		WWWForm form = new WWWForm();
 		form.AddField("frameCount", Time.frameCount.ToString());
 		form.AddBinaryData("fileToUpload", bytes, upload_name, "image/png");
@@ -576,6 +578,7 @@ public class database : MonoBehaviour {
 			if (find_string >= 0) {
 				GameObject.Find ("Info").GetComponent<Text>().text = "Submit Successfully!";
 				GameObject.Find("Info").GetComponent<Text>().enabled =  true;
+				submitNum = 1;
 
 				using (var conn = new SqliteConnection(dbPath)) {
 					conn.Open();
@@ -625,6 +628,7 @@ public class database : MonoBehaviour {
 				GameObject.Find ("Info").GetComponent<Text>().text = "Submit Failed!!";
 				GameObject.Find ("Info").GetComponent<Text> ().text += w.text;
 				GameObject.Find ("Info").GetComponent<Text> ().enabled = true;
+				submitNum = -1;
 
 			}
 			Debug.Log (w.url);

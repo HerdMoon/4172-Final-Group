@@ -23,6 +23,10 @@ public class phoneCamera2 : MonoBehaviour {
 	private GameObject Image03;
 	private GameObject Image04;
 	private GameObject Image05;
+	private GameObject Recipe1;
+	private GameObject Recipe2;
+	private GameObject Recipe3;
+	private GameObject Recipe4;
 
 	private int recipe = -1;
 	private string selectedRecipe = ""; 
@@ -40,6 +44,10 @@ public class phoneCamera2 : MonoBehaviour {
 		Image03 = GameObject.Find ("Image03");
 		Image04 = GameObject.Find ("Image04");
 		Image05 = GameObject.Find ("Image05");
+		Recipe1 = GameObject.Find ("Recipe1");
+		Recipe2 = GameObject.Find ("Recipe2");
+		Recipe3 = GameObject.Find ("Recipe3");
+		Recipe4 = GameObject.Find ("Recipe4");
 		successInfo = GameObject.Find ("Info");
 
 		buttonpanel.SetActive (true);
@@ -53,8 +61,8 @@ public class phoneCamera2 : MonoBehaviour {
 		//		successInfo.SetActive (false);
 
 
-		//mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
-				mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
+		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
+//		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
 
 
 		// Register Vuforia life-cycle callbacks:
@@ -93,6 +101,23 @@ public class phoneCamera2 : MonoBehaviour {
 
 	}
 
+
+	IEnumerator waitSubmitSeconds(){
+		Debug.Log ("waiting!");
+		yield return new WaitForSeconds (3);
+		GameObject.Find ("Info").GetComponent<Text> ().enabled = false;
+		Debug.Log ("wait completed!");
+		endTaking ();
+	}
+
+
+	IEnumerator waitRemindSeconds(){
+		Debug.Log ("waiting!");
+		yield return new WaitForSeconds (3);
+		GameObject.Find ("Info").GetComponent<Text> ().enabled = false;
+		Debug.Log ("wait completed!");
+	}
+
 	void Update(){
 
 		if (mFormatRegistered && SceneManager.GetActiveScene().name == "TakePhoto")
@@ -118,10 +143,27 @@ public class phoneCamera2 : MonoBehaviour {
 
 			} 
 		}
+		if (gameObject.GetComponent<database> ().submitNum != 0) {
+			StartCoroutine(waitSubmitSeconds ());
+			gameObject.GetComponent<database> ().submitNum = 0;
+		}
 	}
 
-	public void startTaking(){
+	public void clearSelection(){
+		Image01.GetComponent<RawImage> ().color = Color.white;
+		Image02.GetComponent<RawImage> ().color = Color.white;
+		Image03.GetComponent<RawImage> ().color = Color.white;
+		Image04.GetComponent<RawImage> ().color = Color.white;
+		Image05.GetComponent<RawImage> ().color = Color.white;
+		Recipe1.GetComponent<RawImage> ().color = Color.white;
+		Recipe2.GetComponent<RawImage> ().color = Color.white;
+		Recipe3.GetComponent<RawImage> ().color = Color.white;
+		Recipe4.GetComponent<RawImage> ().color = Color.white;
+	}
 
+
+	public void startTaking(){
+		clearSelection ();
 		buttonpanel.SetActive (false);
 		scroll.SetActive (true);
 		successInfo.GetComponent<Text>().enabled = false;
@@ -131,6 +173,7 @@ public class phoneCamera2 : MonoBehaviour {
 
 
 	public void endTaking(){
+		clearSelection ();
 		buttonpanel.SetActive (true);
 		scroll.SetActive (false);
 		mAccessCameraImage = true;
@@ -191,9 +234,13 @@ public class phoneCamera2 : MonoBehaviour {
 		System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
 		int time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 		if (mats.Count > 0 && recipe != -1) {
-			gameObject.GetComponent<database>().Insert_Data (flipped, mats, time, recipe);
+			gameObject.GetComponent<database> ().Insert_Data (flipped, mats, time, recipe);
+		} else {
+			GameObject.Find ("Info").GetComponent<Text>().text = "No material or recipe is selected!";
+			GameObject.Find("Info").GetComponent<Text>().enabled =  true;
+			StartCoroutine(waitRemindSeconds ());
+			clearSelection ();
 		}
-
 	}
 
 
