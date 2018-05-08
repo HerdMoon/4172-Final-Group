@@ -14833,6 +14833,8 @@ extern "C" void Texture2D_get_format_m2371899271 ();
 extern "C" void Texture2D_get_whiteTexture_m2176011403 ();
 extern "C" void Texture2D_SetPixel_m2984741184 ();
 extern "C" void Texture2D_INTERNAL_CALL_SetPixel_m4151298262 ();
+extern "C" void Texture2D_GetPixel_m1195410881 ();
+extern "C" void Texture2D_INTERNAL_CALL_GetPixel_m528601370 ();
 extern "C" void Texture2D_GetPixelBilinear_m1950540195 ();
 extern "C" void Texture2D_INTERNAL_CALL_GetPixelBilinear_m2045611222 ();
 extern "C" void Texture2D_SetPixels_m3008871897 ();
@@ -22367,7 +22369,7 @@ extern "C" void wayFinding_startTraveling_m2168396428 ();
 extern "C" void wayFinding_exitTraveling_m256940023 ();
 extern "C" void wayFinding_destroyArrow_m2270348953 ();
 extern "C" void wayFinding_printTable_m1402037971 ();
-extern const Il2CppMethodPointer g_MethodPointers[22349] = 
+extern const Il2CppMethodPointer g_MethodPointers[22351] = 
 {
 	Locale_GetText_m3374010885,
 	Locale_GetText_m1601577974,
@@ -37184,6 +37186,8 @@ extern const Il2CppMethodPointer g_MethodPointers[22349] =
 	Texture2D_get_whiteTexture_m2176011403,
 	Texture2D_SetPixel_m2984741184,
 	Texture2D_INTERNAL_CALL_SetPixel_m4151298262,
+	Texture2D_GetPixel_m1195410881,
+	Texture2D_INTERNAL_CALL_GetPixel_m528601370,
 	Texture2D_GetPixelBilinear_m1950540195,
 	Texture2D_INTERNAL_CALL_GetPixelBilinear_m2045611222,
 	Texture2D_SetPixels_m3008871897,

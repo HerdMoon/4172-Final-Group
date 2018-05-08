@@ -785,28 +785,28 @@ public:
 struct  U3Cupload_graphU3Ec__Iterator0_t3978570228  : public RuntimeObject
 {
 public:
-	// System.Int32 database/<upload_graph>c__Iterator0::<width>__0
-	int32_t ___U3CwidthU3E__0_0;
-	// System.Int32 database/<upload_graph>c__Iterator0::<height>__0
-	int32_t ___U3CheightU3E__0_1;
-	// UnityEngine.Texture2D database/<upload_graph>c__Iterator0::tex
-	Texture2D_t3840446185 * ___tex_2;
-	// System.Byte[] database/<upload_graph>c__Iterator0::<bytes>__0
-	ByteU5BU5D_t4116647657* ___U3CbytesU3E__0_3;
-	// UnityEngine.WWWForm database/<upload_graph>c__Iterator0::<form>__0
-	WWWForm_t4064702195 * ___U3CformU3E__0_4;
-	// System.String database/<upload_graph>c__Iterator0::upload_name
-	String_t* ___upload_name_5;
-	// System.String database/<upload_graph>c__Iterator0::<screenShotURL>__0
-	String_t* ___U3CscreenShotURLU3E__0_6;
-	// UnityEngine.WWW database/<upload_graph>c__Iterator0::<w>__0
-	WWW_t3688466362 * ___U3CwU3E__0_7;
-	// System.String database/<upload_graph>c__Iterator0::upload_URL
-	String_t* ___upload_URL_8;
-	// System.Int32 database/<upload_graph>c__Iterator0::time_stamp
-	int32_t ___time_stamp_9;
 	// System.Collections.Generic.List`1<System.String> database/<upload_graph>c__Iterator0::Chosen_Mat
-	List_1_t3319525431 * ___Chosen_Mat_10;
+	List_1_t3319525431 * ___Chosen_Mat_0;
+	// System.Int32 database/<upload_graph>c__Iterator0::<width>__0
+	int32_t ___U3CwidthU3E__0_1;
+	// System.Int32 database/<upload_graph>c__Iterator0::<height>__0
+	int32_t ___U3CheightU3E__0_2;
+	// UnityEngine.Texture2D database/<upload_graph>c__Iterator0::tex
+	Texture2D_t3840446185 * ___tex_3;
+	// System.Byte[] database/<upload_graph>c__Iterator0::<bytes>__0
+	ByteU5BU5D_t4116647657* ___U3CbytesU3E__0_4;
+	// UnityEngine.WWWForm database/<upload_graph>c__Iterator0::<form>__0
+	WWWForm_t4064702195 * ___U3CformU3E__0_5;
+	// System.String database/<upload_graph>c__Iterator0::upload_name
+	String_t* ___upload_name_6;
+	// System.String database/<upload_graph>c__Iterator0::<screenShotURL>__0
+	String_t* ___U3CscreenShotURLU3E__0_7;
+	// UnityEngine.WWW database/<upload_graph>c__Iterator0::<w>__0
+	WWW_t3688466362 * ___U3CwU3E__0_8;
+	// System.String database/<upload_graph>c__Iterator0::upload_URL
+	String_t* ___upload_URL_9;
+	// System.Int32 database/<upload_graph>c__Iterator0::time_stamp
+	int32_t ___time_stamp_10;
 	// System.Int32 database/<upload_graph>c__Iterator0::recipe_id
 	int32_t ___recipe_id_11;
 	// database database/<upload_graph>c__Iterator0::$this
@@ -819,100 +819,100 @@ public:
 	int32_t ___U24PC_15;
 
 public:
-	inline static int32_t get_offset_of_U3CwidthU3E__0_0() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CwidthU3E__0_0)); }
-	inline int32_t get_U3CwidthU3E__0_0() const { return ___U3CwidthU3E__0_0; }
-	inline int32_t* get_address_of_U3CwidthU3E__0_0() { return &___U3CwidthU3E__0_0; }
-	inline void set_U3CwidthU3E__0_0(int32_t value)
+	inline static int32_t get_offset_of_Chosen_Mat_0() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___Chosen_Mat_0)); }
+	inline List_1_t3319525431 * get_Chosen_Mat_0() const { return ___Chosen_Mat_0; }
+	inline List_1_t3319525431 ** get_address_of_Chosen_Mat_0() { return &___Chosen_Mat_0; }
+	inline void set_Chosen_Mat_0(List_1_t3319525431 * value)
 	{
-		___U3CwidthU3E__0_0 = value;
+		___Chosen_Mat_0 = value;
+		Il2CppCodeGenWriteBarrier((&___Chosen_Mat_0), value);
 	}
 
-	inline static int32_t get_offset_of_U3CheightU3E__0_1() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CheightU3E__0_1)); }
-	inline int32_t get_U3CheightU3E__0_1() const { return ___U3CheightU3E__0_1; }
-	inline int32_t* get_address_of_U3CheightU3E__0_1() { return &___U3CheightU3E__0_1; }
-	inline void set_U3CheightU3E__0_1(int32_t value)
+	inline static int32_t get_offset_of_U3CwidthU3E__0_1() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CwidthU3E__0_1)); }
+	inline int32_t get_U3CwidthU3E__0_1() const { return ___U3CwidthU3E__0_1; }
+	inline int32_t* get_address_of_U3CwidthU3E__0_1() { return &___U3CwidthU3E__0_1; }
+	inline void set_U3CwidthU3E__0_1(int32_t value)
 	{
-		___U3CheightU3E__0_1 = value;
+		___U3CwidthU3E__0_1 = value;
 	}
 
-	inline static int32_t get_offset_of_tex_2() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___tex_2)); }
-	inline Texture2D_t3840446185 * get_tex_2() const { return ___tex_2; }
-	inline Texture2D_t3840446185 ** get_address_of_tex_2() { return &___tex_2; }
-	inline void set_tex_2(Texture2D_t3840446185 * value)
+	inline static int32_t get_offset_of_U3CheightU3E__0_2() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CheightU3E__0_2)); }
+	inline int32_t get_U3CheightU3E__0_2() const { return ___U3CheightU3E__0_2; }
+	inline int32_t* get_address_of_U3CheightU3E__0_2() { return &___U3CheightU3E__0_2; }
+	inline void set_U3CheightU3E__0_2(int32_t value)
 	{
-		___tex_2 = value;
-		Il2CppCodeGenWriteBarrier((&___tex_2), value);
+		___U3CheightU3E__0_2 = value;
 	}
 
-	inline static int32_t get_offset_of_U3CbytesU3E__0_3() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CbytesU3E__0_3)); }
-	inline ByteU5BU5D_t4116647657* get_U3CbytesU3E__0_3() const { return ___U3CbytesU3E__0_3; }
-	inline ByteU5BU5D_t4116647657** get_address_of_U3CbytesU3E__0_3() { return &___U3CbytesU3E__0_3; }
-	inline void set_U3CbytesU3E__0_3(ByteU5BU5D_t4116647657* value)
+	inline static int32_t get_offset_of_tex_3() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___tex_3)); }
+	inline Texture2D_t3840446185 * get_tex_3() const { return ___tex_3; }
+	inline Texture2D_t3840446185 ** get_address_of_tex_3() { return &___tex_3; }
+	inline void set_tex_3(Texture2D_t3840446185 * value)
 	{
-		___U3CbytesU3E__0_3 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CbytesU3E__0_3), value);
+		___tex_3 = value;
+		Il2CppCodeGenWriteBarrier((&___tex_3), value);
 	}
 
-	inline static int32_t get_offset_of_U3CformU3E__0_4() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CformU3E__0_4)); }
-	inline WWWForm_t4064702195 * get_U3CformU3E__0_4() const { return ___U3CformU3E__0_4; }
-	inline WWWForm_t4064702195 ** get_address_of_U3CformU3E__0_4() { return &___U3CformU3E__0_4; }
-	inline void set_U3CformU3E__0_4(WWWForm_t4064702195 * value)
+	inline static int32_t get_offset_of_U3CbytesU3E__0_4() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CbytesU3E__0_4)); }
+	inline ByteU5BU5D_t4116647657* get_U3CbytesU3E__0_4() const { return ___U3CbytesU3E__0_4; }
+	inline ByteU5BU5D_t4116647657** get_address_of_U3CbytesU3E__0_4() { return &___U3CbytesU3E__0_4; }
+	inline void set_U3CbytesU3E__0_4(ByteU5BU5D_t4116647657* value)
 	{
-		___U3CformU3E__0_4 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CformU3E__0_4), value);
+		___U3CbytesU3E__0_4 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CbytesU3E__0_4), value);
 	}
 
-	inline static int32_t get_offset_of_upload_name_5() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___upload_name_5)); }
-	inline String_t* get_upload_name_5() const { return ___upload_name_5; }
-	inline String_t** get_address_of_upload_name_5() { return &___upload_name_5; }
-	inline void set_upload_name_5(String_t* value)
+	inline static int32_t get_offset_of_U3CformU3E__0_5() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CformU3E__0_5)); }
+	inline WWWForm_t4064702195 * get_U3CformU3E__0_5() const { return ___U3CformU3E__0_5; }
+	inline WWWForm_t4064702195 ** get_address_of_U3CformU3E__0_5() { return &___U3CformU3E__0_5; }
+	inline void set_U3CformU3E__0_5(WWWForm_t4064702195 * value)
 	{
-		___upload_name_5 = value;
-		Il2CppCodeGenWriteBarrier((&___upload_name_5), value);
+		___U3CformU3E__0_5 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CformU3E__0_5), value);
 	}
 
-	inline static int32_t get_offset_of_U3CscreenShotURLU3E__0_6() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CscreenShotURLU3E__0_6)); }
-	inline String_t* get_U3CscreenShotURLU3E__0_6() const { return ___U3CscreenShotURLU3E__0_6; }
-	inline String_t** get_address_of_U3CscreenShotURLU3E__0_6() { return &___U3CscreenShotURLU3E__0_6; }
-	inline void set_U3CscreenShotURLU3E__0_6(String_t* value)
+	inline static int32_t get_offset_of_upload_name_6() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___upload_name_6)); }
+	inline String_t* get_upload_name_6() const { return ___upload_name_6; }
+	inline String_t** get_address_of_upload_name_6() { return &___upload_name_6; }
+	inline void set_upload_name_6(String_t* value)
 	{
-		___U3CscreenShotURLU3E__0_6 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CscreenShotURLU3E__0_6), value);
+		___upload_name_6 = value;
+		Il2CppCodeGenWriteBarrier((&___upload_name_6), value);
 	}
 
-	inline static int32_t get_offset_of_U3CwU3E__0_7() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CwU3E__0_7)); }
-	inline WWW_t3688466362 * get_U3CwU3E__0_7() const { return ___U3CwU3E__0_7; }
-	inline WWW_t3688466362 ** get_address_of_U3CwU3E__0_7() { return &___U3CwU3E__0_7; }
-	inline void set_U3CwU3E__0_7(WWW_t3688466362 * value)
+	inline static int32_t get_offset_of_U3CscreenShotURLU3E__0_7() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CscreenShotURLU3E__0_7)); }
+	inline String_t* get_U3CscreenShotURLU3E__0_7() const { return ___U3CscreenShotURLU3E__0_7; }
+	inline String_t** get_address_of_U3CscreenShotURLU3E__0_7() { return &___U3CscreenShotURLU3E__0_7; }
+	inline void set_U3CscreenShotURLU3E__0_7(String_t* value)
 	{
-		___U3CwU3E__0_7 = value;
-		Il2CppCodeGenWriteBarrier((&___U3CwU3E__0_7), value);
+		___U3CscreenShotURLU3E__0_7 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CscreenShotURLU3E__0_7), value);
 	}
 
-	inline static int32_t get_offset_of_upload_URL_8() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___upload_URL_8)); }
-	inline String_t* get_upload_URL_8() const { return ___upload_URL_8; }
-	inline String_t** get_address_of_upload_URL_8() { return &___upload_URL_8; }
-	inline void set_upload_URL_8(String_t* value)
+	inline static int32_t get_offset_of_U3CwU3E__0_8() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___U3CwU3E__0_8)); }
+	inline WWW_t3688466362 * get_U3CwU3E__0_8() const { return ___U3CwU3E__0_8; }
+	inline WWW_t3688466362 ** get_address_of_U3CwU3E__0_8() { return &___U3CwU3E__0_8; }
+	inline void set_U3CwU3E__0_8(WWW_t3688466362 * value)
 	{
-		___upload_URL_8 = value;
-		Il2CppCodeGenWriteBarrier((&___upload_URL_8), value);
+		___U3CwU3E__0_8 = value;
+		Il2CppCodeGenWriteBarrier((&___U3CwU3E__0_8), value);
 	}
 
-	inline static int32_t get_offset_of_time_stamp_9() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___time_stamp_9)); }
-	inline int32_t get_time_stamp_9() const { return ___time_stamp_9; }
-	inline int32_t* get_address_of_time_stamp_9() { return &___time_stamp_9; }
-	inline void set_time_stamp_9(int32_t value)
+	inline static int32_t get_offset_of_upload_URL_9() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___upload_URL_9)); }
+	inline String_t* get_upload_URL_9() const { return ___upload_URL_9; }
+	inline String_t** get_address_of_upload_URL_9() { return &___upload_URL_9; }
+	inline void set_upload_URL_9(String_t* value)
 	{
-		___time_stamp_9 = value;
+		___upload_URL_9 = value;
+		Il2CppCodeGenWriteBarrier((&___upload_URL_9), value);
 	}
 
-	inline static int32_t get_offset_of_Chosen_Mat_10() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___Chosen_Mat_10)); }
-	inline List_1_t3319525431 * get_Chosen_Mat_10() const { return ___Chosen_Mat_10; }
-	inline List_1_t3319525431 ** get_address_of_Chosen_Mat_10() { return &___Chosen_Mat_10; }
-	inline void set_Chosen_Mat_10(List_1_t3319525431 * value)
+	inline static int32_t get_offset_of_time_stamp_10() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___time_stamp_10)); }
+	inline int32_t get_time_stamp_10() const { return ___time_stamp_10; }
+	inline int32_t* get_address_of_time_stamp_10() { return &___time_stamp_10; }
+	inline void set_time_stamp_10(int32_t value)
 	{
-		___Chosen_Mat_10 = value;
-		Il2CppCodeGenWriteBarrier((&___Chosen_Mat_10), value);
+		___time_stamp_10 = value;
 	}
 
 	inline static int32_t get_offset_of_recipe_id_11() { return static_cast<int32_t>(offsetof(U3Cupload_graphU3Ec__Iterator0_t3978570228, ___recipe_id_11)); }
@@ -5697,17 +5697,17 @@ extern const int32_t g_FieldOffsetTable3348[1] =
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3349 = { sizeof (U3Cupload_graphU3Ec__Iterator0_t3978570228), -1, 0, 0 };
 extern const int32_t g_FieldOffsetTable3349[16] = 
 {
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CwidthU3E__0_0(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CheightU3E__0_1(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_tex_2(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CbytesU3E__0_3(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CformU3E__0_4(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_upload_name_5(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CscreenShotURLU3E__0_6(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CwU3E__0_7(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_upload_URL_8(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_time_stamp_9(),
-	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_Chosen_Mat_10(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_Chosen_Mat_0(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CwidthU3E__0_1(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CheightU3E__0_2(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_tex_3(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CbytesU3E__0_4(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CformU3E__0_5(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_upload_name_6(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CscreenShotURLU3E__0_7(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U3CwU3E__0_8(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_upload_URL_9(),
+	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_time_stamp_10(),
 	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_recipe_id_11(),
 	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U24this_12(),
 	U3Cupload_graphU3Ec__Iterator0_t3978570228::get_offset_of_U24current_13(),

@@ -2214,6 +2214,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_Texture2D_Apply();
 		Register_UnityEngine_Texture2D_Apply();
 
+		//System.Void UnityEngine.Texture2D::INTERNAL_CALL_GetPixel(UnityEngine.Texture2D,System.Int32,System.Int32,UnityEngine.Color&)
+		void Register_UnityEngine_Texture2D_INTERNAL_CALL_GetPixel();
+		Register_UnityEngine_Texture2D_INTERNAL_CALL_GetPixel();
+
 		//System.Void UnityEngine.Texture2D::INTERNAL_CALL_GetPixelBilinear(UnityEngine.Texture2D,System.Single,System.Single,UnityEngine.Color&)
 		void Register_UnityEngine_Texture2D_INTERNAL_CALL_GetPixelBilinear();
 		Register_UnityEngine_Texture2D_INTERNAL_CALL_GetPixelBilinear();

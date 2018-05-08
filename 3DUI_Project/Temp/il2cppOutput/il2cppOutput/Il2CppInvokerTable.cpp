@@ -39694,6 +39694,13 @@ void* RuntimeInvoker_Void_t1185182177_RuntimeObject_Int32_t2950945753_Int32_t295
 	return NULL;
 }
 
+void* RuntimeInvoker_Color_t2555686324_Int32_t2950945753_Int32_t2950945753 (Il2CppMethodPointer methodPointer, const RuntimeMethod* methodMetadata, void* obj, void** args)
+{
+	typedef Color_t2555686324  (*Func)(void* obj, int32_t p1, int32_t p2, const RuntimeMethod* method);
+	Color_t2555686324  ret = ((Func)methodPointer)(obj, *((int32_t*)args[0]), *((int32_t*)args[1]), methodMetadata);
+	return Box(il2cpp_codegen_class_from_type (il2cpp_codegen_method_return_type(methodMetadata)), &ret);
+}
+
 void* RuntimeInvoker_Color_t2555686324_Single_t1397266774_Single_t1397266774 (Il2CppMethodPointer methodPointer, const RuntimeMethod* methodMetadata, void* obj, void** args)
 {
 	typedef Color_t2555686324  (*Func)(void* obj, float p1, float p2, const RuntimeMethod* method);
@@ -51223,7 +51230,7 @@ void* RuntimeInvoker_RuntimeObject_FloatTween_t1274330004 (Il2CppMethodPointer m
 	return ret;
 }
 
-extern const InvokerMethod g_Il2CppInvokerPointers[2807] = 
+extern const InvokerMethod g_Il2CppInvokerPointers[2808] = 
 {
 	RuntimeInvoker_Void_t1185182177,
 	RuntimeInvoker_Boolean_t97287965_RuntimeObject,
@@ -52385,6 +52392,7 @@ extern const InvokerMethod g_Il2CppInvokerPointers[2807] =
 	RuntimeInvoker_TextureFormat_t2701165832,
 	RuntimeInvoker_Void_t1185182177_Int32_t2950945753_Int32_t2950945753_Color_t2555686324,
 	RuntimeInvoker_Void_t1185182177_RuntimeObject_Int32_t2950945753_Int32_t2950945753_ColorU26_t491168876,
+	RuntimeInvoker_Color_t2555686324_Int32_t2950945753_Int32_t2950945753,
 	RuntimeInvoker_Color_t2555686324_Single_t1397266774_Single_t1397266774,
 	RuntimeInvoker_Void_t1185182177_RuntimeObject_Single_t1397266774_Single_t1397266774_ColorU26_t491168876,
 	RuntimeInvoker_Void_t1185182177_Int32_t2950945753_Int32_t2950945753_Int32_t2950945753_Int32_t2950945753_RuntimeObject_Int32_t2950945753,

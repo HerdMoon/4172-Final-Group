@@ -53,8 +53,8 @@ public class phoneCamera2 : MonoBehaviour {
 		//		successInfo.SetActive (false);
 
 
-		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
-		//		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
+		//mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
+				mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
 
 
 		// Register Vuforia life-cycle callbacks:
@@ -156,9 +156,24 @@ public class phoneCamera2 : MonoBehaviour {
 	}
 
 	public void submit(){
+
+		Texture2D flipped = new Texture2D(texture.width,texture.height);
+
+		int xN = texture.width;
+		int yN = texture.height;
+
+
+		for (int i = 0; i < xN; i++)
+		{
+			for (int j = 0; j < yN; j++)
+			{
+				flipped.SetPixel(i, yN - j - 1, texture.GetPixel(i, j));
+			}
+		}
+		flipped.Apply();
+
 		List<string> mats = new List<string> ();
 		if (Image01.GetComponent<Image01Script> ().selected == true){
-			Debug.Log (Image01.GetComponent<Image01Script> ().name);
 			mats.Add (Image01.GetComponent<Image01Script> ().name);
 		}
 		if (Image02.GetComponent<Image02Script> ().selected == true){
@@ -176,8 +191,7 @@ public class phoneCamera2 : MonoBehaviour {
 		System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
 		int time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 		if (mats.Count > 0 && recipe != -1) {
-			Debug.Log (mats[0]);
-			gameObject.GetComponent<database>().Insert_Data (texture, mats, time, recipe);
+			gameObject.GetComponent<database>().Insert_Data (flipped, mats, time, recipe);
 		}
 
 	}

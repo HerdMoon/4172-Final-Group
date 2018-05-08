@@ -15523,6 +15523,8 @@ extern "C"  void Texture2D_Internal_Create_m807587593 (RuntimeObject * __this /*
 extern "C"  void Texture2D__ctor_m3176621650 (Texture2D_t3840446185 * __this, int32_t ___width0, int32_t ___height1, int32_t ___format2, bool ___mipmap3, bool ___linear4, intptr_t ___nativeTex5, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Texture2D::INTERNAL_CALL_SetPixel(UnityEngine.Texture2D,System.Int32,System.Int32,UnityEngine.Color&)
 extern "C"  void Texture2D_INTERNAL_CALL_SetPixel_m4151298262 (RuntimeObject * __this /* static, unused */, Texture2D_t3840446185 * ___self0, int32_t ___x1, int32_t ___y2, Color_t2555686324 * ___color3, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// System.Void UnityEngine.Texture2D::INTERNAL_CALL_GetPixel(UnityEngine.Texture2D,System.Int32,System.Int32,UnityEngine.Color&)
+extern "C"  void Texture2D_INTERNAL_CALL_GetPixel_m528601370 (RuntimeObject * __this /* static, unused */, Texture2D_t3840446185 * ___self0, int32_t ___x1, int32_t ___y2, Color_t2555686324 * ___value3, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Texture2D::INTERNAL_CALL_GetPixelBilinear(UnityEngine.Texture2D,System.Single,System.Single,UnityEngine.Color&)
 extern "C"  void Texture2D_INTERNAL_CALL_GetPixelBilinear_m2045611222 (RuntimeObject * __this /* static, unused */, Texture2D_t3840446185 * ___self0, float ___u1, float ___v2, Color_t2555686324 * ___value3, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.Texture2D::SetPixels(UnityEngine.Color[],System.Int32)
@@ -41668,6 +41670,37 @@ extern "C"  void Texture2D_INTERNAL_CALL_SetPixel_m4151298262 (RuntimeObject * _
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Texture2D_INTERNAL_CALL_SetPixel_m4151298262_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Texture2D::INTERNAL_CALL_SetPixel(UnityEngine.Texture2D,System.Int32,System.Int32,UnityEngine.Color&)");
 	_il2cpp_icall_func(___self0, ___x1, ___y2, ___color3);
+}
+// UnityEngine.Color UnityEngine.Texture2D::GetPixel(System.Int32,System.Int32)
+extern "C"  Color_t2555686324  Texture2D_GetPixel_m1195410881 (Texture2D_t3840446185 * __this, int32_t ___x0, int32_t ___y1, const RuntimeMethod* method)
+{
+	Color_t2555686324  V_0;
+	memset(&V_0, 0, sizeof(V_0));
+	Color_t2555686324  V_1;
+	memset(&V_1, 0, sizeof(V_1));
+	{
+		int32_t L_0 = ___x0;
+		int32_t L_1 = ___y1;
+		Texture2D_INTERNAL_CALL_GetPixel_m528601370(NULL /*static, unused*/, __this, L_0, L_1, (&V_0), /*hidden argument*/NULL);
+		Color_t2555686324  L_2 = V_0;
+		V_1 = L_2;
+		goto IL_0012;
+	}
+
+IL_0012:
+	{
+		Color_t2555686324  L_3 = V_1;
+		return L_3;
+	}
+}
+// System.Void UnityEngine.Texture2D::INTERNAL_CALL_GetPixel(UnityEngine.Texture2D,System.Int32,System.Int32,UnityEngine.Color&)
+extern "C"  void Texture2D_INTERNAL_CALL_GetPixel_m528601370 (RuntimeObject * __this /* static, unused */, Texture2D_t3840446185 * ___self0, int32_t ___x1, int32_t ___y2, Color_t2555686324 * ___value3, const RuntimeMethod* method)
+{
+	typedef void (*Texture2D_INTERNAL_CALL_GetPixel_m528601370_ftn) (Texture2D_t3840446185 *, int32_t, int32_t, Color_t2555686324 *);
+	static Texture2D_INTERNAL_CALL_GetPixel_m528601370_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Texture2D_INTERNAL_CALL_GetPixel_m528601370_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Texture2D::INTERNAL_CALL_GetPixel(UnityEngine.Texture2D,System.Int32,System.Int32,UnityEngine.Color&)");
+	_il2cpp_icall_func(___self0, ___x1, ___y2, ___value3);
 }
 // UnityEngine.Color UnityEngine.Texture2D::GetPixelBilinear(System.Single,System.Single)
 extern "C"  Color_t2555686324  Texture2D_GetPixelBilinear_m1950540195 (Texture2D_t3840446185 * __this, float ___u0, float ___v1, const RuntimeMethod* method)
