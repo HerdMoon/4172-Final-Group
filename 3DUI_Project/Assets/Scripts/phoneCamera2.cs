@@ -158,6 +158,7 @@ public class phoneCamera2 : MonoBehaviour {
 	public void submit(){
 		List<string> mats = new List<string> ();
 		if (Image01.GetComponent<Image01Script> ().selected == true){
+			Debug.Log (Image01.GetComponent<Image01Script> ().name);
 			mats.Add (Image01.GetComponent<Image01Script> ().name);
 		}
 		if (Image02.GetComponent<Image02Script> ().selected == true){
@@ -175,6 +176,7 @@ public class phoneCamera2 : MonoBehaviour {
 		System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
 		int time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
 		if (mats.Count > 0 && recipe != -1) {
+			Debug.Log (mats[0]);
 			gameObject.GetComponent<database>().Insert_Data (texture, mats, time, recipe);
 		}
 

@@ -17,7 +17,7 @@ public class database : MonoBehaviour {
 		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
 		try 
 		{
-			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag3.txt");
+			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag4.txt");
 			string input = null;
 			Debug.Log("Exist!");
 			while ((input = sr.ReadLine())!=null)
@@ -27,7 +27,7 @@ public class database : MonoBehaviour {
 		}
 		catch (FileNotFoundException) {
 			InitDatabase ();
-			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag3.txt", false);
+			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag4.txt", false);
 			sw.WriteLine ("Exist");
 			Debug.Log ("None init!");
 			sw.Close ();
@@ -552,7 +552,7 @@ public class database : MonoBehaviour {
 	{
 
 		yield return new WaitForEndOfFrame (); 
-
+		Debug.Log (Chosen_Mat[0]);
 		int width = Screen.width;
 		int height = Screen.height;
 		var bytes = tex.EncodeToPNG();
@@ -614,6 +614,7 @@ public class database : MonoBehaviour {
 							Value = recipe_id
 						});
 						var result = cmd.ExecuteNonQuery();
+						Debug.Log ("Get Image Mat" + Chosen_Mat [0]);
 						Debug.Log("insert URL: " + result);
 					}
 				}

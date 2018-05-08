@@ -554,7 +554,7 @@ extern RuntimeClass* FileNotFoundException_t225391025_il2cpp_TypeInfo_var;
 extern RuntimeClass* StreamWriter_t1266378904_il2cpp_TypeInfo_var;
 extern String_t* _stringLiteral1604535310;
 extern String_t* _stringLiteral3394506779;
-extern String_t* _stringLiteral1222254377;
+extern String_t* _stringLiteral1220222761;
 extern String_t* _stringLiteral40502962;
 extern String_t* _stringLiteral38340274;
 extern String_t* _stringLiteral1039373709;
@@ -14251,7 +14251,7 @@ IL_001a:
 		{
 			String_t* L_2 = Application_get_persistentDataPath_m1428108154(NULL /*static, unused*/, /*hidden argument*/NULL);
 			IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-			String_t* L_3 = String_Concat_m3937257545(NULL /*static, unused*/, L_2, _stringLiteral1222254377, /*hidden argument*/NULL);
+			String_t* L_3 = String_Concat_m3937257545(NULL /*static, unused*/, L_2, _stringLiteral1220222761, /*hidden argument*/NULL);
 			StreamReader_t4009935899 * L_4 = File_OpenText_m196858847(NULL /*static, unused*/, L_3, /*hidden argument*/NULL);
 			V_0 = L_4;
 			V_1 = (String_t*)NULL;
@@ -14294,7 +14294,7 @@ CATCH_0058:
 		database_InitDatabase_m236474145(__this, /*hidden argument*/NULL);
 		String_t* L_9 = Application_get_persistentDataPath_m1428108154(NULL /*static, unused*/, /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
-		String_t* L_10 = String_Concat_m3937257545(NULL /*static, unused*/, L_9, _stringLiteral1222254377, /*hidden argument*/NULL);
+		String_t* L_10 = String_Concat_m3937257545(NULL /*static, unused*/, L_9, _stringLiteral1220222761, /*hidden argument*/NULL);
 		StreamWriter_t1266378904 * L_11 = (StreamWriter_t1266378904 *)il2cpp_codegen_object_new(StreamWriter_t1266378904_il2cpp_TypeInfo_var);
 		StreamWriter__ctor_m587286950(L_11, L_10, (bool)0, /*hidden argument*/NULL);
 		V_2 = L_11;
@@ -21482,7 +21482,7 @@ extern "C"  void phoneCamera2_Start_m2003981674 (phoneCamera2_t1299469883 * __th
 		NullCheck(L_12);
 		GameObject_SetActive_m796801857(L_12, (bool)0, /*hidden argument*/NULL);
 		__this->set_nontexture_9((bool)1);
-		__this->set_mPixelFormat_2(4);
+		__this->set_mPixelFormat_2(2);
 		IL2CPP_RUNTIME_CLASS_INIT(VuforiaARController_t1876945237_il2cpp_TypeInfo_var);
 		VuforiaARController_t1876945237 * L_13 = VuforiaARController_get_Instance_m1100644214(NULL /*static, unused*/, /*hidden argument*/NULL);
 		intptr_t L_14 = (intptr_t)phoneCamera2_OnVuforiaStarted_m2900743289_RuntimeMethod_var;
