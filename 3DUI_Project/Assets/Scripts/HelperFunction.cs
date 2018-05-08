@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class HelperFunction : MonoBehaviour {
 
 	private Scanning scanningScript;
 	private InitScan initScanScript;
+	public Text text;
 
 	void Start () {
 		scanningScript = GameObject.Find ("ARCamera").GetComponent<Scanning> ();
 		initScanScript = GameObject.Find ("ARCamera").GetComponent<InitScan> ();
+		text.text = "Scanning";
 	}
 
 	public void SaveToText() {
@@ -27,6 +30,7 @@ public class HelperFunction : MonoBehaviour {
 		}
 		sw.Close();
 		initScanScript.flag = false;
+		text.text = "Successfully saved";
 		Debug.Log ("sucessfully save text to local!!!!!!!!!!!!!!!!!!!!!!");
 
 	}

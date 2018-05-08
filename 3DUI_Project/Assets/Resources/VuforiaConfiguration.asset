@@ -46,8 +46,6 @@ MonoBehaviour:
     dataSetsToLoad:
     - Project
     - ProjectTest
-    - VuforiaMars_Images
-    - VuforiaMars_VuMark
     dataSetsToActivate:
     - Project
     - ProjectTest

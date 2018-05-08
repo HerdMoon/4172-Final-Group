@@ -18,7 +18,7 @@ public class database : MonoBehaviour {
 		dbPath = "URI=file:" + Application.persistentDataPath + "/exampleDatabase.db";
 		try 
 		{
-			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag4.txt");
+			StreamReader sr = File.OpenText(Application.persistentDataPath + "/flag6.txt");
 			string input = null;
 			Debug.Log("Exist!");
 			while ((input = sr.ReadLine())!=null)
@@ -28,7 +28,7 @@ public class database : MonoBehaviour {
 		}
 		catch (FileNotFoundException) {
 			InitDatabase ();
-			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag4.txt", false);
+			StreamWriter sw = new StreamWriter (Application.persistentDataPath + "/flag6.txt", false);
 			sw.WriteLine ("Exist");
 			Debug.Log ("None init!");
 			sw.Close ();

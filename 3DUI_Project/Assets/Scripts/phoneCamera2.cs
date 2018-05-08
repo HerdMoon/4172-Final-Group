@@ -61,8 +61,8 @@ public class phoneCamera2 : MonoBehaviour {
 		//		successInfo.SetActive (false);
 
 
-		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
-//		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
+//		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.GRAYSCALE; // Use RGB888 for mobile
+		mPixelFormat = Vuforia.Image.PIXEL_FORMAT.RGB888;
 
 
 		// Register Vuforia life-cycle callbacks:
